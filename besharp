@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+set -eu
+
+SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+function main() {
+    if ! dockerBuild > /dev/null 2> /dev/null; then
+        dockerBuild
+        return 1
+    fi
+
+    if dockerIsRunning; then
+        dockerExec "${@:-bash}"
+    else
+        dockerRun "${@:-bash}"
+    fi
+}
+
+function dockerBuild() {
+    (
+        cd "${SCRIPT_DIR}"
+
+        docker build --build-arg USER_ID=$(id -u) -t besharp .
+    )
+}
+
+function dockerRun() {
+    (
+        cd "${SCRIPT_DIR}"
+        docker run "$(dockerTTI)" --rm --name besharp --volume ${PWD:-$(pwd)}:/besharp/ besharp "${@}"
+    )
+}
+
+function dockerExec() {
+    docker exec "$(dockerTTI)" besharp "${@}"
+}
+
+function dockerIsRunning() {
+    [[ "$( docker exec besharp echo testing 2> /dev/null || true )" == 'testing' ]]
+}
+
+function dockerTTI() {
+    if [[ -t 0 ]]; then
+        echo "-it"
+    else
+        echo "-i"
+    fi
+}
+
+main "${@}"

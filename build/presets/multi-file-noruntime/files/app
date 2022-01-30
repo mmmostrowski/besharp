@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -eu
+
+export besharp_app_dir="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+function main() {
+    if ! command -v "${BESHARP_RUNTIME_PATH:-besharp}" > /dev/null 2> /dev/null; then
+        echo "" >&2
+        echo "Cannot find ${BESHARP_RUNTIME_PATH:-besharp} !" >&2
+        echo "" >&2
+        echo "Please either make it accessible by your \$PATH variable, " >&2
+        echo "or provide \${BESHARP_RUNTIME_PATH} environment variable pointing to the 'besharp' executable file. " >&2
+        return 1
+    fi
+
+    "${BESHARP_RUNTIME_PATH:-besharp}" --besharp-include "${besharp_app_dir}/dist/" \
+        "${@}" \
+    ;
+
+}
+main "${@}"

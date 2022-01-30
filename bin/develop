@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+export besharp_root_dir="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )/../" &> /dev/null && pwd )"
+
+source "${besharp_root_dir}/core/include.sh"
+
+function main() {
+    besharp.terminal.clear
+    besharp.entrypoint.develop "${@}"
+}
+main "${@}"

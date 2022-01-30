@@ -1,0 +1,4 @@
+/.idea/
+*.be.sh
+/app/dist/*
+!/app/dist/.gitkeep

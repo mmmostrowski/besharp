@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+export besharp_runtime_home="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )/../" &> /dev/null && pwd )"
+
+"${besharp_runtime_home}/dist/besharp-runtime-"* "${@}"

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -eu
+
+export besharp_app_dir="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+function main() {
+
+    "${besharp_app_dir}/runtime/besharp-runtime"* \
+        --besharp-include "${besharp_app_dir}/dist/" \
+        "${@}" \
+    ;
+
+}
+main "${@}"
