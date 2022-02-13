@@ -11,6 +11,22 @@ function @returning() {
     fi
 }
 
+function @returning__develop() {
+    if [[ "${1}" == "@of" ]] && [[ "${2+isset}" == 'isset' ]]; then
+        shift
+        # field or method
+        "${@}"
+
+        if [[ "${besharp_rcrvs[ besharp_rcsl + 1 ]+isset}" != 'isset' ]]; then
+            besharp.runtime.error "@returning @of cannot pass down the value! Are you @returning any value?"
+        fi
+
+        besharp_rcrvs[ besharp_rcsl ]="${besharp_rcrvs[ besharp_rcsl + 1 ]}"
+    else
+        besharp_rcrvs[ besharp_rcsl ]="${1}"
+    fi
+}
+
 function @returned() {
     local args=( "${@}" )
 
