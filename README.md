@@ -70,6 +70,138 @@ docker run -it --rm mmmostrowski/besharp-mvc-hello-world
 Please visit [demo app project page](https://github.com/mmmostrowski/besharp-mvc-hello-world) for further instructions.   
 
 ---
+### Example code
+
+```shell
+@class AppEntrypoint @implements Entrypoint
+
+    function AppEntrypoint.main()
+    {
+        @let args = @new Args "${@}"
+
+        @let greeting = $args.asString '--greeting' '-g' 'Hello'
+        @let subject = $args.asString '--subject' '-s' 'world'
+
+        if @true $args.asFlag '--loud' '-l' false; then
+            echo "${greeting} ${subject}!"
+        else
+            echo "${greeting} ${subject}$( @echo $args.asChar '--punctuation-mark' '-p' '.' )"
+        fi
+    }
+
+@classdone
+
+
+
+@class Args
+
+    @var @inject ArgsParser parser
+
+    @var Vector arguments
+
+    function Args()
+    {
+        @let $this.arguments = @vectors.make "${@}"
+    }
+
+    function Args.asString()
+    {
+        local longArg="${1}"
+        local shortArg="${2}"
+        local defaultValue="${3:-}"
+
+        @let parser = $this.parser
+        @let arguments = $this.arguments
+
+        @returning @of $parser.parseValued $arguments \
+            "${longArg}" "${shortArg}" "${defaultValue}"
+    }
+
+    function Args.asChar()
+    {
+        local longArg="${1}"
+        local shortArg="${2}"
+        local defaultValue="${3:-}"
+
+        @let parser = $this.parser
+        @let arguments = $this.arguments
+
+        @let string = @returning @of $parser.parseValued $arguments \
+            "${longArg}" "${shortArg}" "${defaultValue}"
+
+        if (( ${#string} != 1 )); then
+            besharp.error "Expected single character for ${longArg}(${shortArg}) argument!"
+        fi
+
+        @returning "${string}"
+    }
+
+    function Args.asFlag()
+    {
+        local longArg="${1}"
+        local shortArg="${2}"
+        local defaultValue="${3:-false}"
+
+        @let parser = $this.parser
+        @let arguments = $this.arguments
+
+        @returning @of $parser.isOccurring $arguments \
+            "${longArg}" "${shortArg}" "${defaultValue}"
+    }
+
+@classdone
+
+
+@class ArgsParser
+
+    function ArgsParser.parseValued()
+    {
+        local arguments="${1}"
+        local longArg="${2}"
+        local shortArg="${3}"
+        local defaultValue="${4}"
+
+        local nextOneIsValue=false
+        while @iterate $arguments @in arg; do
+            if $nextOneIsValue; then
+                @returning "${arg}"
+                return
+            fi
+
+            if [[ "${arg}" == "${longArg}" ]] || [[ "${arg}" == "${shortArg}" ]]; then
+                nextOneIsValue=true
+                continue
+            fi
+        done
+
+        @returning "${defaultValue}"
+    }
+
+    function ArgsParser.isOccurring()
+    {
+        local arguments="${1}"
+        local longArg="${2}"
+        local shortArg="${3}"
+        local defaultValue="${4}"
+
+        local nextOneIsValue=false
+        while @iterate $arguments @in arg; do
+            if [[ "${arg}" == "${longArg}" ]] || [[ "${arg}" == "${shortArg}" ]]; then
+                @returning true
+                return
+            fi
+        done
+
+        @returning "${defaultValue}"
+    }
+
+@classdone
+```
+
+Example usage: `develop --greeting "How are you" -s "programmer" --punctuation-mark '?'` <br>
+
+
+---
 ### How to run
 
 Framework is mainly built of two components:  
@@ -210,5 +342,3 @@ What is planned next?
 ---
 
 BeSharp by Maciej Ostrowski (c) 2022
-
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate/?hosted_button_id=D5QRLBDCRZSY4)
