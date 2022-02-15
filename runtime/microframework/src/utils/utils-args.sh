@@ -34,6 +34,10 @@ function besharp.args.processFlag() {
     local flagName="${1}"
     local inverted="${2:-false}"
 
+    if besharp.args.isCurrentEmpty; then
+        return
+    fi
+
     flagName="${flagName#--}"
 
     local arg
@@ -67,6 +71,10 @@ function besharp.args.processString() {
     local flagName="${1}"
     local default="${2:-}"
 
+    if besharp.args.isCurrentEmpty; then
+        return
+    fi
+
     flagName="${flagName#--}"
 
     local valueInNextArg=false
@@ -94,10 +102,19 @@ function besharp.args.processString() {
     besharp.array.clone filteredArgs ${besharp_args_current_var}
 }
 
+function besharp.args.isCurrentEmpty() {
+    eval "local size=\${#${besharp_args_current_var}[@]}"
+    (( size == 0 ))
+}
+
 function besharp.args.processArray() {
     local flagName="${1}"
     shift 1
     local defaults=( "${@}" )
+
+    if besharp.args.isCurrentEmpty; then
+        return
+    fi
 
     flagName="${flagName#--}"
 
