@@ -71,135 +71,225 @@ Please visit [demo app project page](https://github.com/mmmostrowski/besharp-mvc
 
 ---
 ### Example code
+ 
+Below is an example code of a primitive CLI arguments parsing mechanism.
+Class `Arguments` might be an OOP replacement for the Bash `getopt` command. 
 
 ```shell
+#!/usr/bin/env bash
+
 @class AppEntrypoint @implements Entrypoint
 
-    function AppEntrypoint.main()
-    {
-        @let args = @new Args "${@}"
+  function AppEntrypoint.main()
+  {
+      @let args = $this.makeArguments "${@}"
 
-        @let greeting = $args.asString '--greeting' '-g' 'Hello'
-        @let subject = $args.asString '--subject' '-s' 'world'
+      if @true $args.get isAskingForHelp; then
+          echo 'An example Hello-World App for the BeSharp Framework.' >&2
+          echo '' >&2
+          echo 'Usage:' >&2
+          $args.printUsage >&2
+          return 0
+      fi
 
-        if @true $args.asFlag '--loud' '-l' false; then
-            echo "${greeting} ${subject}!"
-        else
-            echo "${greeting} ${subject}$( @echo $args.asChar '--punctuation-mark' '-p' '.' )"
-        fi
-    }
+      if @true $args.get isLoud; then
+          echo "$( @fmt bold )$( @ $args.get greeting ) $( @ $args.get subject )!$( @fmt reset )"
+      else
+          echo "$( @ $args.get greeting ) $( @ $args.get subject )$( @ $args.get suffix )"
+      fi
+  }
 
-@classdone
+  function AppEntrypoint.makeArguments()
+  {
+      @let arguments = @new Arguments "${@}"
 
+      $arguments.addValuedOption greeting \
+          '--greeting' '-g' \
+          'The way you want to greet. Default greeting is: ' 'Hello'
 
+      $arguments.addValuedOption subject \
+          '--subject' '-s' \
+          'The subject you want to greet. Default subject is: ' 'World'
 
-@class Args
+      $arguments.addValuedOption suffix \
+          '--suffix' '-u' \
+          'The string being placed at the end. Default is: '  '.'
 
-    @var @inject ArgsParser parser
+      $arguments.addFlagOption isLoud \
+          '--loud' '-l' \
+          'You can shout, by providing this flag.'  'false'
 
-    @var Vector arguments
+      $arguments.addFlagOption isAskingForHelp \
+          '--help' '-h' \
+          'Show help.' 'false'
 
-    function Args()
-    {
-        @let $this.arguments = @vectors.make "${@}"
-    }
+      $arguments.process
 
-    function Args.asString()
-    {
-        local longArg="${1}"
-        local shortArg="${2}"
-        local defaultValue="${3:-}"
-
-        @let parser = $this.parser
-        @let arguments = $this.arguments
-
-        @returning @of $parser.parseValued $arguments \
-            "${longArg}" "${shortArg}" "${defaultValue}"
-    }
-
-    function Args.asChar()
-    {
-        local longArg="${1}"
-        local shortArg="${2}"
-        local defaultValue="${3:-}"
-
-        @let parser = $this.parser
-        @let arguments = $this.arguments
-
-        @let string = @returning @of $parser.parseValued $arguments \
-            "${longArg}" "${shortArg}" "${defaultValue}"
-
-        if (( ${#string} != 1 )); then
-            besharp.error "Expected single character for ${longArg}(${shortArg}) argument!"
-        fi
-
-        @returning "${string}"
-    }
-
-    function Args.asFlag()
-    {
-        local longArg="${1}"
-        local shortArg="${2}"
-        local defaultValue="${3:-false}"
-
-        @let parser = $this.parser
-        @let arguments = $this.arguments
-
-        @returning @of $parser.isOccurring $arguments \
-            "${longArg}" "${shortArg}" "${defaultValue}"
-    }
+      @returning $arguments
+  }
 
 @classdone
 
 
-@class ArgsParser
+@class Arguments
 
-    function ArgsParser.parseValued()
-    {
-        local arguments="${1}"
-        local longArg="${2}"
-        local shortArg="${3}"
-        local defaultValue="${4}"
+  @var Vector args
+  @var Map options
+  @var Vector optionsInOrder
+  @var Map values
 
-        local nextOneIsValue=false
-        while @iterate $arguments @in arg; do
-            if $nextOneIsValue; then
-                @returning "${arg}"
-                return
-            fi
+  function Arguments()
+  {
+      @let $this.args = @vectors.make "${@}"
+      @let $this.options = @maps.make
+      @let $this.optionsInOrder = @vectors.make
+      @let $this.values = @maps.make
+  }
 
-            if [[ "${arg}" == "${longArg}" ]] || [[ "${arg}" == "${shortArg}" ]]; then
-                nextOneIsValue=true
-                continue
-            fi
-        done
+  function Arguments.addValuedOption()
+  {
+      $this.addOption true "${@}"
+ }
 
-        @returning "${defaultValue}"
-    }
+  function Arguments.addFlagOption()
+  {
+      $this.addOption false "${@}"
+  }
 
-    function ArgsParser.isOccurring()
-    {
-        local arguments="${1}"
-        local longArg="${2}"
-        local shortArg="${3}"
-        local defaultValue="${4}"
+  function Arguments.process()
+  {
+      @let options = $this.options
+      @let values = $this.values
 
-        local nextOneIsValue=false
-        while @iterate $arguments @in arg; do
-            if [[ "${arg}" == "${longArg}" ]] || [[ "${arg}" == "${shortArg}" ]]; then
-                @returning true
-                return
-            fi
-        done
+      $this.initDefaultValues
 
-        @returning "${defaultValue}"
-    }
+      local nextItemIsValue=false
+      while @iterate @of $this.args @in arg; do
+          if $nextItemIsValue; then
+              $values.set "${key}" "${arg}"
+              nextItemIsValue=false
+              continue
+          fi
+
+          @let key = $this.findOptionForArg "${arg}"
+          @let option = $options.get "${key}"
+
+          if @true $option.isValued; then
+              nextItemIsValue=true
+          else
+              $values.set "${key}" true
+          fi
+      done
+
+      if $nextItemIsValue; then
+          local argText
+          argText="$( @ $option.longOption ) ($( @ $option.shortOption ))"
+          besharp.error "The value is missing for ${argText} argument!"
+      fi
+  }
+
+  function Arguments.get()
+  {
+      local key="${1}"
+
+      @let values = $this.values
+      @returning @of $values.get "${key}"
+  }
+
+  function Arguments.printUsage()
+  {
+      local margin=19
+
+      @let options = $this.options
+      while @iterate @of $this.optionsInOrder @in optionKey; do
+          @let opt = $options.get "${optionKey}"
+          local paddingText=''
+          local totalString="$( @ $opt.longOption )$( @ $opt.shortOption )"
+          local paddingSize=$(( margin - ${#totalString} ))
+          while (( --paddingSize >= 0 )); do
+              paddingText+=' '
+          done
+
+          echo -n "  "
+          if @true $opt.isValued; then
+              echo -n "$(@ $opt.shortOption) value, $(@ $opt.longOption) value ${paddingText} - "
+              echo "$(@ $opt.description)$(@fmt bold)$(@ $opt.defaultValue)$(@fmt reset)"
+          else
+              echo -n "$(@ $opt.shortOption), $(@ $opt.longOption)              ${paddingText} - "
+              @echo $opt.description
+          fi
+      done
+  }
+
+  function Arguments.addOption()
+  {
+      @let option = @new ArgumentOption
+
+      $option.isValued = "${1}"
+      $option.key = "${2}"
+      $option.longOption = "${3}"
+      $option.shortOption = "${4}"
+      $option.description = "${5}"
+      $option.defaultValue = "${6}"
+
+      @let options = $this.options
+      $options.set "${2}" $option
+
+      @let optionsInOrder = $this.optionsInOrder
+      $optionsInOrder.add "${2}"
+  }
+
+  function Arguments.findOptionForArg()
+  {
+      local arg="${1}"
+
+      @returning ""
+      while @iterate @of $this.options @in option; do
+          @let key = $option.key
+          @let longOption = $option.longOption
+          @let shortOption = $option.shortOption
+
+          if [[ "${arg}" == "${shortOption}" ]] || [[ "${arg}" == "${longOption}" ]]; then
+              @returning "${key}"
+              return
+          fi
+      done
+
+      besharp.error "Invalid argument: ${arg}!"
+  }
+
+  function Arguments.initDefaultValues()
+  {
+      @let options = $this.options
+      @let values = $this.values
+
+      while @iterate $options @in option; do
+          @let key = $option.key
+          @let defaultValue = $option.defaultValue
+
+          $values.set "${key}" "${defaultValue}"
+      done
+  }
+
+@classdone
+
+
+@class ArgumentOption
+
+  @var key
+  @var longOption
+  @var shortOption
+  @var description
+  @var defaultValue
+  @var isValued
 
 @classdone
 ```
 
-Example usage: `develop --greeting "How are you" -s "programmer" --punctuation-mark '?'` <br>
-
+Example usage ( _see below how to run_ ): 
+```
+develop --greeting "How are you" -s "programmer" --suffix '?'
+```
 
 ---
 ### How to run
@@ -268,7 +358,7 @@ Please open BeSharp terminal:
 ---
 To run app in a **production** mode:
 
-```shell
+```
 run [ your app params ... ]
 
 # to run given preset
