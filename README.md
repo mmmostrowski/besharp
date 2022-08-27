@@ -387,10 +387,10 @@ To build the project into `dist/` folders, **without running it**:
 build
 
 # to build given preset
-build --preset <preset> [ your app params ... ]
+build --preset <preset>
 
 # to force compilation of all files, instead of compiling only changed files
-build --compile-all [ your app params ... ]
+build --compile-all
 ```
 
 To run the project on the native Bash on Linux/Unix host machine, instead of BeSharp docker terminal:
