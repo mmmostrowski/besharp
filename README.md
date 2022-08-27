@@ -412,9 +412,9 @@ If you have no Docker installed, you might want to try to execute BeSharp Framew
 ```
 
 ---
-### Roadmap
+### What next? 
 
-What is planned next?
+Ideas:
   - documentation and tutorials,
   - working on performance,
   - writing automated tests ( unit tests, performance tests, ... ),
