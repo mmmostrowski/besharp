@@ -90,15 +90,18 @@ The `Arguments` class might be an OOP replacement for the Bash `getopt` command.
           return 0
       fi
 
+      @let greetingText = $this.greetingText $args
+
       if @true $args.get isLoud; then
-          echo "$( @fmt bold )$( @ $this.greetingText )$( @fmt reset )"
+          echo "$( @fmt bold )${greetingText}$( @fmt reset )"
       else
-          @echo $this.greetingText
+          echo "${greetingText}"
       fi
   }
 
-  function AppEntrypoint.greetingText()
-  {
+  function AppEntrypoint.greetingText() {
+      local args="${1}"
+
       @returning "$( @ $args.get greeting ) $( @ $args.get subject )$( @ $args.get suffix )"
   }
 

@@ -184,6 +184,7 @@ function besharp.compiler.oop.compileMethodBody() {
         echo "${methodBody}" | grep -Eo '@let\s+([a-zA-Z_][a-zA-Z_0-9]*)\s+=' | sort | uniq
     )";
 
+    local allLocalVars=""
     local localAssignment
     local localVarName
     for localAssignment in "${foundAssignments[@]}"; do
@@ -201,8 +202,17 @@ function besharp.compiler.oop.compileMethodBody() {
             echo "}"
         )"
 
-       methodBody="${methodBody//${localAssignment}/__be__${localVarName}}"
+        allLocalVars="${allLocalVars}${localVarName} "
+        methodBody="${methodBody//${localAssignment}/__be__${localVarName}}"
     done
+
+    if [[ -n "${allLocalVars}" ]]; then
+        methodBody="$(
+            echo "${methodBody}" | head -n 2
+            echo "    local ${allLocalVars};"
+            echo "${methodBody}" | tail -n +3
+        )"
+    fi
 
     # optimize '@let $object.field = $some.call'
     local foundFieldAssignments=()

@@ -47,7 +47,7 @@ function besharp.error.disableHandling() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.info() {
     besharp.formatMessage INFO "bold green" "lightGreen" "${@}"
@@ -58,7 +58,7 @@ function besharp.warning() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function @fmt() {
     besharp.format "${@}"
@@ -142,7 +142,7 @@ function besharp.format() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.polymorphism.initialize() {
     declare -ag besharp_polymorphism_layers=()
@@ -214,7 +214,7 @@ function besharp.polymorphism.deactivateLayer() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 declare -Ag besharp_shutdown_callbacks
 declare -Ag besharp_shutdown_callback_functions
@@ -256,14 +256,14 @@ function besharp.runShutdownCallbacks()
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.terminal.clear() {
     clear 2> /dev/null || true
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 export besharp_main_pid=${BASHPID}
 export besharp_loglevel=info # debug error
@@ -292,7 +292,7 @@ function besharp.isLoggingDebug() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 export besharp_debugger_fmt_currently_in_group=false
 
@@ -411,7 +411,7 @@ function besharp.debugIndent() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function t() {
     besharp.debugTrace 2
@@ -492,7 +492,7 @@ function besharp.generateDebugTrace() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.debugString() {
     local string="${1}"
@@ -604,7 +604,7 @@ function besharp.debugDir() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 export besharp_debug_nesting_level=0
 export besharp_debug_keys_column_length=0
@@ -705,7 +705,7 @@ function besharp.isDebugModeRequested() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.event.fire() {
     besharp.event.fireAuto "${@}"
@@ -793,7 +793,7 @@ function besharp.event.validateEvent() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 export besharp_args_current_var=''
 
@@ -945,7 +945,7 @@ function besharp.args.processArray() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 
 function besharp.array.clone() {
@@ -965,7 +965,7 @@ function besharp.array.clone() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.fastCall.toArrayOfTokens() {
     local arrName="${1}"
@@ -997,7 +997,7 @@ function besharp.fastCall.toVarSingleToken() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 export besharp_io_file_listing_protector_counter=3333
 
@@ -1118,7 +1118,7 @@ function besharp.files.listFiles() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.readLine() {
     local oldIfs="${IFS}"
@@ -1141,7 +1141,7 @@ function besharp.grepMatch() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.string.glue() {
     local separator="${1}"
@@ -1160,7 +1160,7 @@ function besharp.string.glue() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.is.Array() {
     besharp.is.indexArray "${@}" || besharp.is.assocArray "${@}"
@@ -1204,7 +1204,7 @@ function besharp.is.callback() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.rtti.types() {
     echo "${besharp_oop_types[@]}"
@@ -1223,7 +1223,7 @@ function besharp.rtti.isInternal() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.rtti.allFieldsOf() {
     local type="${1}"
@@ -1245,7 +1245,7 @@ function besharp.rtti.typeHasField() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.rtti.fieldsOf() {
     local type="${1}"
@@ -1287,7 +1287,7 @@ function besharp.rtti.injectableFieldsOf() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.rtti.allMethodsOf() {
     local type="${1}"
@@ -1310,7 +1310,7 @@ function besharp.rtti.isMethodAbstract() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.rtti.methodsOf() {
     local type="${1}"
@@ -1332,7 +1332,7 @@ function besharp.rtti.constructorOf() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.rtti.isTypeA() {
     local type="${1}"
@@ -1378,7 +1378,7 @@ function besharp.rtti.isA() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.rtti.classes() {
     echo "${besharp_oop_classes[@]}"
@@ -1428,7 +1428,7 @@ function besharp.rtti.isParentOf() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.rtti.objectType() {
     local code="${1}"
@@ -1489,7 +1489,7 @@ function besharp.rtti.isValidTypeOrObjectCode() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.rtti.allTypeInterfaces() {
     local type="${1}"
@@ -1508,7 +1508,7 @@ function besharp.rtti.allInterfaceMethodsForType() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.rtti.interfaces() {
     echo "${besharp_oop_interfaces[@]}"
@@ -1547,7 +1547,7 @@ function besharp.rtti.allUserInterfaces() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function @bind() {
     if $besharp_oopRuntime_binds_collecting_enabled; then
@@ -1621,7 +1621,7 @@ function @bind() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function @iterate() {
     local args=( "${@}" )
@@ -1685,7 +1685,7 @@ function @iterate() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function @let() {
     # NOTE: this method should be careful on collisions with caller's local variables
@@ -1719,7 +1719,7 @@ function @let() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function @() {
     if (( ${#@} == 0 )); then
@@ -1806,7 +1806,7 @@ function @echo() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function @new() {
     besharp.oopRuntime.createNewInstance "${@}"
@@ -1901,7 +1901,7 @@ function @same() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function @parent() {
     if [[ -n "${besharp_pm:-}" ]]; then
@@ -1967,7 +1967,7 @@ function @clone() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function @returning() {
     if [[ "${1}" == "@of" ]] && [[ "${2+isset}" == 'isset' ]]; then
@@ -2051,7 +2051,7 @@ function @returned() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.runtime.entrypoint_external_dynamic() {
     set -eu
@@ -2088,7 +2088,7 @@ function besharp.runtime.entrypoint_embedded_static() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 export besharp_runtime_entrypoint=""
 
@@ -2103,14 +2103,14 @@ function besharp.runtime.entrypoint() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.runtime.error() {
     besharp.error "$( besharp.runtime.logbesharp.runtime.error "${@}" 2>&1 )"
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 export besharp_oopRuntime_entrypoint_args_provided=false
 
@@ -2176,7 +2176,7 @@ function besharp.runtime.includeSourcecode() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.runtime.generateInitializer() {
     echo 'declare -Ag besharp_oop_types'
@@ -2194,7 +2194,7 @@ function besharp.runtime.generateInitializer() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.runtime.logbesharp.runtime.error() {
     besharp.runtime.log "$( @fmt lightRed bold )${*}$( @fmt reset )"
@@ -2205,7 +2205,7 @@ function besharp.runtime.log() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 export besharp_oopRuntime_bootstrapTags=''
 
@@ -2249,7 +2249,7 @@ function besharp.oopRuntime.doBootstrap() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 export besharp_oopRuntime_binds_collecting_enabled=true
 export besharp_oopRuntime_binds_enabled=false
@@ -2377,7 +2377,7 @@ function besharp.oopRuntime.disableCollectingDiBindings() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.oopRuntime.createDynamicFactoryClass() {
     local type="${1}"
@@ -2420,7 +2420,7 @@ function besharp.oopRuntime.createDynamicFactoryClass() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.oopRuntime.createStaticInstances() {
 
@@ -2436,7 +2436,7 @@ function besharp.oopRuntime.createStaticInstances() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 export besharp_oopRuntime_object_count=0
 export besharp_oopRuntime_disable_constructor=false
@@ -2535,7 +2535,7 @@ function besharp.oopRuntime.unsetObjectInstance() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 export besharp_runtime_reset_iteration=0
 declare -axg besharp_runtime_current_iterator_keys__stack_x=()
@@ -2651,7 +2651,7 @@ function besharp.oopRuntime.invokeArrayIteration() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 # besharp_runtime_current_stack_level
 export besharp_rcsl=1
@@ -2686,7 +2686,7 @@ function besharp.returningOf() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.oopRuntime.generateFieldStubs() {
     local type="${1}"
@@ -2818,7 +2818,7 @@ function besharp.oopRuntime.fieldStubAccessor() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 declare -ag besharp_oopRuntime_methodDetailsAssocFields=(
     _method_body
@@ -3175,7 +3175,7 @@ function besharp.oopRuntime.isMethodCallingThis() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 declare -Ag besharp_oopRuntime_stubs
 
@@ -3229,7 +3229,7 @@ function besharp.oopRuntime.executeStaticStubsTemplate() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.oopRuntime.verifyAbstractMethodsImplementedForType() {
     local type="${1}"
@@ -3272,7 +3272,7 @@ function besharp.oopRuntime.verifyFieldsAndMethods()
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 declare -Ag besharp_oopRuntime_class_ready
 
@@ -3330,7 +3330,7 @@ function besharp.oopRuntime.prepareClassParents() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.oopRuntime.verifyInterfacesForType() {
     local type="${1}"
@@ -3367,7 +3367,7 @@ function besharp.oopRuntime.verifyInterfaceExists() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 declare -Ag besharp_oopRuntime_interface_ready
 
@@ -3472,7 +3472,7 @@ function besharp.oopRuntime.addToInterfaceMethods() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 declare -Ag besharp_oopRuntime_types
 
@@ -3525,12 +3525,12 @@ function besharp.oopRuntime.generateLinkerLine() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 export besharp_runtime_version="0.1.0"
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["Object"]='true'
 besharp_oop_type_abstract["Object"]='true'
 besharp_oop_type_is["Object"]='class'
@@ -3559,7 +3559,8 @@ besharp_oop_type_Object_method_is_calling_parent["Object"]=false
 besharp_oop_type_Object_method_is_calling_this["Object"]=false
 besharp_oop_type_Object_methods['__cloneFrom']='__cloneFrom'
 besharp_oop_type_Object_method_is_returning["__cloneFrom"]=false
-besharp_oop_type_Object_method_body["__cloneFrom"]='    local source="${1}";
+besharp_oop_type_Object_method_body["__cloneFrom"]='    local value ;
+    local source="${1}";
     local mode="${2}";
     if [[ "${mode}" == "" ]] || [[ "${mode}" == "shallow" ]]; then
         local field;
@@ -3614,17 +3615,18 @@ besharp_oop_type_Object_method_is_calling_parent["__objectId"]=false
 besharp_oop_type_Object_method_is_calling_this["__objectId"]=true
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 function __be__value() {
   "${@}"
   value="${besharp_rcrvs[besharp_rcsl + 1]}"
 }
-Object () 
-{ 
+Object ()
+{
     :
 }
-Object.__cloneFrom () 
-{ 
+Object.__cloneFrom ()
+{
+    local value;
     local source="${1}";
     local mode="${2}";
     if [[ "${mode}" == "" ]] || [[ "${mode}" == "shallow" ]]; then
@@ -3661,17 +3663,17 @@ Object.__cloneFrom ()
         fi;
     fi
 }
-Object.__destroy () 
-{ 
+Object.__destroy ()
+{
     :
 }
-Object.__objectId () 
-{ 
+Object.__objectId ()
+{
     besharp_rcrvs[besharp_rcsl]="${this}"
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["PrimitiveObject"]='true'
 besharp_oop_type_abstract["PrimitiveObject"]='true'
 besharp_oop_type_is["PrimitiveObject"]='class'
@@ -3719,23 +3721,23 @@ besharp_oop_type_PrimitiveObject_method_is_calling_parent["__destroy"]=false
 besharp_oop_type_PrimitiveObject_method_is_calling_this["__destroy"]=true
 
 fi
-if ${beshfile_section__code:-false}; then :; 
-PrimitiveObject () 
-{ 
+if ${beshfile_section__code:-false}; then :;
+PrimitiveObject ()
+{
     $this.declarePrimitiveVariable
 }
-PrimitiveObject.__cloneFrom () 
-{ 
+PrimitiveObject.__cloneFrom ()
+{
     @parent "${@}";
     $this.declarePrimitiveVariable
 }
-PrimitiveObject.__destroy () 
-{ 
+PrimitiveObject.__destroy ()
+{
     $this.destroyPrimitiveVariable
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["NaturalOrderComparator"]='true'
 besharp_oop_type_is["NaturalOrderComparator"]='class'
 besharp_oop_types["NaturalOrderComparator"]="NaturalOrderComparator"
@@ -3783,26 +3785,26 @@ besharp_oop_type_NaturalOrderComparator_method_is_calling_parent["fastCompareFun
 besharp_oop_type_NaturalOrderComparator_method_is_calling_this["fastCompareFunction"]=false
 
 fi
-if ${beshfile_section__code:-false}; then :; 
-NaturalOrderComparator () 
-{ 
+if ${beshfile_section__code:-false}; then :;
+NaturalOrderComparator ()
+{
     :
 }
-NaturalOrderComparator.compare () 
-{ 
+NaturalOrderComparator.compare ()
+{
     local objectA="${1}";
     local objectB="${2}";
     $objectB.compareWith $objectA
 }
-NaturalOrderComparator.fastCompareFunction () 
-{ 
+NaturalOrderComparator.fastCompareFunction ()
+{
     local varAName="${1:-\$valueA}";
     local varBName="${2:-\$valueB}";
     besharp_rcrvs[besharp_rcsl]="${varAName}.compareWith ${varBName} # "
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["NaturalOrderIntegersComparator"]='true'
 besharp_oop_type_is["NaturalOrderIntegersComparator"]='class'
 besharp_oop_types["NaturalOrderIntegersComparator"]="NaturalOrderIntegersComparator"
@@ -3850,26 +3852,26 @@ besharp_oop_type_NaturalOrderIntegersComparator_method_is_calling_parent["fastCo
 besharp_oop_type_NaturalOrderIntegersComparator_method_is_calling_this["fastCompareFunction"]=false
 
 fi
-if ${beshfile_section__code:-false}; then :; 
-NaturalOrderIntegersComparator () 
-{ 
+if ${beshfile_section__code:-false}; then :;
+NaturalOrderIntegersComparator ()
+{
     :
 }
-NaturalOrderIntegersComparator.compare () 
-{ 
+NaturalOrderIntegersComparator.compare ()
+{
     local valueA="${1}";
     local valueB="${2}";
     (( valueA < valueB ))
 }
-NaturalOrderIntegersComparator.fastCompareFunction () 
-{ 
+NaturalOrderIntegersComparator.fastCompareFunction ()
+{
     local varAName="${1:-\$valueA}";
     local varBName="${2:-\$valueB}";
     besharp_rcrvs[besharp_rcsl]="(( ${varAName} < ${varBName} )) # "
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["ReversedOrderComparator"]='true'
 besharp_oop_type_is["ReversedOrderComparator"]='class'
 besharp_oop_types["ReversedOrderComparator"]="ReversedOrderComparator"
@@ -3917,26 +3919,26 @@ besharp_oop_type_ReversedOrderComparator_method_is_calling_parent["fastCompareFu
 besharp_oop_type_ReversedOrderComparator_method_is_calling_this["fastCompareFunction"]=false
 
 fi
-if ${beshfile_section__code:-false}; then :; 
-ReversedOrderComparator () 
-{ 
+if ${beshfile_section__code:-false}; then :;
+ReversedOrderComparator ()
+{
     :
 }
-ReversedOrderComparator.compare () 
-{ 
+ReversedOrderComparator.compare ()
+{
     local objectA="${1}";
     local objectB="${2}";
     ! $objectB.compareWith $objectA
 }
-ReversedOrderComparator.fastCompareFunction () 
-{ 
+ReversedOrderComparator.fastCompareFunction ()
+{
     local varAName="${1:-\$valueA}";
     local varBName="${2:-\$valueB}";
     ! besharp_rcrvs[besharp_rcsl]="${varAName}.compareWith ${varBName} # "
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["ReversedOrderIntegersComparator"]='true'
 besharp_oop_type_is["ReversedOrderIntegersComparator"]='class'
 besharp_oop_types["ReversedOrderIntegersComparator"]="ReversedOrderIntegersComparator"
@@ -3984,26 +3986,26 @@ besharp_oop_type_ReversedOrderIntegersComparator_method_is_calling_parent["fastC
 besharp_oop_type_ReversedOrderIntegersComparator_method_is_calling_this["fastCompareFunction"]=false
 
 fi
-if ${beshfile_section__code:-false}; then :; 
-ReversedOrderIntegersComparator () 
-{ 
+if ${beshfile_section__code:-false}; then :;
+ReversedOrderIntegersComparator ()
+{
     :
 }
-ReversedOrderIntegersComparator.compare () 
-{ 
+ReversedOrderIntegersComparator.compare ()
+{
     local valueA="${1}";
     local valueB="${2}";
     ! (( valueA < valueB ))
 }
-ReversedOrderIntegersComparator.fastCompareFunction () 
-{ 
+ReversedOrderIntegersComparator.fastCompareFunction ()
+{
     local varAName="${1:-\$valueA}";
     local varBName="${2:-\$valueB}";
     besharp_rcrvs[besharp_rcsl]="! (( ${varAName} < ${varBName} )) # "
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["SimpleFactory"]='true'
 besharp_oop_type_is["SimpleFactory"]='class'
 besharp_oop_types["SimpleFactory"]="SimpleFactory"
@@ -4034,7 +4036,8 @@ besharp_oop_type_SimpleFactory_method_is_calling_parent["SimpleFactory"]=false
 besharp_oop_type_SimpleFactory_method_is_calling_this["SimpleFactory"]=true
 besharp_oop_type_SimpleFactory_methods['create']='create'
 besharp_oop_type_SimpleFactory_method_is_returning["create"]=true
-besharp_oop_type_SimpleFactory_method_body["create"]='    __be__class $this.class;
+besharp_oop_type_SimpleFactory_method_body["create"]='    local class object ;
+    __be__class $this.class;
     __be__object @new ${class} "${@}";
     besharp_rcrvs[besharp_rcsl]=$object'
 besharp_oop_type_SimpleFactory_method_locals["create"]='local class
@@ -4044,7 +4047,7 @@ besharp_oop_type_SimpleFactory_method_is_calling_parent["create"]=false
 besharp_oop_type_SimpleFactory_method_is_calling_this["create"]=true
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 function __be__class() {
   "${@}"
   class="${besharp_rcrvs[besharp_rcsl + 1]}"
@@ -4053,19 +4056,20 @@ function __be__object() {
   "${@}"
   object="${besharp_rcrvs[besharp_rcsl + 1]}"
 }
-SimpleFactory () 
-{ 
+SimpleFactory ()
+{
     $this.class = "${1}"
 }
-SimpleFactory.create () 
-{ 
+SimpleFactory.create ()
+{
+    local class object;
     __be__class $this.class;
     __be__object @new ${class} "${@}";
     besharp_rcrvs[besharp_rcsl]=$object
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["SingletonFactory"]='true'
 besharp_oop_type_is["SingletonFactory"]='class'
 besharp_oop_types["SingletonFactory"]="SingletonFactory"
@@ -4108,17 +4112,17 @@ besharp_oop_type_SingletonFactory_method_is_calling_parent["create"]=true
 besharp_oop_type_SingletonFactory_method_is_calling_this["create"]=true
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 function __be___this_object() {
   "${@}"
   eval $this"_object=\"\${besharp_rcrvs[besharp_rcsl + 1]}\""
 }
-SingletonFactory () 
-{ 
+SingletonFactory ()
+{
     $this.class = "${1}"
 }
-SingletonFactory.create () 
-{ 
+SingletonFactory.create ()
+{
     if ! @exists @of $this.object; then
         __be___this_object @parent "${@}";
     fi;
@@ -4126,7 +4130,7 @@ SingletonFactory.create ()
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_is["Entrypoint"]='interface'
 besharp_oop_types["Entrypoint"]="Entrypoint"
 besharp_oop_interfaces["Entrypoint"]="Entrypoint"
@@ -4137,7 +4141,7 @@ besharp_oop_type_Entrypoint_methods['main']='main'
 besharp_oop_type_Entrypoint_method_is_abstract["main"]='true'
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["Comparable"]='true'
 besharp_oop_type_is["Comparable"]='interface'
 besharp_oop_types["Comparable"]="Comparable"
@@ -4149,7 +4153,7 @@ besharp_oop_type_Comparable_methods['compareWith']='compareWith'
 besharp_oop_type_Comparable_method_is_abstract["compareWith"]='true'
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["Comparator"]='true'
 besharp_oop_type_is["Comparator"]='interface'
 besharp_oop_types["Comparator"]="Comparator"
@@ -4161,7 +4165,7 @@ besharp_oop_type_Comparator_methods['compare']='compare'
 besharp_oop_type_Comparator_method_is_abstract["compare"]='true'
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["FastComparator"]='true'
 besharp_oop_type_is["FastComparator"]='interface'
 besharp_oop_types["FastComparator"]="FastComparator"
@@ -4173,7 +4177,7 @@ besharp_oop_type_FastComparator_methods['fastCompareFunction']='fastCompareFunct
 besharp_oop_type_FastComparator_method_is_abstract["fastCompareFunction"]='true'
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["Factory"]='true'
 besharp_oop_type_is["Factory"]='interface'
 besharp_oop_types["Factory"]="Factory"
@@ -4185,7 +4189,7 @@ besharp_oop_type_Factory_methods['create']='create'
 besharp_oop_type_Factory_method_is_abstract["create"]='true'
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["Comparators"]='true'
 besharp_oop_type_is["Comparators"]='class'
 besharp_oop_types["Comparators"]="Comparators"
@@ -4263,13 +4267,13 @@ besharp_oop_type_Comparators_method_is_calling_parent["makeForReversedOrderInteg
 besharp_oop_type_Comparators_method_is_calling_this["makeForReversedOrderIntegers"]=false
 
 fi
-if ${beshfile_section__code:-false}; then :; 
-Comparators () 
-{ 
+if ${beshfile_section__code:-false}; then :;
+Comparators ()
+{
     :
 }
-Comparators.makeForNaturalOrder () 
-{ 
+Comparators.makeForNaturalOrder ()
+{
     local reversed="${1:-false}";
     if $reversed; then
         besharp.returningOf @new ReversedOrderComparator;
@@ -4277,8 +4281,8 @@ Comparators.makeForNaturalOrder ()
         besharp.returningOf @new NaturalOrderComparator;
     fi
 }
-Comparators.makeForNaturalOrderIntegers () 
-{ 
+Comparators.makeForNaturalOrderIntegers ()
+{
     local reversed="${1:-false}";
     if $reversed; then
         besharp.returningOf @new ReversedOrderIntegersComparator;
@@ -4286,8 +4290,8 @@ Comparators.makeForNaturalOrderIntegers ()
         besharp.returningOf @new NaturalOrderIntegersComparator;
     fi
 }
-Comparators.makeForReversedOrder () 
-{ 
+Comparators.makeForReversedOrder ()
+{
     local reversed="${1:-false}";
     if $reversed; then
         besharp.returningOf @new NaturalOrderComparator;
@@ -4295,8 +4299,8 @@ Comparators.makeForReversedOrder ()
         besharp.returningOf @new ReversedOrderComparator;
     fi
 }
-Comparators.makeForReversedOrderIntegers () 
-{ 
+Comparators.makeForReversedOrderIntegers ()
+{
     local reversed="${1:-false}";
     if $reversed; then
         besharp.returningOf @new NaturalOrderIntegersComparator;
@@ -4306,7 +4310,7 @@ Comparators.makeForReversedOrderIntegers ()
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["Objects"]='true'
 besharp_oop_type_is["Objects"]='class'
 besharp_oop_types["Objects"]="Objects"
@@ -4336,14 +4340,14 @@ besharp_oop_type_Objects_method_is_calling_parent["Objects"]=false
 besharp_oop_type_Objects_method_is_calling_this["Objects"]=false
 
 fi
-if ${beshfile_section__code:-false}; then :; 
-Objects () 
-{ 
+if ${beshfile_section__code:-false}; then :;
+Objects ()
+{
     :
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["ArrayList"]='true'
 besharp_oop_type_is["ArrayList"]='class'
 besharp_oop_types["ArrayList"]="ArrayList"
@@ -4399,7 +4403,8 @@ besharp_oop_type_ArrayList_method_is_calling_parent["findIndex"]=false
 besharp_oop_type_ArrayList_method_is_calling_this["findIndex"]=true
 besharp_oop_type_ArrayList_methods['findIndices']='findIndices'
 besharp_oop_type_ArrayList_method_is_returning["findIndices"]=true
-besharp_oop_type_ArrayList_method_body["findIndices"]='    local item="${1}";
+besharp_oop_type_ArrayList_method_body["findIndices"]='    local resultCollection ;
+    local item="${1}";
     __be__resultCollection @new ArrayVector;
     besharp_rcrvs[besharp_rcsl]=$resultCollection;
     local var="${this}[@]";
@@ -4510,17 +4515,17 @@ besharp_oop_type_ArrayList_method_is_calling_parent["set"]=false
 besharp_oop_type_ArrayList_method_is_calling_this["set"]=true
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 function __be__resultCollection() {
   "${@}"
   resultCollection="${besharp_rcrvs[besharp_rcsl + 1]}"
 }
-ArrayList () 
-{ 
+ArrayList ()
+{
     @parent
 }
-ArrayList.findIndex () 
-{ 
+ArrayList.findIndex ()
+{
     local item="${1}";
     local minIndex="${2:--1}";
     local var="${this}[@]";
@@ -4543,8 +4548,9 @@ ArrayList.findIndex ()
     done;
     besharp_rcrvs[besharp_rcsl]=-1
 }
-ArrayList.findIndices () 
-{ 
+ArrayList.findIndices ()
+{
+    local resultCollection;
     local item="${1}";
     __be__resultCollection @new ArrayVector;
     besharp_rcrvs[besharp_rcsl]=$resultCollection;
@@ -4562,8 +4568,8 @@ ArrayList.findIndices ()
         fi;
     done
 }
-ArrayList.findLastIndex () 
-{ 
+ArrayList.findLastIndex ()
+{
     local item="${1}";
     local maxIndex="${2:--1}";
     local var="${this}[@]";
@@ -4589,15 +4595,15 @@ ArrayList.findLastIndex ()
         besharp_rcrvs[besharp_rcsl]=-1;
     fi
 }
-ArrayList.get () 
-{ 
+ArrayList.get ()
+{
     local index="${1}";
     local item;
     eval "item=\"\${${this}[${index}]}\"";
     besharp_rcrvs[besharp_rcsl]="${item}"
 }
-ArrayList.hasIndex () 
-{ 
+ArrayList.hasIndex ()
+{
     local index="${1}";
     local isset;
     eval "isset=\${${this}[${index}]+isset}";
@@ -4607,24 +4613,24 @@ ArrayList.hasIndex ()
         besharp_rcrvs[besharp_rcsl]=false;
     fi
 }
-ArrayList.hasKey () 
-{ 
+ArrayList.hasKey ()
+{
     besharp.returningOf $this.hasIndex "${@}"
 }
-ArrayList.removeIndex () 
-{ 
+ArrayList.removeIndex ()
+{
     local index="${1}";
     unset "${this}[${index}]"
 }
-ArrayList.removeIndices () 
-{ 
+ArrayList.removeIndices ()
+{
     local index;
     while @iterate "${@}" @in index; do
         $this.removeIndex "${index}";
     done
 }
-ArrayList.set () 
-{ 
+ArrayList.set ()
+{
     local index="${1}";
     local item="${2}";
     eval "${this}[${index}]=\"\${item}\"";
@@ -4632,7 +4638,7 @@ ArrayList.set ()
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["ArrayMap"]='true'
 besharp_oop_type_is["ArrayMap"]='class'
 besharp_oop_types["ArrayMap"]="ArrayMap"
@@ -4661,7 +4667,8 @@ besharp_oop_type_ArrayMap_method_is_calling_parent["ArrayMap"]=true
 besharp_oop_type_ArrayMap_method_is_calling_this["ArrayMap"]=false
 besharp_oop_type_ArrayMap_methods['findAllKeys']='findAllKeys'
 besharp_oop_type_ArrayMap_method_is_returning["findAllKeys"]=true
-besharp_oop_type_ArrayMap_method_body["findAllKeys"]='    local item="${1}";
+besharp_oop_type_ArrayMap_method_body["findAllKeys"]='    local resultCollection ;
+    local item="${1}";
     __be__resultCollection @new ArrayVector;
     besharp_rcrvs[besharp_rcsl]=$resultCollection;
     local var="${this}[@]";
@@ -4814,17 +4821,18 @@ besharp_oop_type_ArrayMap_method_is_calling_parent["swapKeys"]=false
 besharp_oop_type_ArrayMap_method_is_calling_this["swapKeys"]=true
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 function __be__resultCollection() {
   "${@}"
   resultCollection="${besharp_rcrvs[besharp_rcsl + 1]}"
 }
-ArrayMap () 
-{ 
+ArrayMap ()
+{
     @parent
 }
-ArrayMap.findAllKeys () 
-{ 
+ArrayMap.findAllKeys ()
+{
+    local resultCollection;
     local item="${1}";
     __be__resultCollection @new ArrayVector;
     besharp_rcrvs[besharp_rcsl]=$resultCollection;
@@ -4842,8 +4850,8 @@ ArrayMap.findAllKeys ()
         fi;
     done
 }
-ArrayMap.hasAllKeys () 
-{ 
+ArrayMap.hasAllKeys ()
+{
     local key;
     while @iterate "${@}" @in key; do
         local isset;
@@ -4855,8 +4863,8 @@ ArrayMap.hasAllKeys ()
     done;
     besharp_rcrvs[besharp_rcsl]=true
 }
-ArrayMap.hasKey () 
-{ 
+ArrayMap.hasKey ()
+{
     local key="${1}";
     local isset;
     eval "isset=\${${this}[\"${key}\"]+isset}";
@@ -4866,8 +4874,8 @@ ArrayMap.hasKey ()
         besharp_rcrvs[besharp_rcsl]=false;
     fi
 }
-ArrayMap.hasSomeKeys () 
-{ 
+ArrayMap.hasSomeKeys ()
+{
     local key;
     while @iterate "${@}" @in key; do
         local isset;
@@ -4879,8 +4887,8 @@ ArrayMap.hasSomeKeys ()
     done;
     besharp_rcrvs[besharp_rcsl]=false
 }
-ArrayMap.remove () 
-{ 
+ArrayMap.remove ()
+{
     local item="${1}";
     local var="${this}[@]";
     if [[ "${!var+isset}" != "isset" ]]; then
@@ -4900,26 +4908,26 @@ ArrayMap.remove ()
     done;
     besharp_rcrvs[besharp_rcsl]=$anyRemoved
 }
-ArrayMap.removeKey () 
-{ 
+ArrayMap.removeKey ()
+{
     local key="${1}";
     unset "${this}[${key}]"
 }
-ArrayMap.removeKeys () 
-{ 
+ArrayMap.removeKeys ()
+{
     local item;
     while @iterate "${@}" @in item; do
         $this.removeKey "${item}";
     done
 }
-ArrayMap.set () 
-{ 
+ArrayMap.set ()
+{
     local key="${1}";
     local item="${2}";
     eval "${this}[\"\${key}\"]=\"\${item}\""
 }
-ArrayMap.setPlainPairs () 
-{ 
+ArrayMap.setPlainPairs ()
+{
     if (( $# == 0 )); then
         $this.removeAll;
         return;
@@ -4942,13 +4950,13 @@ ArrayMap.setPlainPairs ()
         fi;
     done
 }
-ArrayMap.swapKeys () 
-{ 
+ArrayMap.swapKeys ()
+{
     $this.swapElements "${@}"
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["ArraySet"]='true'
 besharp_oop_type_is["ArraySet"]='class'
 besharp_oop_types["ArraySet"]="ArraySet"
@@ -4977,7 +4985,8 @@ besharp_oop_type_ArraySet_method_is_calling_parent["ArraySet"]=true
 besharp_oop_type_ArraySet_method_is_calling_this["ArraySet"]=false
 besharp_oop_type_ArraySet_methods['add']='add'
 besharp_oop_type_ArraySet_method_is_returning["add"]=false
-besharp_oop_type_ArraySet_method_body["add"]='    local item="${1}";
+besharp_oop_type_ArraySet_method_body["add"]='    local objectId ;
+    local item="${1}";
     __be__objectId @object-id "${item}";
     eval "${this}[\"\${objectId}\"]=\"\${item}\""'
 besharp_oop_type_ArraySet_method_locals["add"]='local objectId'
@@ -5007,7 +5016,8 @@ besharp_oop_type_ArraySet_method_is_calling_parent["frequency"]=false
 besharp_oop_type_ArraySet_method_is_calling_this["frequency"]=true
 besharp_oop_type_ArraySet_methods['has']='has'
 besharp_oop_type_ArraySet_method_is_returning["has"]=true
-besharp_oop_type_ArraySet_method_body["has"]='    local item="${1}";
+besharp_oop_type_ArraySet_method_body["has"]='    local objectId ;
+    local item="${1}";
     __be__objectId @object-id "${item}";
     local var="${this}[${objectId}]";
     if [[ "${!var+isset}" == "isset" ]]; then
@@ -5028,7 +5038,8 @@ besharp_oop_type_ArraySet_method_is_calling_parent["hasKey"]=false
 besharp_oop_type_ArraySet_method_is_calling_this["hasKey"]=true
 besharp_oop_type_ArraySet_methods['remove']='remove'
 besharp_oop_type_ArraySet_method_is_returning["remove"]=false
-besharp_oop_type_ArraySet_method_body["remove"]='    local item="${1}";
+besharp_oop_type_ArraySet_method_body["remove"]='    local objectId ;
+    local item="${1}";
     __be__objectId @object-id "${item}";
     unset "${this}[${objectId}]"'
 besharp_oop_type_ArraySet_method_locals["remove"]='local objectId'
@@ -5037,7 +5048,8 @@ besharp_oop_type_ArraySet_method_is_calling_parent["remove"]=false
 besharp_oop_type_ArraySet_method_is_calling_this["remove"]=true
 besharp_oop_type_ArraySet_methods['replace']='replace'
 besharp_oop_type_ArraySet_method_is_returning["replace"]=false
-besharp_oop_type_ArraySet_method_body["replace"]='    local fromItem="${1}";
+besharp_oop_type_ArraySet_method_body["replace"]='    local fromObjId ;
+    local fromItem="${1}";
     local toItem="${2}";
     __be__fromObjId @object-id "${fromItem}";
     local var="${this}[${fromObjId}]";
@@ -5058,7 +5070,7 @@ besharp_oop_type_ArraySet_method_is_calling_parent["shuffle"]=false
 besharp_oop_type_ArraySet_method_is_calling_this["shuffle"]=false
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 function __be__objectId() {
   "${@}"
   objectId="${besharp_rcrvs[besharp_rcsl + 1]}"
@@ -5075,24 +5087,25 @@ function __be__fromObjId() {
   "${@}"
   fromObjId="${besharp_rcrvs[besharp_rcsl + 1]}"
 }
-ArraySet () 
-{ 
+ArraySet ()
+{
     @parent
 }
-ArraySet.add () 
-{ 
+ArraySet.add ()
+{
+    local objectId;
     local item="${1}";
     __be__objectId @object-id "${item}";
     eval "${this}[\"\${objectId}\"]=\"\${item}\""
 }
-ArraySet.fill () 
-{ 
+ArraySet.fill ()
+{
     local item="${1}";
     $this.removeAll;
     $this.add "${item}"
 }
-ArraySet.frequency () 
-{ 
+ArraySet.frequency ()
+{
     local item="${1}";
     if @true $this.has "${item}"; then
         besharp_rcrvs[besharp_rcsl]=1;
@@ -5100,8 +5113,9 @@ ArraySet.frequency ()
         besharp_rcrvs[besharp_rcsl]=0;
     fi
 }
-ArraySet.has () 
-{ 
+ArraySet.has ()
+{
+    local objectId;
     local item="${1}";
     __be__objectId @object-id "${item}";
     local var="${this}[${objectId}]";
@@ -5111,18 +5125,20 @@ ArraySet.has ()
         besharp_rcrvs[besharp_rcsl]=false;
     fi
 }
-ArraySet.hasKey () 
-{ 
+ArraySet.hasKey ()
+{
     besharp.returningOf $this.has "${@}"
 }
-ArraySet.remove () 
-{ 
+ArraySet.remove ()
+{
+    local objectId;
     local item="${1}";
     __be__objectId @object-id "${item}";
     unset "${this}[${objectId}]"
 }
-ArraySet.replace () 
-{ 
+ArraySet.replace ()
+{
+    local fromObjId;
     local fromItem="${1}";
     local toItem="${2}";
     __be__fromObjId @object-id "${fromItem}";
@@ -5132,13 +5148,13 @@ ArraySet.replace ()
     fi;
     $this.add "${toItem}"
 }
-ArraySet.shuffle () 
-{ 
+ArraySet.shuffle ()
+{
     :
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["ArrayVector"]='true'
 besharp_oop_type_is["ArrayVector"]='class'
 besharp_oop_types["ArrayVector"]="ArrayVector"
@@ -5201,7 +5217,8 @@ besharp_oop_type_ArrayVector_method_is_calling_parent["call"]=false
 besharp_oop_type_ArrayVector_method_is_calling_this["call"]=true
 besharp_oop_type_ArrayVector_methods['findIndex']='findIndex'
 besharp_oop_type_ArrayVector_method_is_returning["findIndex"]=true
-besharp_oop_type_ArrayVector_method_body["findIndex"]='    local item="${1}";
+besharp_oop_type_ArrayVector_method_body["findIndex"]='    local size ;
+    local item="${1}";
     local minIndex="${2:-0}";
     local var="${this}[@]";
     if [[ "${!var+isset}" != "isset" ]]; then
@@ -5229,7 +5246,8 @@ besharp_oop_type_ArrayVector_method_is_calling_parent["findIndex"]=false
 besharp_oop_type_ArrayVector_method_is_calling_this["findIndex"]=true
 besharp_oop_type_ArrayVector_methods['findIndices']='findIndices'
 besharp_oop_type_ArrayVector_method_is_returning["findIndices"]=true
-besharp_oop_type_ArrayVector_method_body["findIndices"]='    local item="${1}";
+besharp_oop_type_ArrayVector_method_body["findIndices"]='    local resultCollection size ;
+    local item="${1}";
     __be__resultCollection @new ArrayVector;
     besharp_rcrvs[besharp_rcsl]=$resultCollection;
     local var="${this}[@]";
@@ -5253,7 +5271,8 @@ besharp_oop_type_ArrayVector_method_is_calling_parent["findIndices"]=false
 besharp_oop_type_ArrayVector_method_is_calling_this["findIndices"]=true
 besharp_oop_type_ArrayVector_methods['findLastIndex']='findLastIndex'
 besharp_oop_type_ArrayVector_method_is_returning["findLastIndex"]=true
-besharp_oop_type_ArrayVector_method_body["findLastIndex"]='    local item="${1}";
+besharp_oop_type_ArrayVector_method_body["findLastIndex"]='    local size ;
+    local item="${1}";
     local maxIndex="${2:-}";
     local var="${this}[@]";
     if [[ "${!var+isset}" != "isset" ]]; then
@@ -5295,7 +5314,8 @@ besharp_oop_type_ArrayVector_method_is_calling_parent["get"]=false
 besharp_oop_type_ArrayVector_method_is_calling_this["get"]=true
 besharp_oop_type_ArrayVector_methods['insertAt']='insertAt'
 besharp_oop_type_ArrayVector_method_is_returning["insertAt"]=true
-besharp_oop_type_ArrayVector_method_body["insertAt"]='    local index="${1}";
+besharp_oop_type_ArrayVector_method_body["insertAt"]='    local size ;
+    local index="${1}";
     local item="${2}";
     __be__size $this.size;
     if (( index == size )); then
@@ -5318,7 +5338,8 @@ besharp_oop_type_ArrayVector_method_is_calling_parent["insertAt"]=false
 besharp_oop_type_ArrayVector_method_is_calling_this["insertAt"]=true
 besharp_oop_type_ArrayVector_methods['insertAtManyIndices']='insertAtManyIndices'
 besharp_oop_type_ArrayVector_method_is_returning["insertAtManyIndices"]=true
-besharp_oop_type_ArrayVector_method_body["insertAtManyIndices"]='    local item="${1}";
+besharp_oop_type_ArrayVector_method_body["insertAtManyIndices"]='    local size ;
+    local item="${1}";
     shift 1;
     local index;
     local indices=();
@@ -5360,7 +5381,8 @@ besharp_oop_type_ArrayVector_method_is_calling_parent["insertManyAt"]=false
 besharp_oop_type_ArrayVector_method_is_calling_this["insertManyAt"]=true
 besharp_oop_type_ArrayVector_methods['iterationNew']='iterationNew'
 besharp_oop_type_ArrayVector_method_is_returning["iterationNew"]=true
-besharp_oop_type_ArrayVector_method_body["iterationNew"]='    __be__size $this.size;
+besharp_oop_type_ArrayVector_method_body["iterationNew"]='    local size ;
+    __be__size $this.size;
     if (( size == 0 )); then
         besharp_rcrvs[besharp_rcsl]="";
         return;
@@ -5372,7 +5394,8 @@ besharp_oop_type_ArrayVector_method_is_calling_parent["iterationNew"]=false
 besharp_oop_type_ArrayVector_method_is_calling_this["iterationNew"]=true
 besharp_oop_type_ArrayVector_methods['iterationNext']='iterationNext'
 besharp_oop_type_ArrayVector_method_is_returning["iterationNext"]=true
-besharp_oop_type_ArrayVector_method_body["iterationNext"]='    local index="${1}";
+besharp_oop_type_ArrayVector_method_body["iterationNext"]='    local size ;
+    local index="${1}";
     __be__size $this.size;
     if (( ++index < size )); then
         besharp_rcrvs[besharp_rcsl]="${index}";
@@ -5395,7 +5418,8 @@ besharp_oop_type_ArrayVector_method_is_calling_parent["iterationValue"]=false
 besharp_oop_type_ArrayVector_method_is_calling_this["iterationValue"]=true
 besharp_oop_type_ArrayVector_methods['remove']='remove'
 besharp_oop_type_ArrayVector_method_is_returning["remove"]=true
-besharp_oop_type_ArrayVector_method_body["remove"]='    local item="${1}";
+besharp_oop_type_ArrayVector_method_body["remove"]='    local idx ;
+    local item="${1}";
     local var="${this}[@]";
     if [[ "${!var+isset}" != "isset" ]]; then
         besharp_rcrvs[besharp_rcsl]=false;
@@ -5414,7 +5438,8 @@ besharp_oop_type_ArrayVector_method_is_calling_parent["remove"]=false
 besharp_oop_type_ArrayVector_method_is_calling_this["remove"]=true
 besharp_oop_type_ArrayVector_methods['removeIndex']='removeIndex'
 besharp_oop_type_ArrayVector_method_is_returning["removeIndex"]=true
-besharp_oop_type_ArrayVector_method_body["removeIndex"]='    local index="${1}";
+besharp_oop_type_ArrayVector_method_body["removeIndex"]='    local size ;
+    local index="${1}";
     __be__size $this.size;
     if ! @true $this.hasIndex "${index}"; then
         besharp.runtime.error "Cannot get! ArrayVector index out of range: ${index}. Allowed range: 0 - $(( size - 1))";
@@ -5432,7 +5457,8 @@ besharp_oop_type_ArrayVector_method_is_calling_parent["removeIndex"]=false
 besharp_oop_type_ArrayVector_method_is_calling_this["removeIndex"]=true
 besharp_oop_type_ArrayVector_methods['removeIndices']='removeIndices'
 besharp_oop_type_ArrayVector_method_is_returning["removeIndices"]=true
-besharp_oop_type_ArrayVector_method_body["removeIndices"]='    local index;
+besharp_oop_type_ArrayVector_method_body["removeIndices"]='    local size ;
+    local index;
     local indices=();
     while @iterate "${@}" @in index; do
         if ! @true $this.hasIndex "${index}"; then
@@ -5458,7 +5484,8 @@ besharp_oop_type_ArrayVector_method_is_calling_parent["removeIndices"]=false
 besharp_oop_type_ArrayVector_method_is_calling_this["removeIndices"]=true
 besharp_oop_type_ArrayVector_methods['resize']='resize'
 besharp_oop_type_ArrayVector_method_is_returning["resize"]=false
-besharp_oop_type_ArrayVector_method_body["resize"]='    local targetSize="${1}";
+besharp_oop_type_ArrayVector_method_body["resize"]='    local currentSize ;
+    local targetSize="${1}";
     local emptyItem="${2:-}";
     if (( targetSize < 0 )); then
         besharp.runtime.error "Negative ArrayVector size?";
@@ -5483,7 +5510,8 @@ besharp_oop_type_ArrayVector_method_is_calling_parent["resize"]=false
 besharp_oop_type_ArrayVector_method_is_calling_this["resize"]=true
 besharp_oop_type_ArrayVector_methods['reverse']='reverse'
 besharp_oop_type_ArrayVector_method_is_returning["reverse"]=true
-besharp_oop_type_ArrayVector_method_body["reverse"]='    __be__size $this.size;
+besharp_oop_type_ArrayVector_method_body["reverse"]='    local size ;
+    __be__size $this.size;
     if (( size < 2 )); then
         return;
     fi;
@@ -5506,7 +5534,8 @@ besharp_oop_type_ArrayVector_method_is_calling_parent["reverse"]=false
 besharp_oop_type_ArrayVector_method_is_calling_this["reverse"]=true
 besharp_oop_type_ArrayVector_methods['rotate']='rotate'
 besharp_oop_type_ArrayVector_method_is_returning["rotate"]=true
-besharp_oop_type_ArrayVector_method_body["rotate"]='    local distance="${1}";
+besharp_oop_type_ArrayVector_method_body["rotate"]='    local size ;
+    local distance="${1}";
     __be__size $this.size;
     distance=$(( distance % size ));
     if (( distance < 0 )); then
@@ -5561,7 +5590,8 @@ besharp_oop_type_ArrayVector_method_is_calling_parent["setPlain"]=false
 besharp_oop_type_ArrayVector_method_is_calling_this["setPlain"]=true
 besharp_oop_type_ArrayVector_methods['shuffle']='shuffle'
 besharp_oop_type_ArrayVector_method_is_returning["shuffle"]=true
-besharp_oop_type_ArrayVector_method_body["shuffle"]='    __be__size $this.size;
+besharp_oop_type_ArrayVector_method_body["shuffle"]='    local size ;
+    __be__size $this.size;
     if (( size < 2 )); then
         return;
     fi;
@@ -5584,7 +5614,7 @@ besharp_oop_type_ArrayVector_method_is_calling_parent["shuffle"]=false
 besharp_oop_type_ArrayVector_method_is_calling_this["shuffle"]=true
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 function __be__size() {
   "${@}"
   size="${besharp_rcrvs[besharp_rcsl + 1]}"
@@ -5645,8 +5675,8 @@ function __be__size() {
   "${@}"
   size="${besharp_rcrvs[besharp_rcsl + 1]}"
 }
-ArrayVector () 
-{ 
+ArrayVector ()
+{
     local size="${1:-0}";
     local emptyItem="${2:-}";
     @parent;
@@ -5654,8 +5684,8 @@ ArrayVector ()
         $this.resize "${size}" "${emptyItem}";
     fi
 }
-ArrayVector.__cloneFrom () 
-{ 
+ArrayVector.__cloneFrom ()
+{
     local source="${1}";
     local mode="${2}";
     if [[ "${mode}" == "shallow" ]]; then
@@ -5665,17 +5695,18 @@ ArrayVector.__cloneFrom ()
     fi;
     @parent "${source}" "${mode}"
 }
-ArrayVector.add () 
-{ 
+ArrayVector.add ()
+{
     local item="${1}";
     eval "${this}+=(\"\${item}\")"
 }
-ArrayVector.call () 
-{ 
+ArrayVector.call ()
+{
     eval "besharp.returningOf \"\${@}\" \"\${${this}[@]}\" "
 }
-ArrayVector.findIndex () 
-{ 
+ArrayVector.findIndex ()
+{
+    local size;
     local item="${1}";
     local minIndex="${2:-0}";
     local var="${this}[@]";
@@ -5699,8 +5730,9 @@ ArrayVector.findIndex ()
     done;
     besharp_rcrvs[besharp_rcsl]=-1
 }
-ArrayVector.findIndices () 
-{ 
+ArrayVector.findIndices ()
+{
+    local resultCollection size;
     local item="${1}";
     __be__resultCollection @new ArrayVector;
     besharp_rcrvs[besharp_rcsl]=$resultCollection;
@@ -5719,8 +5751,9 @@ ArrayVector.findIndices ()
         fi;
     done
 }
-ArrayVector.findLastIndex () 
-{ 
+ArrayVector.findLastIndex ()
+{
+    local size;
     local item="${1}";
     local maxIndex="${2:-}";
     local var="${this}[@]";
@@ -5744,8 +5777,8 @@ ArrayVector.findLastIndex ()
     done;
     besharp_rcrvs[besharp_rcsl]=-1
 }
-ArrayVector.get () 
-{ 
+ArrayVector.get ()
+{
     local index="${1}";
     if ! @true $this.hasIndex "${index}"; then
         local size=$( @echo $this.size );
@@ -5755,8 +5788,9 @@ ArrayVector.get ()
     eval "item=\"\${${this}[${index}]}\"";
     besharp_rcrvs[besharp_rcsl]="${item}"
 }
-ArrayVector.insertAt () 
-{ 
+ArrayVector.insertAt ()
+{
+    local size;
     local index="${1}";
     local item="${2}";
     __be__size $this.size;
@@ -5775,8 +5809,9 @@ ArrayVector.insertAt ()
     done;
     eval "${this}[index]=\${item}"
 }
-ArrayVector.insertAtManyIndices () 
-{ 
+ArrayVector.insertAtManyIndices ()
+{
+    local size;
     local item="${1}";
     shift 1;
     local index;
@@ -5799,8 +5834,8 @@ ArrayVector.insertAtManyIndices ()
         (( ++x ));
     done
 }
-ArrayVector.insertManyAt () 
-{ 
+ArrayVector.insertManyAt ()
+{
     local index="${1}";
     shift 1;
     local item;
@@ -5810,8 +5845,9 @@ ArrayVector.insertManyAt ()
         (( ++x ));
     done
 }
-ArrayVector.iterationNew () 
-{ 
+ArrayVector.iterationNew ()
+{
+    local size;
     __be__size $this.size;
     if (( size == 0 )); then
         besharp_rcrvs[besharp_rcsl]="";
@@ -5819,8 +5855,9 @@ ArrayVector.iterationNew ()
     fi;
     besharp_rcrvs[besharp_rcsl]=0
 }
-ArrayVector.iterationNext () 
-{ 
+ArrayVector.iterationNext ()
+{
+    local size;
     local index="${1}";
     __be__size $this.size;
     if (( ++index < size )); then
@@ -5829,15 +5866,16 @@ ArrayVector.iterationNext ()
         besharp_rcrvs[besharp_rcsl]="";
     fi
 }
-ArrayVector.iterationValue () 
-{ 
+ArrayVector.iterationValue ()
+{
     local index="${1}";
     local item;
     eval "item=\"\${${this}[${index}]}\"";
     besharp_rcrvs[besharp_rcsl]="${item}"
 }
-ArrayVector.remove () 
-{ 
+ArrayVector.remove ()
+{
+    local idx;
     local item="${1}";
     local var="${this}[@]";
     if [[ "${!var+isset}" != "isset" ]]; then
@@ -5852,8 +5890,9 @@ ArrayVector.remove ()
     $this.removeIndex "${idx}";
     besharp_rcrvs[besharp_rcsl]=true
 }
-ArrayVector.removeIndex () 
-{ 
+ArrayVector.removeIndex ()
+{
+    local size;
     local index="${1}";
     __be__size $this.size;
     if ! @true $this.hasIndex "${index}"; then
@@ -5867,8 +5906,9 @@ ArrayVector.removeIndex ()
     done;
     unset "${this}[-1]"
 }
-ArrayVector.removeIndices () 
-{ 
+ArrayVector.removeIndices ()
+{
+    local size;
     local index;
     local indices=();
     while @iterate "${@}" @in index; do
@@ -5889,8 +5929,9 @@ ArrayVector.removeIndices ()
         (( ++x ));
     done
 }
-ArrayVector.resize () 
-{ 
+ArrayVector.resize ()
+{
+    local currentSize;
     local targetSize="${1}";
     local emptyItem="${2:-}";
     if (( targetSize < 0 )); then
@@ -5911,8 +5952,9 @@ ArrayVector.resize ()
         done;
     fi
 }
-ArrayVector.reverse () 
-{ 
+ArrayVector.reverse ()
+{
+    local size;
     __be__size $this.size;
     if (( size < 2 )); then
         return;
@@ -5931,8 +5973,9 @@ ArrayVector.reverse ()
         eval "${this}[idx2]=\"\${tmpValue}\"";
     done
 }
-ArrayVector.rotate () 
-{ 
+ArrayVector.rotate ()
+{
+    local size;
     local distance="${1}";
     __be__size $this.size;
     distance=$(( distance % size ));
@@ -5962,8 +6005,8 @@ ArrayVector.rotate ()
         eval "${this}[size - distance + i]=\${values[${i}]}";
     done
 }
-ArrayVector.set () 
-{ 
+ArrayVector.set ()
+{
     local index="${1}";
     local item="${2}";
     if ! @true $this.hasIndex "${index}"; then
@@ -5973,12 +6016,13 @@ ArrayVector.set ()
     eval "${this}[${index}]=\"\${item}\"";
     besharp_rcrvs[besharp_rcsl]="${item}"
 }
-ArrayVector.setPlain () 
-{ 
+ArrayVector.setPlain ()
+{
     eval "${this}=(\"\${@}\")"
 }
-ArrayVector.shuffle () 
-{ 
+ArrayVector.shuffle ()
+{
+    local size;
     __be__size $this.size;
     if (( size < 2 )); then
         return;
@@ -5999,7 +6043,7 @@ ArrayVector.shuffle ()
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["PairingHeap"]='true'
 besharp_oop_type_is["PairingHeap"]='class'
 besharp_oop_types["PairingHeap"]="PairingHeap"
@@ -6031,7 +6075,7 @@ besharp_oop_type_PairingHeap_methods['PairingHeap']='PairingHeap'
 besharp_oop_type_PairingHeap_method_is_returning["PairingHeap"]=true
 besharp_oop_type_PairingHeap_method_body["PairingHeap"]='    @parent;
     local comparatorOrReverseFlag="${1:-min}";
-    case "${comparatorOrReverseFlag}" in 
+    case "${comparatorOrReverseFlag}" in
         "min")
             $this.reversed = false
         ;;
@@ -6063,7 +6107,8 @@ besharp_oop_type_PairingHeap_method_is_calling_parent["PairingHeap"]=true
 besharp_oop_type_PairingHeap_method_is_calling_this["PairingHeap"]=true
 besharp_oop_type_PairingHeap_methods['add']='add'
 besharp_oop_type_PairingHeap_method_is_returning["add"]=false
-besharp_oop_type_PairingHeap_method_body["add"]='    local element="${1}";
+besharp_oop_type_PairingHeap_method_body["add"]='    local comparator newHeap reversed ;
+    local element="${1}";
     if [[ "${2+isset}" == '"'"'isset'"'"' ]]; then
         local value="${2}";
     else
@@ -6105,7 +6150,8 @@ besharp_oop_type_PairingHeap_method_is_calling_parent["addMany"]=false
 besharp_oop_type_PairingHeap_method_is_calling_this["addMany"]=false
 besharp_oop_type_PairingHeap_methods['createEmptyHeapNode']='createEmptyHeapNode'
 besharp_oop_type_PairingHeap_method_is_returning["createEmptyHeapNode"]=true
-besharp_oop_type_PairingHeap_method_body["createEmptyHeapNode"]='    local element="${1}";
+besharp_oop_type_PairingHeap_method_body["createEmptyHeapNode"]='    local index ;
+    local element="${1}";
     local value="${2}";
     __be__index $this.maxNodeIndex;
     (( ++index ));
@@ -6272,7 +6318,8 @@ besharp_oop_type_PairingHeap_method_is_calling_parent["merge"]=false
 besharp_oop_type_PairingHeap_method_is_calling_this["merge"]=true
 besharp_oop_type_PairingHeap_methods['mergePairs']='mergePairs'
 besharp_oop_type_PairingHeap_method_is_returning["mergePairs"]=true
-besharp_oop_type_PairingHeap_method_body["mergePairs"]='    local heap="${1}";
+besharp_oop_type_PairingHeap_method_body["mergePairs"]='    local allTheRestHeap firstTwoHeap ;
+    local heap="${1}";
     if [[ -z "${heap}" ]] || eval "[[ -z \"\${${this}_next_sibling[${heap}]}\" ]]"; then
         besharp_rcrvs[besharp_rcsl]="${heap}";
     else
@@ -6293,7 +6340,8 @@ besharp_oop_type_PairingHeap_method_is_calling_parent["mergePairs"]=false
 besharp_oop_type_PairingHeap_method_is_calling_this["mergePairs"]=true
 besharp_oop_type_PairingHeap_methods['min']='min'
 besharp_oop_type_PairingHeap_method_is_returning["min"]=true
-besharp_oop_type_PairingHeap_method_body["min"]='    __be__rootHeap $this.rootHeap;
+besharp_oop_type_PairingHeap_method_body["min"]='    local rootHeap ;
+    __be__rootHeap $this.rootHeap;
     if [[ -z "${rootHeap}" ]]; then
         besharp.runtime.error "There are no elements on the heap!";
     fi;
@@ -6339,7 +6387,8 @@ besharp_oop_type_PairingHeap_method_is_calling_parent["removeMany"]=false
 besharp_oop_type_PairingHeap_method_is_calling_this["removeMany"]=false
 besharp_oop_type_PairingHeap_methods['removeMin']='removeMin'
 besharp_oop_type_PairingHeap_method_is_returning["removeMin"]=false
-besharp_oop_type_PairingHeap_method_body["removeMin"]='    __be__rootHeap $this.rootHeap;
+besharp_oop_type_PairingHeap_method_body["removeMin"]='    local rootHeap ;
+    __be__rootHeap $this.rootHeap;
     if [[ -z "${rootHeap}" ]]; then
         besharp.runtime.error "There are no elements on the heap!";
     fi;
@@ -6409,7 +6458,7 @@ besharp_oop_type_PairingHeap_method_is_calling_parent["size"]=false
 besharp_oop_type_PairingHeap_method_is_calling_this["size"]=false
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 function __be___this_comparatorCallback() {
   "${@}"
   eval $this"_comparatorCallback=\"\${besharp_rcrvs[besharp_rcsl + 1]}\""
@@ -6454,11 +6503,11 @@ function __be___this_rootHeap() {
   "${@}"
   eval $this"_rootHeap=\"\${besharp_rcrvs[besharp_rcsl + 1]}\""
 }
-PairingHeap () 
-{ 
+PairingHeap ()
+{
     @parent;
     local comparatorOrReverseFlag="${1:-min}";
-    case "${comparatorOrReverseFlag}" in 
+    case "${comparatorOrReverseFlag}" in
         "min")
             $this.reversed = false
         ;;
@@ -6485,8 +6534,9 @@ PairingHeap ()
         ;;
     esac
 }
-PairingHeap.add () 
-{ 
+PairingHeap.add ()
+{
+    local comparator newHeap reversed;
     local element="${1}";
     if [[ "${2+isset}" == 'isset' ]]; then
         local value="${2}";
@@ -6515,12 +6565,13 @@ PairingHeap.add ()
     local rootHeapVar="${this}_rootHeap";
     eval "@let ${this}_rootHeap = $this.merge \"${!rootHeapVar:-}\" \"${newHeap}\""
 }
-PairingHeap.addMany () 
-{ 
+PairingHeap.addMany ()
+{
     :
 }
-PairingHeap.createEmptyHeapNode () 
-{ 
+PairingHeap.createEmptyHeapNode ()
+{
+    local index;
     local element="${1}";
     local value="${2}";
     __be__index $this.maxNodeIndex;
@@ -6532,54 +6583,54 @@ PairingHeap.createEmptyHeapNode ()
     eval "${this}_next_sibling[${index}]=";
     besharp_rcrvs[besharp_rcsl]="${index}"
 }
-PairingHeap.current () 
-{ 
+PairingHeap.current ()
+{
     :
 }
-PairingHeap.declarePrimitiveVariable () 
-{ 
+PairingHeap.declarePrimitiveVariable ()
+{
     declare -a "${this}_element";
     declare -a "${this}_value";
     declare -a "${this}_left_child";
     declare -a "${this}_next_sibling"
 }
-PairingHeap.destroyHeapNode () 
-{ 
+PairingHeap.destroyHeapNode ()
+{
     local heap="${1}";
     unset "${this}_element[${heap}]";
     unset "${this}_value[${heap}]";
     unset "${this}_left_child[${heap}]";
     unset "${this}_next_sibling[${heap}]"
 }
-PairingHeap.destroyPrimitiveVariable () 
-{ 
+PairingHeap.destroyPrimitiveVariable ()
+{
     unset "${this}_element";
     unset "${this}_value";
     unset "${this}_left_child";
     unset "${this}_next_sibling"
 }
-PairingHeap.fill () 
-{ 
+PairingHeap.fill ()
+{
     :
 }
-PairingHeap.frequency () 
-{ 
+PairingHeap.frequency ()
+{
     :
 }
-PairingHeap.has () 
-{ 
+PairingHeap.has ()
+{
     :
 }
-PairingHeap.hasAll () 
-{ 
+PairingHeap.hasAll ()
+{
     :
 }
-PairingHeap.hasSome () 
-{ 
+PairingHeap.hasSome ()
+{
     :
 }
-PairingHeap.isEmpty () 
-{ 
+PairingHeap.isEmpty ()
+{
     local isset;
     eval "isset=\${${this}_element[@]+isset}";
     if [[ "${isset}" == 'isset' ]]; then
@@ -6588,24 +6639,24 @@ PairingHeap.isEmpty ()
         besharp_rcrvs[besharp_rcsl]=true;
     fi
 }
-PairingHeap.isOwningItems () 
-{ 
+PairingHeap.isOwningItems ()
+{
     :
 }
-PairingHeap.iterationNew () 
-{ 
+PairingHeap.iterationNew ()
+{
     ArrayIteration.reversedIterationNew "${this}" "${@}"
 }
-PairingHeap.iterationNext () 
-{ 
+PairingHeap.iterationNext ()
+{
     ArrayIteration.reversedIterationNext "${this}" "${@}"
 }
-PairingHeap.iterationValue () 
-{ 
+PairingHeap.iterationValue ()
+{
     ArrayIteration.iterationValue "${this}" "${@}"
 }
-PairingHeap.merge () 
-{ 
+PairingHeap.merge ()
+{
     local heapA="${1}";
     local heapB="${2}";
     if [[ -z "${heapA}" ]]; then
@@ -6638,8 +6689,9 @@ PairingHeap.merge ()
         besharp_rcrvs[besharp_rcsl]=$heapB;
     fi
 }
-PairingHeap.mergePairs () 
-{ 
+PairingHeap.mergePairs ()
+{
+    local allTheRestHeap firstTwoHeap;
     local heap="${1}";
     if [[ -z "${heap}" ]] || eval "[[ -z \"\${${this}_next_sibling[${heap}]}\" ]]"; then
         besharp_rcrvs[besharp_rcsl]="${heap}";
@@ -6655,36 +6707,38 @@ PairingHeap.mergePairs ()
         besharp.returningOf $this.merge "${firstTwoHeap}" "${allTheRestHeap}";
     fi
 }
-PairingHeap.min () 
-{ 
+PairingHeap.min ()
+{
+    local rootHeap;
     __be__rootHeap $this.rootHeap;
     if [[ -z "${rootHeap}" ]]; then
         besharp.runtime.error "There are no elements on the heap!";
     fi;
     eval "besharp_rcrvs[besharp_rcsl]=\${${this}_element[${rootHeap}]}"
 }
-PairingHeap.ownsItsItems () 
-{ 
+PairingHeap.ownsItsItems ()
+{
     :
 }
-PairingHeap.pull () 
-{ 
+PairingHeap.pull ()
+{
     :
 }
-PairingHeap.remove () 
-{ 
+PairingHeap.remove ()
+{
     :
 }
-PairingHeap.removeAll () 
-{ 
+PairingHeap.removeAll ()
+{
     :
 }
-PairingHeap.removeMany () 
-{ 
+PairingHeap.removeMany ()
+{
     :
 }
-PairingHeap.removeMin () 
-{ 
+PairingHeap.removeMin ()
+{
+    local rootHeap;
     __be__rootHeap $this.rootHeap;
     if [[ -z "${rootHeap}" ]]; then
         besharp.runtime.error "There are no elements on the heap!";
@@ -6694,16 +6748,16 @@ PairingHeap.removeMin ()
     __be___this_rootHeap $this.mergePairs "${leftChild}";
     $this.destroyHeapNode "${rootHeap}"
 }
-PairingHeap.replace () 
-{ 
+PairingHeap.replace ()
+{
     :
 }
-PairingHeap.replaceMany () 
-{ 
+PairingHeap.replaceMany ()
+{
     :
 }
-PairingHeap.show () 
-{ 
+PairingHeap.show ()
+{
     local var="${this}_element[@]";
     if [[ "${!var+isset}" != "isset" ]]; then
         echo "<EMPTY>";
@@ -6727,17 +6781,17 @@ PairingHeap.show ()
     echo "rootHeap: $( @echo $this.rootHeap )";
     echo "maxNodeIndex: $( @echo $this.maxNodeIndex )"
 }
-PairingHeap.shuffle () 
-{ 
+PairingHeap.shuffle ()
+{
     :
 }
-PairingHeap.size () 
-{ 
+PairingHeap.size ()
+{
     :
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["Queue"]='true'
 besharp_oop_type_is["Queue"]='class'
 besharp_oop_types["Queue"]="Queue"
@@ -6810,13 +6864,13 @@ besharp_oop_type_Queue_method_is_calling_parent["pull"]=false
 besharp_oop_type_Queue_method_is_calling_this["pull"]=true
 
 fi
-if ${beshfile_section__code:-false}; then :; 
-Queue () 
-{ 
+if ${beshfile_section__code:-false}; then :;
+Queue ()
+{
     @parent
 }
-Queue.current () 
-{ 
+Queue.current ()
+{
     local var="${this}[@]";
     if [[ "${!var+isset}" != "isset" ]]; then
         besharp.runtime.error "You cannot call Queue.current() on an empty Set! Please use Queue.isEmpty() method to avoid this issue!";
@@ -6833,8 +6887,8 @@ Queue.current ()
         return;
     done
 }
-Queue.pull () 
-{ 
+Queue.pull ()
+{
     local var="${this}[@]";
     if [[ "${!var+isset}" != "isset" ]]; then
         besharp.runtime.error "You cannot call Queue.pull() on an empty Set! Please use Queue.isEmpty() method to avoid this issue!";
@@ -6854,7 +6908,7 @@ Queue.pull ()
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["Stack"]='true'
 besharp_oop_type_is["Stack"]='class'
 besharp_oop_types["Stack"]="Stack"
@@ -6936,13 +6990,13 @@ besharp_oop_type_Stack_method_is_calling_parent["pull"]=false
 besharp_oop_type_Stack_method_is_calling_this["pull"]=true
 
 fi
-if ${beshfile_section__code:-false}; then :; 
-Stack () 
-{ 
+if ${beshfile_section__code:-false}; then :;
+Stack ()
+{
     @parent
 }
-Stack.current () 
-{ 
+Stack.current ()
+{
     local var="${this}[@]";
     if [[ "${!var+isset}" != "isset" ]]; then
         besharp.runtime.error "You cannot call Stack.current() on an empty Set! Please use Stack.isEmpty() method to avoid this issue!";
@@ -6954,20 +7008,20 @@ Stack.current ()
     eval "item=\"\${${this}[-1]}\"";
     besharp_rcrvs[besharp_rcsl]="${item}"
 }
-Stack.iterationNew () 
-{ 
+Stack.iterationNew ()
+{
     ArrayIteration.reversedIterationNew "${this}" "${@}"
 }
-Stack.iterationNext () 
-{ 
+Stack.iterationNext ()
+{
     ArrayIteration.reversedIterationNext "${this}" "${@}"
 }
-Stack.iterationValue () 
-{ 
+Stack.iterationValue ()
+{
     ArrayIteration.iterationValue "${this}" "${@}"
 }
-Stack.pull () 
-{ 
+Stack.pull ()
+{
     local var="${this}[@]";
     if [[ "${!var+isset}" != "isset" ]]; then
         besharp.runtime.error "You cannot call Stack.pull() on an empty Set! Please use Stack.isEmpty() method to avoid this issue!";
@@ -6980,7 +7034,7 @@ Stack.pull ()
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["ArrayIteration"]='true'
 besharp_oop_type_is["ArrayIteration"]='class'
 besharp_oop_types["ArrayIteration"]="ArrayIteration"
@@ -7088,20 +7142,20 @@ besharp_oop_type_ArrayIteration_method_is_calling_parent["reversedIterationNext"
 besharp_oop_type_ArrayIteration_method_is_calling_this["reversedIterationNext"]=true
 
 fi
-if ${beshfile_section__code:-false}; then :; 
-ArrayIteration () 
-{ 
+if ${beshfile_section__code:-false}; then :;
+ArrayIteration ()
+{
     :
 }
-ArrayIteration.iterationKey () 
-{ 
+ArrayIteration.iterationKey ()
+{
     local varName="${this}_system_iterator_$(( besharp_rcsl - 1 ))_${__besharp_iterator_position_in_a_method}";
     local key;
     eval "key=\"\${${varName}[\"${2}\"]}\"";
     besharp_rcrvs[besharp_rcsl]="${key}"
 }
-ArrayIteration.iterationNew () 
-{ 
+ArrayIteration.iterationNew ()
+{
     local stackLvl=$(( besharp_rcsl - 1 ));
     if eval "[[ -z \${!${1}[@]} ]]"; then
         besharp_rcrvs[besharp_rcsl]='';
@@ -7112,8 +7166,8 @@ ArrayIteration.iterationNew ()
         besharp_rcrvs[besharp_rcsl]=0;
     fi
 }
-ArrayIteration.iterationNext () 
-{ 
+ArrayIteration.iterationNext ()
+{
     local varName="${this}_system_iterator_$(( besharp_rcsl - 1 ))_${__besharp_iterator_position_in_a_method}";
     local size;
     eval "size=\${#${varName}[@]}";
@@ -7123,8 +7177,8 @@ ArrayIteration.iterationNext ()
         besharp_rcrvs[besharp_rcsl]='';
     fi
 }
-ArrayIteration.iterationValue () 
-{ 
+ArrayIteration.iterationValue ()
+{
     local varName="${this}_system_iterator_$(( besharp_rcsl - 1 ))_${__besharp_iterator_position_in_a_method}";
     local idx;
     eval "idx=\"\${${varName}[\"${2}\"]}\"";
@@ -7132,8 +7186,8 @@ ArrayIteration.iterationValue ()
     eval "value=\"\${${1}[${idx}]}\"";
     besharp_rcrvs[besharp_rcsl]="${value}"
 }
-ArrayIteration.reversedIterationNew () 
-{ 
+ArrayIteration.reversedIterationNew ()
+{
     local stackLvl=$(( besharp_rcsl - 1 ));
     if eval "[[ -z \${!${1}[@]} ]]"; then
         besharp_rcrvs[besharp_rcsl]='';
@@ -7146,8 +7200,8 @@ ArrayIteration.reversedIterationNew ()
         besharp_rcrvs[besharp_rcsl]=$(( size - 1 ));
     fi
 }
-ArrayIteration.reversedIterationNext () 
-{ 
+ArrayIteration.reversedIterationNext ()
+{
     local varName="${this}_system_iterator_$(( besharp_rcsl - 1 ))_${__besharp_iterator_position_in_a_method}";
     if (( $2 > 0 )); then
         besharp_rcrvs[besharp_rcsl]=$(( $2 - 1 ));
@@ -7157,7 +7211,7 @@ ArrayIteration.reversedIterationNext ()
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["AssocArrayCollection"]='true'
 besharp_oop_type_abstract["AssocArrayCollection"]='true'
 besharp_oop_type_is["AssocArrayCollection"]='class'
@@ -7200,22 +7254,22 @@ besharp_oop_type_AssocArrayCollection_method_is_calling_parent["destroyPrimitive
 besharp_oop_type_AssocArrayCollection_method_is_calling_this["destroyPrimitiveVariable"]=true
 
 fi
-if ${beshfile_section__code:-false}; then :; 
-AssocArrayCollection () 
-{ 
+if ${beshfile_section__code:-false}; then :;
+AssocArrayCollection ()
+{
     @parent
 }
-AssocArrayCollection.declarePrimitiveVariable () 
-{ 
+AssocArrayCollection.declarePrimitiveVariable ()
+{
     declare -Ag "${this}"
 }
-AssocArrayCollection.destroyPrimitiveVariable () 
-{ 
+AssocArrayCollection.destroyPrimitiveVariable ()
+{
     unset "${this}"
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["AssocArrayContainer"]='true'
 besharp_oop_type_abstract["AssocArrayContainer"]='true'
 besharp_oop_type_is["AssocArrayContainer"]='class'
@@ -7258,22 +7312,22 @@ besharp_oop_type_AssocArrayContainer_method_is_calling_parent["destroyPrimitiveV
 besharp_oop_type_AssocArrayContainer_method_is_calling_this["destroyPrimitiveVariable"]=true
 
 fi
-if ${beshfile_section__code:-false}; then :; 
-AssocArrayContainer () 
-{ 
+if ${beshfile_section__code:-false}; then :;
+AssocArrayContainer ()
+{
     @parent
 }
-AssocArrayContainer.declarePrimitiveVariable () 
-{ 
+AssocArrayContainer.declarePrimitiveVariable ()
+{
     declare -Ag "${this}"
 }
-AssocArrayContainer.destroyPrimitiveVariable () 
-{ 
+AssocArrayContainer.destroyPrimitiveVariable ()
+{
     unset "${this}"
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["IndexedArrayCollection"]='true'
 besharp_oop_type_abstract["IndexedArrayCollection"]='true'
 besharp_oop_type_is["IndexedArrayCollection"]='class'
@@ -7349,7 +7403,8 @@ besharp_oop_type_IndexedArrayCollection_method_is_calling_parent["hasKey"]=false
 besharp_oop_type_IndexedArrayCollection_method_is_calling_this["hasKey"]=true
 besharp_oop_type_IndexedArrayCollection_methods['indices']='indices'
 besharp_oop_type_IndexedArrayCollection_method_is_returning["indices"]=true
-besharp_oop_type_IndexedArrayCollection_method_body["indices"]='    local myself;
+besharp_oop_type_IndexedArrayCollection_method_body["indices"]='    local indices ;
+    local myself;
     declare -n myself="${this}";
     __be__indices @new ArrayVector;
     $indices.setPlain ${!myself[@]};
@@ -7390,7 +7445,8 @@ besharp_oop_type_IndexedArrayCollection_method_is_calling_parent["remove"]=false
 besharp_oop_type_IndexedArrayCollection_method_is_calling_this["remove"]=true
 besharp_oop_type_IndexedArrayCollection_methods['reverse']='reverse'
 besharp_oop_type_IndexedArrayCollection_method_is_returning["reverse"]=true
-besharp_oop_type_IndexedArrayCollection_method_body["reverse"]='    __be__size $this.size;
+besharp_oop_type_IndexedArrayCollection_method_body["reverse"]='    local size ;
+    __be__size $this.size;
     if (( size < 2 )); then
         return;
     fi;
@@ -7422,7 +7478,8 @@ besharp_oop_type_IndexedArrayCollection_method_is_calling_parent["reverse"]=fals
 besharp_oop_type_IndexedArrayCollection_method_is_calling_this["reverse"]=true
 besharp_oop_type_IndexedArrayCollection_methods['rotate']='rotate'
 besharp_oop_type_IndexedArrayCollection_method_is_returning["rotate"]=true
-besharp_oop_type_IndexedArrayCollection_method_body["rotate"]='    local distance="${1}";
+besharp_oop_type_IndexedArrayCollection_method_body["rotate"]='    local size ;
+    local distance="${1}";
     __be__size $this.size;
     distance=$(( distance % size ));
     if (( distance < 0 )); then
@@ -7467,7 +7524,7 @@ besharp_oop_type_IndexedArrayCollection_method_is_calling_parent["swapIndices"]=
 besharp_oop_type_IndexedArrayCollection_method_is_calling_this["swapIndices"]=true
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 function __be__indices() {
   "${@}"
   indices="${besharp_rcrvs[besharp_rcsl + 1]}"
@@ -7480,25 +7537,25 @@ function __be__size() {
   "${@}"
   size="${besharp_rcrvs[besharp_rcsl + 1]}"
 }
-IndexedArrayCollection () 
-{ 
+IndexedArrayCollection ()
+{
     @parent
 }
-IndexedArrayCollection.add () 
-{ 
+IndexedArrayCollection.add ()
+{
     local item="${1}";
     eval "${this}+=( \"\${item}\" )"
 }
-IndexedArrayCollection.declarePrimitiveVariable () 
-{ 
+IndexedArrayCollection.declarePrimitiveVariable ()
+{
     declare -a "${this}"
 }
-IndexedArrayCollection.destroyPrimitiveVariable () 
-{ 
+IndexedArrayCollection.destroyPrimitiveVariable ()
+{
     unset "${this}"
 }
-IndexedArrayCollection.hasIndex () 
-{ 
+IndexedArrayCollection.hasIndex ()
+{
     local index="${1}";
     if (( index < 0 )); then
         besharp_rcrvs[besharp_rcsl]=false;
@@ -7512,24 +7569,25 @@ IndexedArrayCollection.hasIndex ()
         besharp_rcrvs[besharp_rcsl]=false;
     fi
 }
-IndexedArrayCollection.hasKey () 
-{ 
+IndexedArrayCollection.hasKey ()
+{
     besharp.returningOf $this.hasIndex "${@}"
 }
-IndexedArrayCollection.indices () 
-{ 
+IndexedArrayCollection.indices ()
+{
+    local indices;
     local myself;
     declare -n myself="${this}";
     __be__indices @new ArrayVector;
     $indices.setPlain ${!myself[@]};
     besharp_rcrvs[besharp_rcsl]=$indices
 }
-IndexedArrayCollection.keys () 
-{ 
+IndexedArrayCollection.keys ()
+{
     besharp.returningOf $this.indices
 }
-IndexedArrayCollection.remove () 
-{ 
+IndexedArrayCollection.remove ()
+{
     local item="${1}";
     local var="${this}[@]";
     if [[ "${!var+isset}" != "isset" ]]; then
@@ -7548,8 +7606,9 @@ IndexedArrayCollection.remove ()
         fi;
     done
 }
-IndexedArrayCollection.reverse () 
-{ 
+IndexedArrayCollection.reverse ()
+{
+    local size;
     __be__size $this.size;
     if (( size < 2 )); then
         return;
@@ -7577,8 +7636,9 @@ IndexedArrayCollection.reverse ()
         eval "${this}[idx2]=\"\${tmpValue}\"";
     done
 }
-IndexedArrayCollection.rotate () 
-{ 
+IndexedArrayCollection.rotate ()
+{
+    local size;
     local distance="${1}";
     __be__size $this.size;
     distance=$(( distance % size ));
@@ -7612,13 +7672,13 @@ IndexedArrayCollection.rotate ()
         eval "${this}[${targetIdx}]=\${values[${i}]}";
     done
 }
-IndexedArrayCollection.swapIndices () 
-{ 
+IndexedArrayCollection.swapIndices ()
+{
     $this.swapElements "${@}"
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["PrimitiveCollection"]='true'
 besharp_oop_type_abstract["PrimitiveCollection"]='true'
 besharp_oop_type_is["PrimitiveCollection"]='class'
@@ -7657,13 +7717,13 @@ besharp_oop_type_PrimitiveCollection_method_is_calling_parent["addMany"]=false
 besharp_oop_type_PrimitiveCollection_method_is_calling_this["addMany"]=true
 
 fi
-if ${beshfile_section__code:-false}; then :; 
-PrimitiveCollection () 
-{ 
+if ${beshfile_section__code:-false}; then :;
+PrimitiveCollection ()
+{
     @parent
 }
-PrimitiveCollection.addMany () 
-{ 
+PrimitiveCollection.addMany ()
+{
     local item;
     while @iterate "${@}" @in item; do
         $this.add "${item}";
@@ -7671,7 +7731,7 @@ PrimitiveCollection.addMany ()
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["PrimitiveContainer"]='true'
 besharp_oop_type_abstract["PrimitiveContainer"]='true'
 besharp_oop_type_is["PrimitiveContainer"]='class'
@@ -7702,7 +7762,8 @@ besharp_oop_type_PrimitiveContainer_method_is_calling_parent["PrimitiveContainer
 besharp_oop_type_PrimitiveContainer_method_is_calling_this["PrimitiveContainer"]=false
 besharp_oop_type_PrimitiveContainer_methods['__cloneFrom']='__cloneFrom'
 besharp_oop_type_PrimitiveContainer_method_is_returning["__cloneFrom"]=false
-besharp_oop_type_PrimitiveContainer_method_body["__cloneFrom"]='    local source="${1}";
+besharp_oop_type_PrimitiveContainer_method_body["__cloneFrom"]='    local value ;
+    local source="${1}";
     local mode="${2}";
     unset "${this}[@]";
     $this.declarePrimitiveVariable "${@}";
@@ -7921,7 +7982,8 @@ besharp_oop_type_PrimitiveContainer_method_is_calling_parent["iterationValue"]=f
 besharp_oop_type_PrimitiveContainer_method_is_calling_this["iterationValue"]=true
 besharp_oop_type_PrimitiveContainer_methods['keys']='keys'
 besharp_oop_type_PrimitiveContainer_method_is_returning["keys"]=true
-besharp_oop_type_PrimitiveContainer_method_body["keys"]='    local myself;
+besharp_oop_type_PrimitiveContainer_method_body["keys"]='    local indices ;
+    local myself;
     declare -n myself="${this}";
     __be__indices @new ArrayVector;
     $indices.setPlain "${!myself[@]}";
@@ -7978,7 +8040,8 @@ besharp_oop_type_PrimitiveContainer_method_is_calling_parent["replace"]=false
 besharp_oop_type_PrimitiveContainer_method_is_calling_this["replace"]=true
 besharp_oop_type_PrimitiveContainer_methods['replaceMany']='replaceMany'
 besharp_oop_type_PrimitiveContainer_method_is_returning["replaceMany"]=false
-besharp_oop_type_PrimitiveContainer_method_body["replaceMany"]='    local replaceMap="${1}";
+besharp_oop_type_PrimitiveContainer_method_body["replaceMany"]='    local to ;
+    local replaceMap="${1}";
     local from;
     while @iterate @of $replaceMap.keys @in from; do
         __be__to $replaceMap.get "${from}";
@@ -8010,7 +8073,8 @@ besharp_oop_type_PrimitiveContainer_method_is_calling_parent["show"]=false
 besharp_oop_type_PrimitiveContainer_method_is_calling_this["show"]=true
 besharp_oop_type_PrimitiveContainer_methods['shuffle']='shuffle'
 besharp_oop_type_PrimitiveContainer_method_is_returning["shuffle"]=true
-besharp_oop_type_PrimitiveContainer_method_body["shuffle"]='    __be__size $this.size;
+besharp_oop_type_PrimitiveContainer_method_body["shuffle"]='    local size ;
+    __be__size $this.size;
     if (( size < 2 )); then
         return;
     fi;
@@ -8080,7 +8144,7 @@ besharp_oop_type_PrimitiveContainer_method_is_calling_parent["swapElements"]=fal
 besharp_oop_type_PrimitiveContainer_method_is_calling_this["swapElements"]=true
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 function __be__value() {
   "${@}"
   value="${besharp_rcrvs[besharp_rcsl + 1]}"
@@ -8097,12 +8161,13 @@ function __be__size() {
   "${@}"
   size="${besharp_rcrvs[besharp_rcsl + 1]}"
 }
-PrimitiveContainer () 
-{ 
+PrimitiveContainer ()
+{
     @parent
 }
-PrimitiveContainer.__cloneFrom () 
-{ 
+PrimitiveContainer.__cloneFrom ()
+{
+    local value;
     local source="${1}";
     local mode="${2}";
     unset "${this}[@]";
@@ -8149,13 +8214,13 @@ PrimitiveContainer.__cloneFrom ()
         fi;
     fi
 }
-PrimitiveContainer.__destroy () 
-{ 
+PrimitiveContainer.__destroy ()
+{
     $this.destroyOwningItems;
     @parent
 }
-PrimitiveContainer.destroyOwningItems () 
-{ 
+PrimitiveContainer.destroyOwningItems ()
+{
     if @true $this.isOwningItems; then
         local item;
         while @iterate $this @in item; do
@@ -8165,8 +8230,8 @@ PrimitiveContainer.destroyOwningItems ()
         done;
     fi
 }
-PrimitiveContainer.fill () 
-{ 
+PrimitiveContainer.fill ()
+{
     local item="${1}";
     local temp;
     declare -n temp="${this}";
@@ -8176,8 +8241,8 @@ PrimitiveContainer.fill ()
         eval "${this}[${idx}]=\"\${item}\"";
     done
 }
-PrimitiveContainer.frequency () 
-{ 
+PrimitiveContainer.frequency ()
+{
     local item="${1}";
     local var="${this}[@]";
     if [[ "${!var+isset}" != "isset" ]]; then
@@ -8196,8 +8261,8 @@ PrimitiveContainer.frequency ()
     done;
     besharp_rcrvs[besharp_rcsl]=${frequency}
 }
-PrimitiveContainer.get () 
-{ 
+PrimitiveContainer.get ()
+{
     local key="${1}";
     local isset;
     eval "isset=\${${this}[\"${key}\"]+isset}";
@@ -8208,8 +8273,8 @@ PrimitiveContainer.get ()
     eval "item=\"\${${this}[\"${key}\"]}\"";
     besharp_rcrvs[besharp_rcsl]="${item}"
 }
-PrimitiveContainer.has () 
-{ 
+PrimitiveContainer.has ()
+{
     local item="${1}";
     local var="${this}[@]";
     if [[ "${!var+isset}" != "isset" ]]; then
@@ -8226,8 +8291,8 @@ PrimitiveContainer.has ()
     done;
     besharp_rcrvs[besharp_rcsl]=false
 }
-PrimitiveContainer.hasAll () 
-{ 
+PrimitiveContainer.hasAll ()
+{
     if @true $this.isEmpty; then
         besharp_rcrvs[besharp_rcsl]=false;
         return;
@@ -8241,8 +8306,8 @@ PrimitiveContainer.hasAll ()
     done;
     besharp_rcrvs[besharp_rcsl]=true
 }
-PrimitiveContainer.hasSome () 
-{ 
+PrimitiveContainer.hasSome ()
+{
     local item;
     while @iterate "${@}" @in item; do
         if @true $this.has "${item}"; then
@@ -8252,8 +8317,8 @@ PrimitiveContainer.hasSome ()
     done;
     besharp_rcrvs[besharp_rcsl]=false
 }
-PrimitiveContainer.isEmpty () 
-{ 
+PrimitiveContainer.isEmpty ()
+{
     local isset;
     eval "isset=\${${this}[@]+isset}";
     if [[ "${isset}" == 'isset' ]]; then
@@ -8262,48 +8327,49 @@ PrimitiveContainer.isEmpty ()
         besharp_rcrvs[besharp_rcsl]=true;
     fi
 }
-PrimitiveContainer.isOwningItems () 
-{ 
+PrimitiveContainer.isOwningItems ()
+{
     besharp.returningOf $this.owningItems
 }
-PrimitiveContainer.iterationNew () 
-{ 
+PrimitiveContainer.iterationNew ()
+{
     ArrayIteration.iterationNew "${this}" "${@}"
 }
-PrimitiveContainer.iterationNext () 
-{ 
+PrimitiveContainer.iterationNext ()
+{
     ArrayIteration.iterationNext "${this}" "${@}"
 }
-PrimitiveContainer.iterationValue () 
-{ 
+PrimitiveContainer.iterationValue ()
+{
     ArrayIteration.iterationValue "${this}" "${@}"
 }
-PrimitiveContainer.keys () 
-{ 
+PrimitiveContainer.keys ()
+{
+    local indices;
     local myself;
     declare -n myself="${this}";
     __be__indices @new ArrayVector;
     $indices.setPlain "${!myself[@]}";
     besharp_rcrvs[besharp_rcsl]=$indices
 }
-PrimitiveContainer.ownsItsItems () 
-{ 
+PrimitiveContainer.ownsItsItems ()
+{
     $this.owningItems = "${1:-true}"
 }
-PrimitiveContainer.removeAll () 
-{ 
+PrimitiveContainer.removeAll ()
+{
     $this.destroyPrimitiveVariable;
     $this.declarePrimitiveVariable
 }
-PrimitiveContainer.removeMany () 
-{ 
+PrimitiveContainer.removeMany ()
+{
     local item;
     while @iterate "${@}" @in item; do
         $this.remove "${item}";
     done
 }
-PrimitiveContainer.replace () 
-{ 
+PrimitiveContainer.replace ()
+{
     local fromItem="${1}";
     local toItem="${2}";
     local var="${this}[@]";
@@ -8320,8 +8386,9 @@ PrimitiveContainer.replace ()
         fi;
     done
 }
-PrimitiveContainer.replaceMany () 
-{ 
+PrimitiveContainer.replaceMany ()
+{
+    local to;
     local replaceMap="${1}";
     local from;
     while @iterate @of $replaceMap.keys @in from; do
@@ -8329,8 +8396,8 @@ PrimitiveContainer.replaceMany ()
         $this.replace "${from}" "${to}";
     done
 }
-PrimitiveContainer.show () 
-{ 
+PrimitiveContainer.show ()
+{
     local var="${this}[@]";
     if [[ "${!var+isset}" != "isset" ]]; then
         echo "<EMPTY>";
@@ -8345,8 +8412,9 @@ PrimitiveContainer.show ()
         echo "| #${this} $(besharp.rtti.objectType "${this}") | ${idx} -> ${!var}";
     done
 }
-PrimitiveContainer.shuffle () 
-{ 
+PrimitiveContainer.shuffle ()
+{
+    local size;
     __be__size $this.size;
     if (( size < 2 )); then
         return;
@@ -8374,8 +8442,8 @@ PrimitiveContainer.shuffle ()
         eval "${this}[\"\${index2}\"]=\"\${tmpValue}\"";
     done
 }
-PrimitiveContainer.size () 
-{ 
+PrimitiveContainer.size ()
+{
     local count=0;
     local isset;
     eval "isset=\${${this}[@]+isset}";
@@ -8384,8 +8452,8 @@ PrimitiveContainer.size ()
     fi;
     besharp_rcrvs[besharp_rcsl]="${count}"
 }
-PrimitiveContainer.swapElements () 
-{ 
+PrimitiveContainer.swapElements ()
+{
     local index1="${1}";
     local index2="${2}";
     if [[ "${index1}" == "${index2}" ]]; then
@@ -8408,7 +8476,7 @@ PrimitiveContainer.swapElements ()
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["AbstractEmptyCollection"]='true'
 besharp_oop_type_abstract["AbstractEmptyCollection"]='true'
 besharp_oop_type_is["AbstractEmptyCollection"]='class'
@@ -8600,106 +8668,106 @@ besharp_oop_type_AbstractEmptyCollection_method_is_calling_parent["size"]=false
 besharp_oop_type_AbstractEmptyCollection_method_is_calling_this["size"]=false
 
 fi
-if ${beshfile_section__code:-false}; then :; 
-AbstractEmptyCollection () 
-{ 
+if ${beshfile_section__code:-false}; then :;
+AbstractEmptyCollection ()
+{
     @parent
 }
-AbstractEmptyCollection.add () 
-{ 
+AbstractEmptyCollection.add ()
+{
     besharp.runtime.error "You cannot add!"
 }
-AbstractEmptyCollection.addMany () 
-{ 
+AbstractEmptyCollection.addMany ()
+{
     besharp.runtime.error "You cannot addMany!"
 }
-AbstractEmptyCollection.fill () 
-{ 
+AbstractEmptyCollection.fill ()
+{
     :
 }
-AbstractEmptyCollection.frequency () 
-{ 
+AbstractEmptyCollection.frequency ()
+{
     besharp_rcrvs[besharp_rcsl]=0
 }
-AbstractEmptyCollection.get () 
-{ 
+AbstractEmptyCollection.get ()
+{
     besharp.runtime.error "Nothing to get!"
 }
-AbstractEmptyCollection.has () 
-{ 
+AbstractEmptyCollection.has ()
+{
     besharp_rcrvs[besharp_rcsl]=false
 }
-AbstractEmptyCollection.hasAll () 
-{ 
+AbstractEmptyCollection.hasAll ()
+{
     besharp_rcrvs[besharp_rcsl]=false
 }
-AbstractEmptyCollection.hasKey () 
-{ 
+AbstractEmptyCollection.hasKey ()
+{
     besharp_rcrvs[besharp_rcsl]=false
 }
-AbstractEmptyCollection.hasSome () 
-{ 
+AbstractEmptyCollection.hasSome ()
+{
     besharp_rcrvs[besharp_rcsl]=false
 }
-AbstractEmptyCollection.isEmpty () 
-{ 
+AbstractEmptyCollection.isEmpty ()
+{
     besharp_rcrvs[besharp_rcsl]=true
 }
-AbstractEmptyCollection.isOwningItems () 
-{ 
+AbstractEmptyCollection.isOwningItems ()
+{
     besharp_rcrvs[besharp_rcsl]=false
 }
-AbstractEmptyCollection.iterationNew () 
-{ 
+AbstractEmptyCollection.iterationNew ()
+{
     besharp_rcrvs[besharp_rcsl]=""
 }
-AbstractEmptyCollection.iterationNext () 
-{ 
+AbstractEmptyCollection.iterationNext ()
+{
     besharp_rcrvs[besharp_rcsl]=""
 }
-AbstractEmptyCollection.iterationValue () 
-{ 
+AbstractEmptyCollection.iterationValue ()
+{
     besharp.runtime.error "Has no values!"
 }
-AbstractEmptyCollection.keys () 
-{ 
+AbstractEmptyCollection.keys ()
+{
     besharp_rcrvs[besharp_rcsl]=$this
 }
-AbstractEmptyCollection.ownsItsItems () 
-{ 
+AbstractEmptyCollection.ownsItsItems ()
+{
     :
 }
-AbstractEmptyCollection.remove () 
-{ 
+AbstractEmptyCollection.remove ()
+{
     besharp_rcrvs[besharp_rcsl]=false
 }
-AbstractEmptyCollection.removeAll () 
-{ 
+AbstractEmptyCollection.removeAll ()
+{
     :
 }
-AbstractEmptyCollection.removeMany () 
-{ 
+AbstractEmptyCollection.removeMany ()
+{
     besharp_rcrvs[besharp_rcsl]=false
 }
-AbstractEmptyCollection.replace () 
-{ 
+AbstractEmptyCollection.replace ()
+{
     :
 }
-AbstractEmptyCollection.replaceMany () 
-{ 
+AbstractEmptyCollection.replaceMany ()
+{
     :
 }
-AbstractEmptyCollection.shuffle () 
-{ 
+AbstractEmptyCollection.shuffle ()
+{
     :
 }
-AbstractEmptyCollection.size () 
-{ 
+AbstractEmptyCollection.size ()
+{
     besharp_rcrvs[besharp_rcsl]=0
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["EmptyMap"]='true'
 besharp_oop_type_is["EmptyMap"]='class'
 besharp_oop_types["EmptyMap"]="EmptyMap"
@@ -8791,50 +8859,50 @@ besharp_oop_type_EmptyMap_method_is_calling_parent["swapKeys"]=false
 besharp_oop_type_EmptyMap_method_is_calling_this["swapKeys"]=false
 
 fi
-if ${beshfile_section__code:-false}; then :; 
-EmptyMap () 
-{ 
+if ${beshfile_section__code:-false}; then :;
+EmptyMap ()
+{
     @parent
 }
-EmptyMap.findAllKeys () 
-{ 
+EmptyMap.findAllKeys ()
+{
     besharp_rcrvs[besharp_rcsl]=$this
 }
-EmptyMap.hasAllKeys () 
-{ 
+EmptyMap.hasAllKeys ()
+{
     besharp_rcrvs[besharp_rcsl]=false
 }
-EmptyMap.hasKey () 
-{ 
+EmptyMap.hasKey ()
+{
     besharp_rcrvs[besharp_rcsl]=false
 }
-EmptyMap.hasSomeKeys () 
-{ 
+EmptyMap.hasSomeKeys ()
+{
     besharp_rcrvs[besharp_rcsl]=false
 }
-EmptyMap.removeKey () 
-{ 
+EmptyMap.removeKey ()
+{
     :
 }
-EmptyMap.removeKeys () 
-{ 
+EmptyMap.removeKeys ()
+{
     :
 }
-EmptyMap.set () 
-{ 
+EmptyMap.set ()
+{
     besharp.runtime.error "You cannot set!"
 }
-EmptyMap.setPlainPairs () 
-{ 
+EmptyMap.setPlainPairs ()
+{
     besharp.runtime.error "You cannot setPlainPairs!"
 }
-EmptyMap.swapKeys () 
-{ 
+EmptyMap.swapKeys ()
+{
     besharp.runtime.error "You cannot swapKeys!"
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["EmptySet"]='true'
 besharp_oop_type_is["EmptySet"]='class'
 besharp_oop_types["EmptySet"]="EmptySet"
@@ -8863,14 +8931,14 @@ besharp_oop_type_EmptySet_method_is_calling_parent["EmptySet"]=true
 besharp_oop_type_EmptySet_method_is_calling_this["EmptySet"]=false
 
 fi
-if ${beshfile_section__code:-false}; then :; 
-EmptySet () 
-{ 
+if ${beshfile_section__code:-false}; then :;
+EmptySet ()
+{
     @parent
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["EmptyVector"]='true'
 besharp_oop_type_is["EmptyVector"]='class'
 besharp_oop_types["EmptyVector"]="EmptyVector"
@@ -9018,82 +9086,82 @@ besharp_oop_type_EmptyVector_method_is_calling_parent["swapIndices"]=false
 besharp_oop_type_EmptyVector_method_is_calling_this["swapIndices"]=false
 
 fi
-if ${beshfile_section__code:-false}; then :; 
-EmptyVector () 
-{ 
+if ${beshfile_section__code:-false}; then :;
+EmptyVector ()
+{
     @parent
 }
-EmptyVector.call () 
-{ 
+EmptyVector.call ()
+{
     eval "besharp.returningOf \"\${@}\""
 }
-EmptyVector.findIndex () 
-{ 
+EmptyVector.findIndex ()
+{
     besharp_rcrvs[besharp_rcsl]=-1
 }
-EmptyVector.findIndices () 
-{ 
+EmptyVector.findIndices ()
+{
     besharp_rcrvs[besharp_rcsl]=$this
 }
-EmptyVector.findLastIndex () 
-{ 
+EmptyVector.findLastIndex ()
+{
     besharp_rcrvs[besharp_rcsl]=-1
 }
-EmptyVector.hasIndex () 
-{ 
+EmptyVector.hasIndex ()
+{
     besharp_rcrvs[besharp_rcsl]=false
 }
-EmptyVector.indices () 
-{ 
+EmptyVector.indices ()
+{
     besharp_rcrvs[besharp_rcsl]=$this
 }
-EmptyVector.insertAt () 
-{ 
+EmptyVector.insertAt ()
+{
     besharp.runtime.error "You cannot insertAt!"
 }
-EmptyVector.insertAtManyIndices () 
-{ 
+EmptyVector.insertAtManyIndices ()
+{
     besharp.runtime.error "You cannot insertAtManyIndices!"
 }
-EmptyVector.insertManyAt () 
-{ 
+EmptyVector.insertManyAt ()
+{
     besharp.runtime.error "You cannot insertManyAt!"
 }
-EmptyVector.removeIndex () 
-{ 
+EmptyVector.removeIndex ()
+{
     besharp.runtime.error "You cannot removeIndex!"
 }
-EmptyVector.removeIndices () 
-{ 
+EmptyVector.removeIndices ()
+{
     besharp.runtime.error "You cannot removeIndices!"
 }
-EmptyVector.resize () 
-{ 
+EmptyVector.resize ()
+{
     besharp.runtime.error "You cannot resize!"
 }
-EmptyVector.reverse () 
-{ 
+EmptyVector.reverse ()
+{
     :
 }
-EmptyVector.rotate () 
-{ 
+EmptyVector.rotate ()
+{
     :
 }
-EmptyVector.set () 
-{ 
+EmptyVector.set ()
+{
     besharp.runtime.error "You cannot set!"
 }
-EmptyVector.setPlain () 
-{ 
+EmptyVector.setPlain ()
+{
     besharp.runtime.error "You cannot setPlain!"
 }
-EmptyVector.swapIndices () 
-{ 
+EmptyVector.swapIndices ()
+{
     besharp.runtime.error "You cannot swapIndices!"
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["AbstractImmutableCollection"]='true'
 besharp_oop_type_abstract["AbstractImmutableCollection"]='true'
 besharp_oop_type_is["AbstractImmutableCollection"]='class'
@@ -9187,50 +9255,50 @@ besharp_oop_type_AbstractImmutableCollection_method_is_calling_parent["shuffle"]
 besharp_oop_type_AbstractImmutableCollection_method_is_calling_this["shuffle"]=false
 
 fi
-if ${beshfile_section__code:-false}; then :; 
-AbstractImmutableCollection () 
-{ 
+if ${beshfile_section__code:-false}; then :;
+AbstractImmutableCollection ()
+{
     @parent
 }
-AbstractImmutableCollection.add () 
-{ 
+AbstractImmutableCollection.add ()
+{
     besharp.runtime.error "You cannot add!"
 }
-AbstractImmutableCollection.addMany () 
-{ 
+AbstractImmutableCollection.addMany ()
+{
     besharp.runtime.error "You cannot addMany!"
 }
-AbstractImmutableCollection.fill () 
-{ 
+AbstractImmutableCollection.fill ()
+{
     besharp.runtime.error "You cannot fill!"
 }
-AbstractImmutableCollection.remove () 
-{ 
+AbstractImmutableCollection.remove ()
+{
     besharp.runtime.error "You cannot remove!"
 }
-AbstractImmutableCollection.removeAll () 
-{ 
+AbstractImmutableCollection.removeAll ()
+{
     besharp.runtime.error "You cannot removeAll!"
 }
-AbstractImmutableCollection.removeMany () 
-{ 
+AbstractImmutableCollection.removeMany ()
+{
     besharp.runtime.error "You cannot removeMany!"
 }
-AbstractImmutableCollection.replace () 
-{ 
+AbstractImmutableCollection.replace ()
+{
     besharp.runtime.error "You cannot replace!"
 }
-AbstractImmutableCollection.replaceMany () 
-{ 
+AbstractImmutableCollection.replaceMany ()
+{
     besharp.runtime.error "You cannot replaceMany!"
 }
-AbstractImmutableCollection.shuffle () 
-{ 
+AbstractImmutableCollection.shuffle ()
+{
     besharp.runtime.error "You cannot shuffle!"
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["ImmutableList"]='true'
 besharp_oop_type_is["ImmutableList"]='class'
 besharp_oop_types["ImmutableList"]="ImmutableList"
@@ -9315,47 +9383,47 @@ besharp_oop_type_ImmutableList_method_is_calling_parent["swapIndices"]=false
 besharp_oop_type_ImmutableList_method_is_calling_this["swapIndices"]=false
 
 fi
-if ${beshfile_section__code:-false}; then :; 
-ImmutableList () 
-{ 
+if ${beshfile_section__code:-false}; then :;
+ImmutableList ()
+{
     @parent;
     eval "${this}=(\"\${@}\")"
 }
-ImmutableList.add () 
-{ 
+ImmutableList.add ()
+{
     besharp.runtime.error "You cannot add!"
 }
-ImmutableList.addMany () 
-{ 
+ImmutableList.addMany ()
+{
     besharp.runtime.error "You cannot addMany!"
 }
-ImmutableList.removeIndex () 
-{ 
+ImmutableList.removeIndex ()
+{
     besharp.runtime.error "You cannot removeIndex!"
 }
-ImmutableList.removeIndices () 
-{ 
+ImmutableList.removeIndices ()
+{
     besharp.runtime.error "You cannot removeIndices!"
 }
-ImmutableList.reverse () 
-{ 
+ImmutableList.reverse ()
+{
     besharp.runtime.error "You cannot reverse!"
 }
-ImmutableList.rotate () 
-{ 
+ImmutableList.rotate ()
+{
     besharp.runtime.error "You cannot rotate!"
 }
-ImmutableList.set () 
-{ 
+ImmutableList.set ()
+{
     besharp.runtime.error "You cannot set!"
 }
-ImmutableList.swapIndices () 
-{ 
+ImmutableList.swapIndices ()
+{
     besharp.runtime.error "You cannot swapIndices!"
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["ImmutableMap"]='true'
 besharp_oop_type_is["ImmutableMap"]='class'
 besharp_oop_types["ImmutableMap"]="ImmutableMap"
@@ -9466,9 +9534,9 @@ besharp_oop_type_ImmutableMap_method_is_calling_parent["swapKeys"]=false
 besharp_oop_type_ImmutableMap_method_is_calling_this["swapKeys"]=false
 
 fi
-if ${beshfile_section__code:-false}; then :; 
-ImmutableMap () 
-{ 
+if ${beshfile_section__code:-false}; then :;
+ImmutableMap ()
+{
     @parent;
     if (( $# == 0 )); then
         return;
@@ -9491,45 +9559,45 @@ ImmutableMap ()
         fi;
     done
 }
-ImmutableMap.findAllKeys () 
-{ 
+ImmutableMap.findAllKeys ()
+{
     besharp_rcrvs[besharp_rcsl]=$this
 }
-ImmutableMap.hasAllKeys () 
-{ 
+ImmutableMap.hasAllKeys ()
+{
     besharp_rcrvs[besharp_rcsl]=false
 }
-ImmutableMap.hasKey () 
-{ 
+ImmutableMap.hasKey ()
+{
     besharp_rcrvs[besharp_rcsl]=false
 }
-ImmutableMap.hasSomeKeys () 
-{ 
+ImmutableMap.hasSomeKeys ()
+{
     besharp_rcrvs[besharp_rcsl]=false
 }
-ImmutableMap.removeKey () 
-{ 
+ImmutableMap.removeKey ()
+{
     :
 }
-ImmutableMap.removeKeys () 
-{ 
+ImmutableMap.removeKeys ()
+{
     :
 }
-ImmutableMap.set () 
-{ 
+ImmutableMap.set ()
+{
     besharp.runtime.error "You cannot set!"
 }
-ImmutableMap.setPlainPairs () 
-{ 
+ImmutableMap.setPlainPairs ()
+{
     besharp.runtime.error "You cannot setPlainPairs!"
 }
-ImmutableMap.swapKeys () 
-{ 
+ImmutableMap.swapKeys ()
+{
     besharp.runtime.error "You cannot swapKeys!"
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["ImmutableSet"]='true'
 besharp_oop_type_is["ImmutableSet"]='class'
 besharp_oop_types["ImmutableSet"]="ImmutableSet"
@@ -9550,7 +9618,8 @@ declare -Ag besharp_oop_type_ImmutableSet_method_is_calling_parent
 declare -Ag besharp_oop_type_ImmutableSet_method_is_calling_this
 besharp_oop_type_ImmutableSet_methods['ImmutableSet']='ImmutableSet'
 besharp_oop_type_ImmutableSet_method_is_returning["ImmutableSet"]=false
-besharp_oop_type_ImmutableSet_method_body["ImmutableSet"]='    @parent;
+besharp_oop_type_ImmutableSet_method_body["ImmutableSet"]='    local objectId ;
+    @parent;
     local item;
     for item in "${@}";
     do
@@ -9626,13 +9695,14 @@ besharp_oop_type_ImmutableSet_method_is_calling_parent["shuffle"]=false
 besharp_oop_type_ImmutableSet_method_is_calling_this["shuffle"]=false
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 function __be__objectId() {
   "${@}"
   objectId="${besharp_rcrvs[besharp_rcsl + 1]}"
 }
-ImmutableSet () 
-{ 
+ImmutableSet ()
+{
+    local objectId;
     @parent;
     local item;
     for item in "${@}";
@@ -9641,45 +9711,45 @@ ImmutableSet ()
         eval "${this}[\"\${objectId}\"]=\"\${item}\"";
     done
 }
-ImmutableSet.add () 
-{ 
+ImmutableSet.add ()
+{
     besharp.runtime.error "You cannot add!"
 }
-ImmutableSet.addMany () 
-{ 
+ImmutableSet.addMany ()
+{
     besharp.runtime.error "You cannot addMany!"
 }
-ImmutableSet.fill () 
-{ 
+ImmutableSet.fill ()
+{
     besharp.runtime.error "You cannot fill!"
 }
-ImmutableSet.remove () 
-{ 
+ImmutableSet.remove ()
+{
     besharp.runtime.error "You cannot remove!"
 }
-ImmutableSet.removeAll () 
-{ 
+ImmutableSet.removeAll ()
+{
     besharp.runtime.error "You cannot removeAll!"
 }
-ImmutableSet.removeMany () 
-{ 
+ImmutableSet.removeMany ()
+{
     besharp.runtime.error "You cannot removeMany!"
 }
-ImmutableSet.replace () 
-{ 
+ImmutableSet.replace ()
+{
     besharp.runtime.error "You cannot replace!"
 }
-ImmutableSet.replaceMany () 
-{ 
+ImmutableSet.replaceMany ()
+{
     besharp.runtime.error "You cannot replaceMany!"
 }
-ImmutableSet.shuffle () 
-{ 
+ImmutableSet.shuffle ()
+{
     besharp.runtime.error "You cannot shuffle!"
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["ImmutableVector"]='true'
 besharp_oop_type_is["ImmutableVector"]='class'
 besharp_oop_types["ImmutableVector"]="ImmutableVector"
@@ -9799,67 +9869,67 @@ besharp_oop_type_ImmutableVector_method_is_calling_parent["swapIndices"]=false
 besharp_oop_type_ImmutableVector_method_is_calling_this["swapIndices"]=false
 
 fi
-if ${beshfile_section__code:-false}; then :; 
-ImmutableVector () 
-{ 
+if ${beshfile_section__code:-false}; then :;
+ImmutableVector ()
+{
     @parent;
     eval "${this}=(\"\${@}\")"
 }
-ImmutableVector.add () 
-{ 
+ImmutableVector.add ()
+{
     besharp.runtime.error "You cannot add!"
 }
-ImmutableVector.addMany () 
-{ 
+ImmutableVector.addMany ()
+{
     besharp.runtime.error "You cannot addMany!"
 }
-ImmutableVector.insertAt () 
-{ 
+ImmutableVector.insertAt ()
+{
     besharp.runtime.error "You cannot insertAt!"
 }
-ImmutableVector.insertAtManyIndices () 
-{ 
+ImmutableVector.insertAtManyIndices ()
+{
     besharp.runtime.error "You cannot insertAtManyIndices!"
 }
-ImmutableVector.insertManyAt () 
-{ 
+ImmutableVector.insertManyAt ()
+{
     besharp.runtime.error "You cannot insertManyAt!"
 }
-ImmutableVector.removeIndex () 
-{ 
+ImmutableVector.removeIndex ()
+{
     besharp.runtime.error "You cannot removeIndex!"
 }
-ImmutableVector.removeIndices () 
-{ 
+ImmutableVector.removeIndices ()
+{
     besharp.runtime.error "You cannot removeIndices!"
 }
-ImmutableVector.resize () 
-{ 
+ImmutableVector.resize ()
+{
     besharp.runtime.error "You cannot resize!"
 }
-ImmutableVector.reverse () 
-{ 
+ImmutableVector.reverse ()
+{
     besharp.runtime.error "You cannot reverse!"
 }
-ImmutableVector.rotate () 
-{ 
+ImmutableVector.rotate ()
+{
     besharp.runtime.error "You cannot rotate!"
 }
-ImmutableVector.set () 
-{ 
+ImmutableVector.set ()
+{
     besharp.runtime.error "You cannot set!"
 }
-ImmutableVector.setPlain () 
-{ 
+ImmutableVector.setPlain ()
+{
     besharp.runtime.error "You cannot setPlain!"
 }
-ImmutableVector.swapIndices () 
-{ 
+ImmutableVector.swapIndices ()
+{
     besharp.runtime.error "You cannot swapIndices!"
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["Collection"]='true'
 besharp_oop_type_is["Collection"]='interface'
 besharp_oop_types["Collection"]="Collection"
@@ -9874,7 +9944,7 @@ besharp_oop_type_Collection_methods['addMany']='addMany'
 besharp_oop_type_Collection_method_is_abstract["addMany"]='true'
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["Container"]='true'
 besharp_oop_type_is["Container"]='interface'
 besharp_oop_types["Container"]="Container"
@@ -9901,7 +9971,7 @@ besharp_oop_type_Container_methods['ownsItsItems']='ownsItsItems'
 besharp_oop_type_Container_method_is_abstract["ownsItsItems"]='true'
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["Iterable"]='true'
 besharp_oop_type_is["Iterable"]='interface'
 besharp_oop_types["Iterable"]="Iterable"
@@ -9917,7 +9987,7 @@ besharp_oop_type_Iterable_methods['iterationNext']='iterationNext'
 besharp_oop_type_Iterable_method_is_abstract["iterationNext"]='true'
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["IterableByKeys"]='true'
 besharp_oop_type_is["IterableByKeys"]='interface'
 besharp_oop_types["IterableByKeys"]="IterableByKeys"
@@ -9933,7 +10003,7 @@ besharp_oop_type_IterableByKeys_methods['hasKey']='hasKey'
 besharp_oop_type_IterableByKeys_method_is_abstract["hasKey"]='true'
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["List"]='true'
 besharp_oop_type_is["List"]='interface'
 besharp_oop_types["List"]="List"
@@ -9969,7 +10039,7 @@ besharp_oop_type_List_methods['swapIndices']='swapIndices'
 besharp_oop_type_List_method_is_abstract["swapIndices"]='true'
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["Map"]='true'
 besharp_oop_type_is["Map"]='interface'
 besharp_oop_types["Map"]="Map"
@@ -9999,7 +10069,7 @@ besharp_oop_type_Map_methods['swapKeys']='swapKeys'
 besharp_oop_type_Map_method_is_abstract["swapKeys"]='true'
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["MutableContainer"]='true'
 besharp_oop_type_is["MutableContainer"]='interface'
 besharp_oop_types["MutableContainer"]="MutableContainer"
@@ -10024,7 +10094,7 @@ besharp_oop_type_MutableContainer_methods['fill']='fill'
 besharp_oop_type_MutableContainer_method_is_abstract["fill"]='true'
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["PriorityQueue"]='true'
 besharp_oop_type_is["PriorityQueue"]='interface'
 besharp_oop_types["PriorityQueue"]="PriorityQueue"
@@ -10040,7 +10110,7 @@ besharp_oop_type_PriorityQueue_methods['addMany']='addMany'
 besharp_oop_type_PriorityQueue_method_is_abstract["addMany"]='true'
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["Sequence"]='true'
 besharp_oop_type_is["Sequence"]='interface'
 besharp_oop_types["Sequence"]="Sequence"
@@ -10054,7 +10124,7 @@ besharp_oop_type_Sequence_methods['pull']='pull'
 besharp_oop_type_Sequence_method_is_abstract["pull"]='true'
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["Set"]='true'
 besharp_oop_type_is["Set"]='interface'
 besharp_oop_types["Set"]="Set"
@@ -10066,7 +10136,7 @@ declare -Ag besharp_oop_type_Set_methods
 declare -Ag besharp_oop_type_Set_method_is_abstract
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["Vector"]='true'
 besharp_oop_type_is["Vector"]='interface'
 besharp_oop_types["Vector"]="Vector"
@@ -10089,7 +10159,7 @@ besharp_oop_type_Vector_methods['call']='call'
 besharp_oop_type_Vector_method_is_abstract["call"]='true'
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["Collections"]='true'
 besharp_oop_type_is["Collections"]='class'
 besharp_oop_types["Collections"]="Collections"
@@ -10208,7 +10278,8 @@ besharp_oop_type_Collections_method_is_calling_parent["has"]=false
 besharp_oop_type_Collections_method_is_calling_this["has"]=false
 besharp_oop_type_Collections_methods['hasAll']='hasAll'
 besharp_oop_type_Collections_method_is_returning["hasAll"]=true
-besharp_oop_type_Collections_method_body["hasAll"]='    local iterable="${1}";
+besharp_oop_type_Collections_method_body["hasAll"]='    local uniqueItems ;
+    local iterable="${1}";
     shift 1;
     if @is $iterable @a Container; then
         besharp.returningOf $iterable.hasAll "${@}";
@@ -10228,7 +10299,8 @@ besharp_oop_type_Collections_method_is_calling_parent["hasAll"]=false
 besharp_oop_type_Collections_method_is_calling_this["hasAll"]=false
 besharp_oop_type_Collections_methods['hasSome']='hasSome'
 besharp_oop_type_Collections_method_is_returning["hasSome"]=true
-besharp_oop_type_Collections_method_body["hasSome"]='    local iterable="${1}";
+besharp_oop_type_Collections_method_body["hasSome"]='    local subjectItems ;
+    local iterable="${1}";
     shift 1;
     if @is $iterable @a Container; then
         besharp.returningOf $iterable.hasSome "${@}";
@@ -10426,7 +10498,7 @@ besharp_oop_type_Collections_method_is_calling_parent["size"]=false
 besharp_oop_type_Collections_method_is_calling_this["size"]=false
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 function __be___this_empty() {
   "${@}"
   eval $this"_empty=\"\${besharp_rcrvs[besharp_rcsl + 1]}\""
@@ -10439,12 +10511,12 @@ function __be__subjectItems() {
   "${@}"
   subjectItems="${besharp_rcrvs[besharp_rcsl + 1]}"
 }
-Collections () 
-{ 
+Collections ()
+{
     __be___this_empty @new EmptySet
 }
-Collections.cloneTo () 
-{ 
+Collections.cloneTo ()
+{
     local targetContainer="${1}";
     local sourceIterable="${2}";
     if [[ "$( besharp.rtti.objectType "${sourceIterable}" )" == "$( besharp.rtti.objectType "${targetContainer}" )" ]]; then
@@ -10454,8 +10526,8 @@ Collections.cloneTo ()
     $targetContainer.removeAll;
     $this.copyTo $targetContainer $sourceIterable
 }
-Collections.copyTo () 
-{ 
+Collections.copyTo ()
+{
     local targetContainer="${1}";
     local sourceIterable="${2}";
     if @is $targetContainer @a Map; then
@@ -10483,8 +10555,8 @@ Collections.copyTo ()
     fi;
     besharp.runtime.error "Sorry pal. You will have to copy '${sourceIterable}' object by yourself! I don't know how to add things to '${targetContainer}' :( "
 }
-Collections.frequency () 
-{ 
+Collections.frequency ()
+{
     local iterable="${1}";
     local subjectItem="${2}";
     if @is $iterable @a Container; then
@@ -10500,8 +10572,8 @@ Collections.frequency ()
         besharp_rcrvs[besharp_rcsl]="${frequency}";
     fi
 }
-Collections.has () 
-{ 
+Collections.has ()
+{
     local iterable="${1}";
     local value="${2}";
     if @is $iterable @a Container; then
@@ -10517,8 +10589,9 @@ Collections.has ()
         besharp_rcrvs[besharp_rcsl]=false;
     fi
 }
-Collections.hasAll () 
-{ 
+Collections.hasAll ()
+{
+    local uniqueItems;
     local iterable="${1}";
     shift 1;
     if @is $iterable @a Container; then
@@ -10533,8 +10606,9 @@ Collections.hasAll ()
         @unset $uniqueItems;
     fi
 }
-Collections.hasSome () 
-{ 
+Collections.hasSome ()
+{
+    local subjectItems;
     local iterable="${1}";
     shift 1;
     if @is $iterable @a Container; then
@@ -10552,8 +10626,8 @@ Collections.hasSome ()
         @unset $subjectItems;
     fi
 }
-Collections.isEmpty () 
-{ 
+Collections.isEmpty ()
+{
     local iterable="${1}";
     if @is $iterable @a Container; then
         besharp.returningOf $iterable.isEmpty;
@@ -10565,8 +10639,8 @@ Collections.isEmpty ()
         fi;
     fi
 }
-Collections.isIntersecting () 
-{ 
+Collections.isIntersecting ()
+{
     local iterableA="${1}";
     local iterableB="${2}";
     if @is $iterableB Set; then
@@ -10595,8 +10669,8 @@ Collections.isIntersecting ()
     done;
     besharp_rcrvs[besharp_rcsl]=false
 }
-Collections.makeImmutableOf () 
-{ 
+Collections.makeImmutableOf ()
+{
     local iterable="${1}";
     if @is $iterable Set; then
         besharp.returningOf @sets.makeImmutableOf $iterable;
@@ -10628,8 +10702,8 @@ Collections.makeImmutableOf ()
         fi;
     fi
 }
-Collections.makeOf () 
-{ 
+Collections.makeOf ()
+{
     local iterable="${1}";
     if @is $iterable Set; then
         besharp.returningOf @sets.makeOf $iterable;
@@ -10661,29 +10735,29 @@ Collections.makeOf ()
         fi;
     fi
 }
-Collections.makePriorityQueue () 
-{ 
+Collections.makePriorityQueue ()
+{
     besharp.returningOf @new Heap
 }
-Collections.makeQueue () 
-{ 
+Collections.makeQueue ()
+{
     besharp.returningOf @new Queue
 }
-Collections.makeStack () 
-{ 
+Collections.makeStack ()
+{
     besharp.returningOf @new Stack
 }
-Collections.nCopies () 
-{ 
+Collections.nCopies ()
+{
     besharp.returningOf @vectors.nCopies "${@}"
 }
-Collections.single () 
-{ 
+Collections.single ()
+{
     local item="${1}";
     besharp.returningOf @new ImmutableVector "${item}"
 }
-Collections.size () 
-{ 
+Collections.size ()
+{
     local iterable="${1}";
     if @is $iterable @a Container; then
         besharp.returningOf $iterable.size;
@@ -10698,7 +10772,7 @@ Collections.size ()
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["Lists"]='true'
 besharp_oop_type_is["Lists"]='class'
 besharp_oop_types["Lists"]="Lists"
@@ -10745,7 +10819,8 @@ besharp_oop_type_Lists_method_is_calling_parent["cloneTo"]=false
 besharp_oop_type_Lists_method_is_calling_this["cloneTo"]=true
 besharp_oop_type_Lists_methods['copyTo']='copyTo'
 besharp_oop_type_Lists_method_is_returning["copyTo"]=true
-besharp_oop_type_Lists_method_body["copyTo"]='    local targetList="${1}";
+besharp_oop_type_Lists_method_body["copyTo"]='    local value ;
+    local targetList="${1}";
     local sourceIterable="${2}";
     if @is $sourceIterable @a PrimitiveObject; then
         if @is $sourceIterable @a List; then
@@ -10779,7 +10854,8 @@ besharp_oop_type_Lists_method_is_calling_parent["copyTo"]=false
 besharp_oop_type_Lists_method_is_calling_this["copyTo"]=false
 besharp_oop_type_Lists_methods['intersect']='intersect'
 besharp_oop_type_Lists_method_is_returning["intersect"]=true
-besharp_oop_type_Lists_method_body["intersect"]='    local first="${1}";
+besharp_oop_type_Lists_method_body["intersect"]='    local result ;
+    local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.intersectTo $result "${@}";
@@ -10790,7 +10866,8 @@ besharp_oop_type_Lists_method_is_calling_parent["intersect"]=false
 besharp_oop_type_Lists_method_is_calling_this["intersect"]=true
 besharp_oop_type_Lists_methods['intersectTo']='intersectTo'
 besharp_oop_type_Lists_method_is_returning["intersectTo"]=false
-besharp_oop_type_Lists_method_body["intersectTo"]='    local targetList="${1}";
+besharp_oop_type_Lists_method_body["intersectTo"]='    local targetValue ;
+    local targetList="${1}";
     shift 1;
     local targetIdx;
     while @iterate @of $targetList.indices @in targetIdx; do
@@ -10812,7 +10889,8 @@ besharp_oop_type_Lists_method_is_calling_parent["intersectTo"]=false
 besharp_oop_type_Lists_method_is_calling_this["intersectTo"]=false
 besharp_oop_type_Lists_methods['join']='join'
 besharp_oop_type_Lists_method_is_returning["join"]=true
-besharp_oop_type_Lists_method_body["join"]='    local first="${1}";
+besharp_oop_type_Lists_method_body["join"]='    local result ;
+    local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.joinTo $result "${@}";
@@ -10840,7 +10918,8 @@ besharp_oop_type_Lists_method_is_calling_parent["joinTo"]=false
 besharp_oop_type_Lists_method_is_calling_this["joinTo"]=false
 besharp_oop_type_Lists_methods['make']='make'
 besharp_oop_type_Lists_method_is_returning["make"]=true
-besharp_oop_type_Lists_method_body["make"]='    __be__list @new ArrayList;
+besharp_oop_type_Lists_method_body["make"]='    local list ;
+    __be__list @new ArrayList;
     $list.addMany @array "${@}";
     besharp_rcrvs[besharp_rcsl]=$list'
 besharp_oop_type_Lists_method_locals["make"]='local list'
@@ -10856,7 +10935,8 @@ besharp_oop_type_Lists_method_is_calling_parent["makeImmutable"]=false
 besharp_oop_type_Lists_method_is_calling_this["makeImmutable"]=false
 besharp_oop_type_Lists_methods['makeImmutableOf']='makeImmutableOf'
 besharp_oop_type_Lists_method_is_returning["makeImmutableOf"]=true
-besharp_oop_type_Lists_method_body["makeImmutableOf"]='    local iterable="${1}";
+besharp_oop_type_Lists_method_body["makeImmutableOf"]='    local immutable ;
+    local iterable="${1}";
     __be__immutable @new ImmutableList;
     $this.cloneTo $immutable $iterable;
     besharp_rcrvs[besharp_rcsl]=$immutable'
@@ -10866,7 +10946,8 @@ besharp_oop_type_Lists_method_is_calling_parent["makeImmutableOf"]=false
 besharp_oop_type_Lists_method_is_calling_this["makeImmutableOf"]=true
 besharp_oop_type_Lists_methods['makeOf']='makeOf'
 besharp_oop_type_Lists_method_is_returning["makeOf"]=true
-besharp_oop_type_Lists_method_body["makeOf"]='    local iterable="${1}";
+besharp_oop_type_Lists_method_body["makeOf"]='    local list value ;
+    local iterable="${1}";
     if @is $iterable @exact ArrayList; then
         besharp.returningOf @clone shallow $iterable;
         return;
@@ -10898,7 +10979,8 @@ besharp_oop_type_Lists_method_is_calling_parent["nCopies"]=false
 besharp_oop_type_Lists_method_is_calling_this["nCopies"]=false
 besharp_oop_type_Lists_methods['overlay']='overlay'
 besharp_oop_type_Lists_method_is_returning["overlay"]=true
-besharp_oop_type_Lists_method_body["overlay"]='    local first="${1}";
+besharp_oop_type_Lists_method_body["overlay"]='    local result ;
+    local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.overlayTo $result "${@}";
@@ -10930,7 +11012,8 @@ besharp_oop_type_Lists_method_is_calling_parent["single"]=false
 besharp_oop_type_Lists_method_is_calling_this["single"]=false
 besharp_oop_type_Lists_methods['slice']='slice'
 besharp_oop_type_Lists_method_is_returning["slice"]=true
-besharp_oop_type_Lists_method_body["slice"]='    local list="${1}";
+besharp_oop_type_Lists_method_body["slice"]='    local result ;
+    local list="${1}";
     local indexA="${2}";
     local indexB="${3}";
     __be__result @new ArrayList;
@@ -10942,7 +11025,8 @@ besharp_oop_type_Lists_method_is_calling_parent["slice"]=false
 besharp_oop_type_Lists_method_is_calling_this["slice"]=true
 besharp_oop_type_Lists_methods['sliceTo']='sliceTo'
 besharp_oop_type_Lists_method_is_returning["sliceTo"]=true
-besharp_oop_type_Lists_method_body["sliceTo"]='    local targetList="${1}";
+besharp_oop_type_Lists_method_body["sliceTo"]='    local sourceSize value ;
+    local targetList="${1}";
     local list="${2}";
     local indexA="${3}";
     local indexB="${4}";
@@ -11013,7 +11097,8 @@ besharp_oop_type_Lists_method_is_calling_parent["sliceTo"]=false
 besharp_oop_type_Lists_method_is_calling_this["sliceTo"]=false
 besharp_oop_type_Lists_methods['subtract']='subtract'
 besharp_oop_type_Lists_method_is_returning["subtract"]=true
-besharp_oop_type_Lists_method_body["subtract"]='    local first="${1}";
+besharp_oop_type_Lists_method_body["subtract"]='    local result ;
+    local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.subtractTo $result "${@}";
@@ -11024,7 +11109,8 @@ besharp_oop_type_Lists_method_is_calling_parent["subtract"]=false
 besharp_oop_type_Lists_method_is_calling_this["subtract"]=true
 besharp_oop_type_Lists_methods['subtractTo']='subtractTo'
 besharp_oop_type_Lists_method_is_returning["subtractTo"]=false
-besharp_oop_type_Lists_method_body["subtractTo"]='    local targetList="${1}";
+besharp_oop_type_Lists_method_body["subtractTo"]='    local targetValue ;
+    local targetList="${1}";
     shift 1;
     local targetIdx;
     while @iterate @of $targetList.indices @in targetIdx; do
@@ -11045,7 +11131,7 @@ besharp_oop_type_Lists_method_is_calling_parent["subtractTo"]=false
 besharp_oop_type_Lists_method_is_calling_this["subtractTo"]=false
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 function __be___this_empty() {
   "${@}"
   eval $this"_empty=\"\${besharp_rcrvs[besharp_rcsl + 1]}\""
@@ -11106,12 +11192,12 @@ function __be__targetValue() {
   "${@}"
   targetValue="${besharp_rcrvs[besharp_rcsl + 1]}"
 }
-Lists () 
-{ 
+Lists ()
+{
     __be___this_empty @new EmptyVector
 }
-Lists.cloneTo () 
-{ 
+Lists.cloneTo ()
+{
     local targetList="${1}";
     local sourceIterable="${2}";
     if [[ "$( besharp.rtti.objectType "${sourceIterable}" )" == "$( besharp.rtti.objectType "${targetList}" )" ]]; then
@@ -11121,8 +11207,9 @@ Lists.cloneTo ()
     $targetList.removeAll;
     $this.copyTo $targetList $sourceIterable
 }
-Lists.copyTo () 
-{ 
+Lists.copyTo ()
+{
+    local value;
     local targetList="${1}";
     local sourceIterable="${2}";
     if @is $sourceIterable @a PrimitiveObject; then
@@ -11151,16 +11238,18 @@ Lists.copyTo ()
     fi;
     $targetList.addMany $sourceIterable
 }
-Lists.intersect () 
-{ 
+Lists.intersect ()
+{
+    local result;
     local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.intersectTo $result "${@}";
     besharp_rcrvs[besharp_rcsl]=$result
 }
-Lists.intersectTo () 
-{ 
+Lists.intersectTo ()
+{
+    local targetValue;
     local targetList="${1}";
     shift 1;
     local targetIdx;
@@ -11177,16 +11266,17 @@ Lists.intersectTo ()
         done;
     done
 }
-Lists.join () 
-{ 
+Lists.join ()
+{
+    local result;
     local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.joinTo $result "${@}";
     besharp_rcrvs[besharp_rcsl]=$result
 }
-Lists.joinTo () 
-{ 
+Lists.joinTo ()
+{
     local targetList="${1}";
     shift 1;
     local iterable;
@@ -11199,25 +11289,28 @@ Lists.joinTo ()
         fi;
     done
 }
-Lists.make () 
-{ 
+Lists.make ()
+{
+    local list;
     __be__list @new ArrayList;
     $list.addMany @array "${@}";
     besharp_rcrvs[besharp_rcsl]=$list
 }
-Lists.makeImmutable () 
-{ 
+Lists.makeImmutable ()
+{
     besharp.returningOf @new ImmutableList "${@}"
 }
-Lists.makeImmutableOf () 
-{ 
+Lists.makeImmutableOf ()
+{
+    local immutable;
     local iterable="${1}";
     __be__immutable @new ImmutableList;
     $this.cloneTo $immutable $iterable;
     besharp_rcrvs[besharp_rcsl]=$immutable
 }
-Lists.makeOf () 
-{ 
+Lists.makeOf ()
+{
+    local list value;
     local iterable="${1}";
     if @is $iterable @exact ArrayList; then
         besharp.returningOf @clone shallow $iterable;
@@ -11236,20 +11329,21 @@ Lists.makeOf ()
     $list.addMany @iterable "${iterable}";
     besharp_rcrvs[besharp_rcsl]=$list
 }
-Lists.nCopies () 
-{ 
+Lists.nCopies ()
+{
     besharp.returningOf @vectors.nCopies "${@}"
 }
-Lists.overlay () 
-{ 
+Lists.overlay ()
+{
+    local result;
     local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.overlayTo $result "${@}";
     besharp_rcrvs[besharp_rcsl]=$result
 }
-Lists.overlayTo () 
-{ 
+Lists.overlayTo ()
+{
     local targetList="${1}";
     shift 1;
     local iterable;
@@ -11258,13 +11352,14 @@ Lists.overlayTo ()
         $this.copyTo $targetList $iterable;
     done
 }
-Lists.single () 
-{ 
+Lists.single ()
+{
     local item="${1}";
     besharp.returningOf @new ImmutableList "${item}"
 }
-Lists.slice () 
-{ 
+Lists.slice ()
+{
+    local result;
     local list="${1}";
     local indexA="${2}";
     local indexB="${3}";
@@ -11272,8 +11367,9 @@ Lists.slice ()
     $this.sliceTo $result "${@}";
     besharp_rcrvs[besharp_rcsl]=$result
 }
-Lists.sliceTo () 
-{ 
+Lists.sliceTo ()
+{
+    local sourceSize value;
     local targetList="${1}";
     local list="${2}";
     local indexA="${3}";
@@ -11338,16 +11434,18 @@ Lists.sliceTo ()
         fi;
     done
 }
-Lists.subtract () 
-{ 
+Lists.subtract ()
+{
+    local result;
     local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.subtractTo $result "${@}";
     besharp_rcrvs[besharp_rcsl]=$result
 }
-Lists.subtractTo () 
-{ 
+Lists.subtractTo ()
+{
+    local targetValue;
     local targetList="${1}";
     shift 1;
     local targetIdx;
@@ -11365,7 +11463,7 @@ Lists.subtractTo ()
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["Maps"]='true'
 besharp_oop_type_is["Maps"]='class'
 besharp_oop_types["Maps"]="Maps"
@@ -11412,7 +11510,8 @@ besharp_oop_type_Maps_method_is_calling_parent["cloneTo"]=false
 besharp_oop_type_Maps_method_is_calling_this["cloneTo"]=true
 besharp_oop_type_Maps_methods['copyTo']='copyTo'
 besharp_oop_type_Maps_method_is_returning["copyTo"]=true
-besharp_oop_type_Maps_method_body["copyTo"]='    local targetMap="${1}";
+besharp_oop_type_Maps_method_body["copyTo"]='    local value ;
+    local targetMap="${1}";
     local sourceIterable="${2}";
     if @is $sourceIterable @a PrimitiveObject; then
         local source;
@@ -11436,7 +11535,8 @@ besharp_oop_type_Maps_method_is_calling_parent["copyTo"]=false
 besharp_oop_type_Maps_method_is_calling_this["copyTo"]=false
 besharp_oop_type_Maps_methods['intersect']='intersect'
 besharp_oop_type_Maps_method_is_returning["intersect"]=true
-besharp_oop_type_Maps_method_body["intersect"]='    local first="${1}";
+besharp_oop_type_Maps_method_body["intersect"]='    local result ;
+    local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.intersectTo $result "${@}";
@@ -11447,7 +11547,8 @@ besharp_oop_type_Maps_method_is_calling_parent["intersect"]=false
 besharp_oop_type_Maps_method_is_calling_this["intersect"]=true
 besharp_oop_type_Maps_methods['intersectKeys']='intersectKeys'
 besharp_oop_type_Maps_method_is_returning["intersectKeys"]=true
-besharp_oop_type_Maps_method_body["intersectKeys"]='    local first="${1}";
+besharp_oop_type_Maps_method_body["intersectKeys"]='    local result ;
+    local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.intersectKeysTo $result "${@}";
@@ -11477,7 +11578,8 @@ besharp_oop_type_Maps_method_is_calling_parent["intersectKeysTo"]=false
 besharp_oop_type_Maps_method_is_calling_this["intersectKeysTo"]=false
 besharp_oop_type_Maps_methods['intersectTo']='intersectTo'
 besharp_oop_type_Maps_method_is_returning["intersectTo"]=true
-besharp_oop_type_Maps_method_body["intersectTo"]='    local targetMap="${1}";
+besharp_oop_type_Maps_method_body["intersectTo"]='    local iterableValue targetValue ;
+    local targetMap="${1}";
     shift 1;
     local allPrimitiveMaps=true;
     for iterableByKeys in "${@}";
@@ -11523,7 +11625,8 @@ besharp_oop_type_Maps_method_is_calling_parent["intersectTo"]=false
 besharp_oop_type_Maps_method_is_calling_this["intersectTo"]=false
 besharp_oop_type_Maps_methods['intersectValues']='intersectValues'
 besharp_oop_type_Maps_method_is_returning["intersectValues"]=true
-besharp_oop_type_Maps_method_body["intersectValues"]='    local first="${1}";
+besharp_oop_type_Maps_method_body["intersectValues"]='    local result ;
+    local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.intersectValuesTo $result "${@}";
@@ -11534,7 +11637,8 @@ besharp_oop_type_Maps_method_is_calling_parent["intersectValues"]=false
 besharp_oop_type_Maps_method_is_calling_this["intersectValues"]=true
 besharp_oop_type_Maps_methods['intersectValuesTo']='intersectValuesTo'
 besharp_oop_type_Maps_method_is_returning["intersectValuesTo"]=false
-besharp_oop_type_Maps_method_body["intersectValuesTo"]='    local targetMap="${1}";
+besharp_oop_type_Maps_method_body["intersectValuesTo"]='    local targetValue ;
+    local targetMap="${1}";
     shift 1;
     local targetKey;
     local targetValue;
@@ -11556,7 +11660,8 @@ besharp_oop_type_Maps_method_is_calling_parent["intersectValuesTo"]=false
 besharp_oop_type_Maps_method_is_calling_this["intersectValuesTo"]=false
 besharp_oop_type_Maps_methods['make']='make'
 besharp_oop_type_Maps_method_is_returning["make"]=true
-besharp_oop_type_Maps_method_body["make"]='    __be__map @new ArrayMap;
+besharp_oop_type_Maps_method_body["make"]='    local map ;
+    __be__map @new ArrayMap;
     $map.setPlainPairs "${@}";
     besharp_rcrvs[besharp_rcsl]=$map'
 besharp_oop_type_Maps_method_locals["make"]='local map'
@@ -11572,7 +11677,8 @@ besharp_oop_type_Maps_method_is_calling_parent["makeImmutable"]=false
 besharp_oop_type_Maps_method_is_calling_this["makeImmutable"]=false
 besharp_oop_type_Maps_methods['makeImmutableOf']='makeImmutableOf'
 besharp_oop_type_Maps_method_is_returning["makeImmutableOf"]=true
-besharp_oop_type_Maps_method_body["makeImmutableOf"]='    local iterable="${1}";
+besharp_oop_type_Maps_method_body["makeImmutableOf"]='    local immutable ;
+    local iterable="${1}";
     __be__immutable @new ImmutableMap;
     $this.cloneTo $immutable $iterable;
     besharp_rcrvs[besharp_rcsl]=$immutable'
@@ -11582,7 +11688,8 @@ besharp_oop_type_Maps_method_is_calling_parent["makeImmutableOf"]=false
 besharp_oop_type_Maps_method_is_calling_this["makeImmutableOf"]=true
 besharp_oop_type_Maps_methods['makeOf']='makeOf'
 besharp_oop_type_Maps_method_is_returning["makeOf"]=true
-besharp_oop_type_Maps_method_body["makeOf"]='    local iterableByKeys="${1}";
+besharp_oop_type_Maps_method_body["makeOf"]='    local map value ;
+    local iterableByKeys="${1}";
     __be__map @new ArrayMap;
     local key;
     while @iterate @of $iterableByKeys.keys @in key; do
@@ -11598,7 +11705,8 @@ besharp_oop_type_Maps_method_is_calling_parent["makeOf"]=false
 besharp_oop_type_Maps_method_is_calling_this["makeOf"]=false
 besharp_oop_type_Maps_methods['overlay']='overlay'
 besharp_oop_type_Maps_method_is_returning["overlay"]=true
-besharp_oop_type_Maps_method_body["overlay"]='    local first="${1}";
+besharp_oop_type_Maps_method_body["overlay"]='    local result ;
+    local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.overlayTo $result "${@}";
@@ -11631,7 +11739,8 @@ besharp_oop_type_Maps_method_is_calling_parent["single"]=false
 besharp_oop_type_Maps_method_is_calling_this["single"]=false
 besharp_oop_type_Maps_methods['subtract']='subtract'
 besharp_oop_type_Maps_method_is_returning["subtract"]=true
-besharp_oop_type_Maps_method_body["subtract"]='    local first="${1}";
+besharp_oop_type_Maps_method_body["subtract"]='    local result ;
+    local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.subtractTo $result "${@}";
@@ -11642,7 +11751,8 @@ besharp_oop_type_Maps_method_is_calling_parent["subtract"]=false
 besharp_oop_type_Maps_method_is_calling_this["subtract"]=true
 besharp_oop_type_Maps_methods['subtractKeys']='subtractKeys'
 besharp_oop_type_Maps_method_is_returning["subtractKeys"]=true
-besharp_oop_type_Maps_method_body["subtractKeys"]='    local first="${1}";
+besharp_oop_type_Maps_method_body["subtractKeys"]='    local result ;
+    local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.subtractKeysTo $result "${@}";
@@ -11672,7 +11782,8 @@ besharp_oop_type_Maps_method_is_calling_parent["subtractKeysTo"]=false
 besharp_oop_type_Maps_method_is_calling_this["subtractKeysTo"]=false
 besharp_oop_type_Maps_methods['subtractTo']='subtractTo'
 besharp_oop_type_Maps_method_is_returning["subtractTo"]=true
-besharp_oop_type_Maps_method_body["subtractTo"]='    local targetMap="${1}";
+besharp_oop_type_Maps_method_body["subtractTo"]='    local iterableValue targetValue ;
+    local targetMap="${1}";
     shift 1;
     local iterableByKeys;
     local allPrimitiveMaps=true;
@@ -11715,7 +11826,8 @@ besharp_oop_type_Maps_method_is_calling_parent["subtractTo"]=false
 besharp_oop_type_Maps_method_is_calling_this["subtractTo"]=false
 besharp_oop_type_Maps_methods['subtractValues']='subtractValues'
 besharp_oop_type_Maps_method_is_returning["subtractValues"]=true
-besharp_oop_type_Maps_method_body["subtractValues"]='    local first="${1}";
+besharp_oop_type_Maps_method_body["subtractValues"]='    local result ;
+    local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.subtractValuesTo $result "${@}";
@@ -11726,7 +11838,8 @@ besharp_oop_type_Maps_method_is_calling_parent["subtractValues"]=false
 besharp_oop_type_Maps_method_is_calling_this["subtractValues"]=true
 besharp_oop_type_Maps_methods['subtractValuesTo']='subtractValuesTo'
 besharp_oop_type_Maps_method_is_returning["subtractValuesTo"]=false
-besharp_oop_type_Maps_method_body["subtractValuesTo"]='    local targetMap="${1}";
+besharp_oop_type_Maps_method_body["subtractValuesTo"]='    local targetValue ;
+    local targetMap="${1}";
     shift 1;
     local targetKey;
     while @iterate @of $targetMap.keys @in targetKey; do
@@ -11747,7 +11860,7 @@ besharp_oop_type_Maps_method_is_calling_parent["subtractValuesTo"]=false
 besharp_oop_type_Maps_method_is_calling_this["subtractValuesTo"]=false
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 function __be___this_empty() {
   "${@}"
   eval $this"_empty=\"\${besharp_rcrvs[besharp_rcsl + 1]}\""
@@ -11824,12 +11937,12 @@ function __be__targetValue() {
   "${@}"
   targetValue="${besharp_rcrvs[besharp_rcsl + 1]}"
 }
-Maps () 
-{ 
+Maps ()
+{
     __be___this_empty @new EmptyMap
 }
-Maps.cloneTo () 
-{ 
+Maps.cloneTo ()
+{
     local targetMap="${1}";
     local sourceIterable="${2}";
     if [[ "$( besharp.rtti.objectType "${sourceIterable}" )" == "$( besharp.rtti.objectType "${targetMap}" )" ]]; then
@@ -11839,8 +11952,9 @@ Maps.cloneTo ()
     $targetMap.removeAll;
     $this.copyTo $targetMap $sourceIterable
 }
-Maps.copyTo () 
-{ 
+Maps.copyTo ()
+{
+    local value;
     local targetMap="${1}";
     local sourceIterable="${2}";
     if @is $sourceIterable @a PrimitiveObject; then
@@ -11859,24 +11973,26 @@ Maps.copyTo ()
         $targetMap.set "${key}" "${value}";
     done
 }
-Maps.intersect () 
-{ 
+Maps.intersect ()
+{
+    local result;
     local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.intersectTo $result "${@}";
     besharp_rcrvs[besharp_rcsl]=$result
 }
-Maps.intersectKeys () 
-{ 
+Maps.intersectKeys ()
+{
+    local result;
     local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.intersectKeysTo $result "${@}";
     besharp_rcrvs[besharp_rcsl]=$result
 }
-Maps.intersectKeysTo () 
-{ 
+Maps.intersectKeysTo ()
+{
     local targetMap="${1}";
     shift 1;
     local targetKey;
@@ -11891,8 +12007,9 @@ Maps.intersectKeysTo ()
         done;
     done
 }
-Maps.intersectTo () 
-{ 
+Maps.intersectTo ()
+{
+    local iterableValue targetValue;
     local targetMap="${1}";
     shift 1;
     local allPrimitiveMaps=true;
@@ -11932,16 +12049,18 @@ Maps.intersectTo ()
         done;
     done
 }
-Maps.intersectValues () 
-{ 
+Maps.intersectValues ()
+{
+    local result;
     local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.intersectValuesTo $result "${@}";
     besharp_rcrvs[besharp_rcsl]=$result
 }
-Maps.intersectValuesTo () 
-{ 
+Maps.intersectValuesTo ()
+{
+    local targetValue;
     local targetMap="${1}";
     shift 1;
     local targetKey;
@@ -11958,25 +12077,28 @@ Maps.intersectValuesTo ()
         done;
     done
 }
-Maps.make () 
-{ 
+Maps.make ()
+{
+    local map;
     __be__map @new ArrayMap;
     $map.setPlainPairs "${@}";
     besharp_rcrvs[besharp_rcsl]=$map
 }
-Maps.makeImmutable () 
-{ 
+Maps.makeImmutable ()
+{
     besharp.returningOf @new ImmutableMap "${@}"
 }
-Maps.makeImmutableOf () 
-{ 
+Maps.makeImmutableOf ()
+{
+    local immutable;
     local iterable="${1}";
     __be__immutable @new ImmutableMap;
     $this.cloneTo $immutable $iterable;
     besharp_rcrvs[besharp_rcsl]=$immutable
 }
-Maps.makeOf () 
-{ 
+Maps.makeOf ()
+{
+    local map value;
     local iterableByKeys="${1}";
     __be__map @new ArrayMap;
     local key;
@@ -11986,16 +12108,17 @@ Maps.makeOf ()
     done;
     besharp_rcrvs[besharp_rcsl]=$map
 }
-Maps.overlay () 
-{ 
+Maps.overlay ()
+{
+    local result;
     local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.overlayTo $result "${@}";
     besharp_rcrvs[besharp_rcsl]=$result
 }
-Maps.overlayTo () 
-{ 
+Maps.overlayTo ()
+{
     local targetMap="${1}";
     shift 1;
     local iterableByKeys;
@@ -12004,30 +12127,32 @@ Maps.overlayTo ()
         $this.copyTo $targetMap $iterableByKeys;
     done
 }
-Maps.single () 
-{ 
+Maps.single ()
+{
     local key="${1}";
     local value="${2}";
     besharp.returningOf @new ImmutableMap "${key}" "${value}"
 }
-Maps.subtract () 
-{ 
+Maps.subtract ()
+{
+    local result;
     local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.subtractTo $result "${@}";
     besharp_rcrvs[besharp_rcsl]=$result
 }
-Maps.subtractKeys () 
-{ 
+Maps.subtractKeys ()
+{
+    local result;
     local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.subtractKeysTo $result "${@}";
     besharp_rcrvs[besharp_rcsl]=$result
 }
-Maps.subtractKeysTo () 
-{ 
+Maps.subtractKeysTo ()
+{
     local targetMap="${1}";
     shift 1;
     local targetKey;
@@ -12042,8 +12167,9 @@ Maps.subtractKeysTo ()
         done;
     done
 }
-Maps.subtractTo () 
-{ 
+Maps.subtractTo ()
+{
+    local iterableValue targetValue;
     local targetMap="${1}";
     shift 1;
     local iterableByKeys;
@@ -12080,16 +12206,18 @@ Maps.subtractTo ()
         done;
     done
 }
-Maps.subtractValues () 
-{ 
+Maps.subtractValues ()
+{
+    local result;
     local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.subtractValuesTo $result "${@}";
     besharp_rcrvs[besharp_rcsl]=$result
 }
-Maps.subtractValuesTo () 
-{ 
+Maps.subtractValuesTo ()
+{
+    local targetValue;
     local targetMap="${1}";
     shift 1;
     local targetKey;
@@ -12107,7 +12235,7 @@ Maps.subtractValuesTo ()
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["Sets"]='true'
 besharp_oop_type_is["Sets"]='class'
 besharp_oop_types["Sets"]="Sets"
@@ -12163,7 +12291,8 @@ besharp_oop_type_Sets_method_is_calling_parent["copyTo"]=false
 besharp_oop_type_Sets_method_is_calling_this["copyTo"]=false
 besharp_oop_type_Sets_methods['intersect']='intersect'
 besharp_oop_type_Sets_method_is_returning["intersect"]=true
-besharp_oop_type_Sets_method_body["intersect"]='    local first="${1}";
+besharp_oop_type_Sets_method_body["intersect"]='    local result ;
+    local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.intersectTo $result "${@}";
@@ -12174,7 +12303,8 @@ besharp_oop_type_Sets_method_is_calling_parent["intersect"]=false
 besharp_oop_type_Sets_method_is_calling_this["intersect"]=true
 besharp_oop_type_Sets_methods['intersectTo']='intersectTo'
 besharp_oop_type_Sets_method_is_returning["intersectTo"]=true
-besharp_oop_type_Sets_method_body["intersectTo"]='    local targetSet="${1}";
+besharp_oop_type_Sets_method_body["intersectTo"]='    local objectId ;
+    local targetSet="${1}";
     shift 1;
     local allPrimitiveSets=true;
     for iterable in "${@}";
@@ -12232,7 +12362,8 @@ besharp_oop_type_Sets_method_is_calling_parent["intersectTo"]=false
 besharp_oop_type_Sets_method_is_calling_this["intersectTo"]=false
 besharp_oop_type_Sets_methods['join']='join'
 besharp_oop_type_Sets_method_is_returning["join"]=true
-besharp_oop_type_Sets_method_body["join"]='    local first="${1}";
+besharp_oop_type_Sets_method_body["join"]='    local result ;
+    local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.joinTo $result "${@}";
@@ -12266,7 +12397,8 @@ besharp_oop_type_Sets_method_is_calling_parent["joinTo"]=false
 besharp_oop_type_Sets_method_is_calling_this["joinTo"]=false
 besharp_oop_type_Sets_methods['make']='make'
 besharp_oop_type_Sets_method_is_returning["make"]=true
-besharp_oop_type_Sets_method_body["make"]='    __be__set @new ArraySet;
+besharp_oop_type_Sets_method_body["make"]='    local set ;
+    __be__set @new ArraySet;
     $set.addMany @array "${@}";
     besharp_rcrvs[besharp_rcsl]=$set'
 besharp_oop_type_Sets_method_locals["make"]='local set'
@@ -12295,7 +12427,8 @@ besharp_oop_type_Sets_method_is_calling_parent["makeImmutableOf"]=false
 besharp_oop_type_Sets_method_is_calling_this["makeImmutableOf"]=false
 besharp_oop_type_Sets_methods['makeOf']='makeOf'
 besharp_oop_type_Sets_method_is_returning["makeOf"]=true
-besharp_oop_type_Sets_method_body["makeOf"]='    local iterable="${1}";
+besharp_oop_type_Sets_method_body["makeOf"]='    local set ;
+    local iterable="${1}";
     __be__set @new ArraySet;
     $set.addMany @iterable "${iterable}";
     besharp_rcrvs[besharp_rcsl]=$set'
@@ -12313,7 +12446,8 @@ besharp_oop_type_Sets_method_is_calling_parent["single"]=false
 besharp_oop_type_Sets_method_is_calling_this["single"]=false
 besharp_oop_type_Sets_methods['subtract']='subtract'
 besharp_oop_type_Sets_method_is_returning["subtract"]=true
-besharp_oop_type_Sets_method_body["subtract"]='    local first="${1}";
+besharp_oop_type_Sets_method_body["subtract"]='    local result ;
+    local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.subtractTo $result "${@}";
@@ -12324,7 +12458,8 @@ besharp_oop_type_Sets_method_is_calling_parent["subtract"]=false
 besharp_oop_type_Sets_method_is_calling_this["subtract"]=true
 besharp_oop_type_Sets_methods['subtractTo']='subtractTo'
 besharp_oop_type_Sets_method_is_returning["subtractTo"]=true
-besharp_oop_type_Sets_method_body["subtractTo"]='    local targetSet="${1}";
+besharp_oop_type_Sets_method_body["subtractTo"]='    local objectId ;
+    local targetSet="${1}";
     shift 1;
     local allPrimitiveSets=true;
     for iterable in "${@}";
@@ -12382,7 +12517,7 @@ besharp_oop_type_Sets_method_is_calling_parent["subtractTo"]=false
 besharp_oop_type_Sets_method_is_calling_this["subtractTo"]=false
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 function __be___this_empty() {
   "${@}"
   eval $this"_empty=\"\${besharp_rcrvs[besharp_rcsl + 1]}\""
@@ -12415,12 +12550,12 @@ function __be__objectId() {
   "${@}"
   objectId="${besharp_rcrvs[besharp_rcsl + 1]}"
 }
-Sets () 
-{ 
+Sets ()
+{
     __be___this_empty @new EmptySet
 }
-Sets.cloneTo () 
-{ 
+Sets.cloneTo ()
+{
     local targetSet="${1}";
     local sourceIterable="${2}";
     if [[ "$( besharp.rtti.objectType "${sourceIterable}" )" == "$( besharp.rtti.objectType "${targetSet}" )" ]]; then
@@ -12430,22 +12565,24 @@ Sets.cloneTo ()
     $targetSet.removeAll;
     $targetSet.addMany $sourceIterable
 }
-Sets.copyTo () 
-{ 
+Sets.copyTo ()
+{
     local targetSet="${1}";
     local sourceIterable="${2}";
     $targetSet.addMany $sourceIterable
 }
-Sets.intersect () 
-{ 
+Sets.intersect ()
+{
+    local result;
     local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.intersectTo $result "${@}";
     besharp_rcrvs[besharp_rcsl]=$result
 }
-Sets.intersectTo () 
-{ 
+Sets.intersectTo ()
+{
+    local objectId;
     local targetSet="${1}";
     shift 1;
     local allPrimitiveSets=true;
@@ -12497,16 +12634,17 @@ Sets.intersectTo ()
         done;
     done
 }
-Sets.join () 
-{ 
+Sets.join ()
+{
+    local result;
     local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.joinTo $result "${@}";
     besharp_rcrvs[besharp_rcsl]=$result
 }
-Sets.joinTo () 
-{ 
+Sets.joinTo ()
+{
     local targetSet="${1}";
     shift 1;
     local iterable;
@@ -12525,18 +12663,19 @@ Sets.joinTo ()
         fi;
     done
 }
-Sets.make () 
-{ 
+Sets.make ()
+{
+    local set;
     __be__set @new ArraySet;
     $set.addMany @array "${@}";
     besharp_rcrvs[besharp_rcsl]=$set
 }
-Sets.makeImmutable () 
-{ 
+Sets.makeImmutable ()
+{
     besharp.returningOf @new ImmutableSet "${@}"
 }
-Sets.makeImmutableOf () 
-{ 
+Sets.makeImmutableOf ()
+{
     local iterable="${1}";
     local items=();
     local item;
@@ -12545,28 +12684,31 @@ Sets.makeImmutableOf ()
     done;
     besharp.returningOf @new ImmutableSet "${items[@]}"
 }
-Sets.makeOf () 
-{ 
+Sets.makeOf ()
+{
+    local set;
     local iterable="${1}";
     __be__set @new ArraySet;
     $set.addMany @iterable "${iterable}";
     besharp_rcrvs[besharp_rcsl]=$set
 }
-Sets.single () 
-{ 
+Sets.single ()
+{
     local item="${1}";
     besharp.returningOf @new ImmutableSet "${item}"
 }
-Sets.subtract () 
-{ 
+Sets.subtract ()
+{
+    local result;
     local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.subtractTo $result "${@}";
     besharp_rcrvs[besharp_rcsl]=$result
 }
-Sets.subtractTo () 
-{ 
+Sets.subtractTo ()
+{
+    local objectId;
     local targetSet="${1}";
     shift 1;
     local allPrimitiveSets=true;
@@ -12620,7 +12762,7 @@ Sets.subtractTo ()
 }
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_internal["Vectors"]='true'
 besharp_oop_type_is["Vectors"]='class'
 besharp_oop_types["Vectors"]="Vectors"
@@ -12680,7 +12822,8 @@ besharp_oop_type_Vectors_method_is_calling_parent["copyTo"]=false
 besharp_oop_type_Vectors_method_is_calling_this["copyTo"]=false
 besharp_oop_type_Vectors_methods['intersect']='intersect'
 besharp_oop_type_Vectors_method_is_returning["intersect"]=true
-besharp_oop_type_Vectors_method_body["intersect"]='    local first="${1}";
+besharp_oop_type_Vectors_method_body["intersect"]='    local result ;
+    local first="${1}";
     shift 1;
     __be__result @new ArrayVector;
     local targetValue;
@@ -12702,7 +12845,8 @@ besharp_oop_type_Vectors_method_is_calling_parent["intersect"]=false
 besharp_oop_type_Vectors_method_is_calling_this["intersect"]=false
 besharp_oop_type_Vectors_methods['intersectTo']='intersectTo'
 besharp_oop_type_Vectors_method_is_returning["intersectTo"]=false
-besharp_oop_type_Vectors_method_body["intersectTo"]='    local targetVector="${1}";
+besharp_oop_type_Vectors_method_body["intersectTo"]='    local sourceSize targetValue ;
+    local targetVector="${1}";
     shift 1;
     local i;
     local targetValue;
@@ -12728,7 +12872,8 @@ besharp_oop_type_Vectors_method_is_calling_parent["intersectTo"]=false
 besharp_oop_type_Vectors_method_is_calling_this["intersectTo"]=false
 besharp_oop_type_Vectors_methods['join']='join'
 besharp_oop_type_Vectors_method_is_returning["join"]=true
-besharp_oop_type_Vectors_method_body["join"]='    local first="${1}";
+besharp_oop_type_Vectors_method_body["join"]='    local result ;
+    local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.joinTo $result "${@}";
@@ -12756,7 +12901,8 @@ besharp_oop_type_Vectors_method_is_calling_parent["joinTo"]=false
 besharp_oop_type_Vectors_method_is_calling_this["joinTo"]=false
 besharp_oop_type_Vectors_methods['make']='make'
 besharp_oop_type_Vectors_method_is_returning["make"]=true
-besharp_oop_type_Vectors_method_body["make"]='    __be__vector @new ArrayVector;
+besharp_oop_type_Vectors_method_body["make"]='    local vector ;
+    __be__vector @new ArrayVector;
     $vector.setPlain "${@}";
     besharp_rcrvs[besharp_rcsl]=$vector'
 besharp_oop_type_Vectors_method_locals["make"]='local vector'
@@ -12772,7 +12918,8 @@ besharp_oop_type_Vectors_method_is_calling_parent["makeImmutable"]=false
 besharp_oop_type_Vectors_method_is_calling_this["makeImmutable"]=false
 besharp_oop_type_Vectors_methods['makeImmutableOf']='makeImmutableOf'
 besharp_oop_type_Vectors_method_is_returning["makeImmutableOf"]=true
-besharp_oop_type_Vectors_method_body["makeImmutableOf"]='    local iterable="${1}";
+besharp_oop_type_Vectors_method_body["makeImmutableOf"]='    local immutable ;
+    local iterable="${1}";
     __be__immutable @new ImmutableVector;
     $this.cloneTo $immutable $iterable;
     besharp_rcrvs[besharp_rcsl]=$immutable'
@@ -12782,7 +12929,8 @@ besharp_oop_type_Vectors_method_is_calling_parent["makeImmutableOf"]=false
 besharp_oop_type_Vectors_method_is_calling_this["makeImmutableOf"]=true
 besharp_oop_type_Vectors_methods['makeOf']='makeOf'
 besharp_oop_type_Vectors_method_is_returning["makeOf"]=true
-besharp_oop_type_Vectors_method_body["makeOf"]='    local iterable="${1}";
+besharp_oop_type_Vectors_method_body["makeOf"]='    local vector ;
+    local iterable="${1}";
     if @is $iterable @exact ArrayVector; then
         besharp.returningOf @clone shallow $iterable;
         return;
@@ -12821,7 +12969,8 @@ besharp_oop_type_Vectors_method_is_calling_parent["single"]=false
 besharp_oop_type_Vectors_method_is_calling_this["single"]=false
 besharp_oop_type_Vectors_methods['slice']='slice'
 besharp_oop_type_Vectors_method_is_returning["slice"]=true
-besharp_oop_type_Vectors_method_body["slice"]='    local list="${1}";
+besharp_oop_type_Vectors_method_body["slice"]='    local result ;
+    local list="${1}";
     local indexA="${2}";
     local indexB="${3}";
     __be__result @new ArrayVector;
@@ -12840,7 +12989,8 @@ besharp_oop_type_Vectors_method_is_calling_parent["sliceTo"]=false
 besharp_oop_type_Vectors_method_is_calling_this["sliceTo"]=false
 besharp_oop_type_Vectors_methods['subtract']='subtract'
 besharp_oop_type_Vectors_method_is_returning["subtract"]=true
-besharp_oop_type_Vectors_method_body["subtract"]='    local first="${1}";
+besharp_oop_type_Vectors_method_body["subtract"]='    local result ;
+    local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.subtractTo $result "${@}";
@@ -12851,7 +13001,8 @@ besharp_oop_type_Vectors_method_is_calling_parent["subtract"]=false
 besharp_oop_type_Vectors_method_is_calling_this["subtract"]=true
 besharp_oop_type_Vectors_methods['subtractTo']='subtractTo'
 besharp_oop_type_Vectors_method_is_returning["subtractTo"]=false
-besharp_oop_type_Vectors_method_body["subtractTo"]='    local targetVector="${1}";
+besharp_oop_type_Vectors_method_body["subtractTo"]='    local sourceSize targetValue ;
+    local targetVector="${1}";
     shift 1;
     local i;
     local targetValue;
@@ -12877,7 +13028,7 @@ besharp_oop_type_Vectors_method_is_calling_parent["subtractTo"]=false
 besharp_oop_type_Vectors_method_is_calling_this["subtractTo"]=false
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 function __be___this_empty() {
   "${@}"
   eval $this"_empty=\"\${besharp_rcrvs[besharp_rcsl + 1]}\""
@@ -12926,12 +13077,12 @@ function __be__targetValue() {
   "${@}"
   targetValue="${besharp_rcrvs[besharp_rcsl + 1]}"
 }
-Vectors () 
-{ 
+Vectors ()
+{
     __be___this_empty @new EmptyVector
 }
-Vectors.cloneTo () 
-{ 
+Vectors.cloneTo ()
+{
     local targetVector="${1}";
     local sourceIterable="${2}";
     if [[ "$( besharp.rtti.objectType "${sourceIterable}" )" == "$( besharp.rtti.objectType "${targetVector}" )" ]]; then
@@ -12941,8 +13092,8 @@ Vectors.cloneTo ()
     $targetVector.removeAll;
     $this.copyTo $targetVector $sourceIterable
 }
-Vectors.copyTo () 
-{ 
+Vectors.copyTo ()
+{
     local targetVector="${1}";
     local sourceIterable="${2}";
     if @is $sourceIterable @a PrimitiveObject; then
@@ -12951,8 +13102,9 @@ Vectors.copyTo ()
     fi;
     $targetVector.addMany $sourceIterable
 }
-Vectors.intersect () 
-{ 
+Vectors.intersect ()
+{
+    local result;
     local first="${1}";
     shift 1;
     __be__result @new ArrayVector;
@@ -12969,8 +13121,9 @@ Vectors.intersect ()
     done;
     besharp_rcrvs[besharp_rcsl]=$result
 }
-Vectors.intersectTo () 
-{ 
+Vectors.intersectTo ()
+{
+    local sourceSize targetValue;
     local targetVector="${1}";
     shift 1;
     local i;
@@ -12991,16 +13144,17 @@ Vectors.intersectTo ()
     done;
     $targetVector.removeIndices "${indicesToRemove[@]}"
 }
-Vectors.join () 
-{ 
+Vectors.join ()
+{
+    local result;
     local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.joinTo $result "${@}";
     besharp_rcrvs[besharp_rcsl]=$result
 }
-Vectors.joinTo () 
-{ 
+Vectors.joinTo ()
+{
     local targetVector="${1}";
     shift 1;
     local iterable;
@@ -13013,25 +13167,28 @@ Vectors.joinTo ()
         fi;
     done
 }
-Vectors.make () 
-{ 
+Vectors.make ()
+{
+    local vector;
     __be__vector @new ArrayVector;
     $vector.setPlain "${@}";
     besharp_rcrvs[besharp_rcsl]=$vector
 }
-Vectors.makeImmutable () 
-{ 
+Vectors.makeImmutable ()
+{
     besharp.returningOf @new ImmutableVector "${@}"
 }
-Vectors.makeImmutableOf () 
-{ 
+Vectors.makeImmutableOf ()
+{
+    local immutable;
     local iterable="${1}";
     __be__immutable @new ImmutableVector;
     $this.cloneTo $immutable $iterable;
     besharp_rcrvs[besharp_rcsl]=$immutable
 }
-Vectors.makeOf () 
-{ 
+Vectors.makeOf ()
+{
+    local vector;
     local iterable="${1}";
     if @is $iterable @exact ArrayVector; then
         besharp.returningOf @clone shallow $iterable;
@@ -13041,8 +13198,8 @@ Vectors.makeOf ()
     $vector.addMany @iterable "${iterable}";
     besharp_rcrvs[besharp_rcsl]=$vector
 }
-Vectors.nCopies () 
-{ 
+Vectors.nCopies ()
+{
     local item="${1}";
     local numOfCopies="${2}";
     if (( numOfCopies == 0 )); then
@@ -13055,13 +13212,14 @@ Vectors.nCopies ()
     done;
     besharp.returningOf @new ImmutableVector "${copies[@]}"
 }
-Vectors.single () 
-{ 
+Vectors.single ()
+{
     local item="${1}";
     besharp.returningOf @new ImmutableVector "${item}"
 }
-Vectors.slice () 
-{ 
+Vectors.slice ()
+{
+    local result;
     local list="${1}";
     local indexA="${2}";
     local indexB="${3}";
@@ -13069,20 +13227,22 @@ Vectors.slice ()
     $this.sliceTo $result "${@}";
     besharp_rcrvs[besharp_rcsl]=$result
 }
-Vectors.sliceTo () 
-{ 
+Vectors.sliceTo ()
+{
     @lists.sliceTo "${@}"
 }
-Vectors.subtract () 
-{ 
+Vectors.subtract ()
+{
+    local result;
     local first="${1}";
     shift 1;
     __be__result $this.makeOf $first;
     $this.subtractTo $result "${@}";
     besharp_rcrvs[besharp_rcsl]=$result
 }
-Vectors.subtractTo () 
-{ 
+Vectors.subtractTo ()
+{
+    local sourceSize targetValue;
     local targetVector="${1}";
     shift 1;
     local i;
@@ -13105,10 +13265,10 @@ Vectors.subtractTo ()
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 export besharp_oopRuntime_object_count=0
 
@@ -13119,7 +13279,7 @@ declare -axg besharp_rcrvs
 declare -axg besharp_runtime_current_iterator_keys__stack_x=()
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.runtime.entrypoint_micro() {
     set -eu
@@ -13140,7 +13300,7 @@ function besharp.runtime.entrypoint_micro() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function besharp.oopRuntime.turnOnDevelopMode() {
     besharp.oopRuntime.disableCollectingDiBindings
@@ -13148,7 +13308,7 @@ function besharp.oopRuntime.turnOnDevelopMode() {
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 function @class() {
     :
@@ -13183,11 +13343,11 @@ function @internal() {
 }
 
 fi
-if false; then :; 
-    besharp.runtime.entrypoint "${@}" 
+if false; then :;
+    besharp.runtime.entrypoint "${@}"
 
 fi
-if ${beshfile_section__oop_meta:-false}; then :; 
+if ${beshfile_section__oop_meta:-false}; then :;
 besharp_oop_type_is["AppEntrypoint"]='class'
 besharp_oop_types["AppEntrypoint"]="AppEntrypoint"
 declare -Ag besharp_oop_type_AppEntrypoint_interfaces
@@ -13215,14 +13375,16 @@ besharp_oop_type_AppEntrypoint_method_is_calling_parent["AppEntrypoint"]=true
 besharp_oop_type_AppEntrypoint_method_is_calling_this["AppEntrypoint"]=false
 besharp_oop_type_AppEntrypoint_methods['greetingText']='greetingText'
 besharp_oop_type_AppEntrypoint_method_is_returning["greetingText"]=true
-besharp_oop_type_AppEntrypoint_method_body["greetingText"]='    besharp_rcrvs[besharp_rcsl]="$( @ $args.get greeting ) $( @ $args.get subject )$( @ $args.get suffix )"'
+besharp_oop_type_AppEntrypoint_method_body["greetingText"]='    local args="${1}";
+    besharp_rcrvs[besharp_rcsl]="$( @ $args.get greeting ) $( @ $args.get subject )$( @ $args.get suffix )"'
 besharp_oop_type_AppEntrypoint_method_locals["greetingText"]=''
 besharp_oop_type_AppEntrypoint_method_is_using_iterators["greetingText"]=false
 besharp_oop_type_AppEntrypoint_method_is_calling_parent["greetingText"]=false
 besharp_oop_type_AppEntrypoint_method_is_calling_this["greetingText"]=false
 besharp_oop_type_AppEntrypoint_methods['main']='main'
 besharp_oop_type_AppEntrypoint_method_is_returning["main"]=true
-besharp_oop_type_AppEntrypoint_method_body["main"]='    __be__args $this.makeArguments "${@}";
+besharp_oop_type_AppEntrypoint_method_body["main"]='    local args greetingText ;
+    __be__args $this.makeArguments "${@}";
     if @true $args.get isAskingForHelp; then
         echo '"'"'An example Hello-World App for the BeSharp Framework.'"'"' 1>&2;
         echo '"'"''"'"' 1>&2;
@@ -13230,18 +13392,21 @@ besharp_oop_type_AppEntrypoint_method_body["main"]='    __be__args $this.makeArg
         $args.printUsage 1>&2;
         return 0;
     fi;
+    __be__greetingText $this.greetingText $args;
     if @true $args.get isLoud; then
-        echo "$( @fmt bold )$( @ $this.greetingText )$( @fmt reset )";
+        echo "$( @fmt bold )${greetingText}$( @fmt reset )";
     else
-        @echo $this.greetingText;
+        echo "${greetingText}";
     fi'
-besharp_oop_type_AppEntrypoint_method_locals["main"]='local args'
+besharp_oop_type_AppEntrypoint_method_locals["main"]='local args
+local greetingText'
 besharp_oop_type_AppEntrypoint_method_is_using_iterators["main"]=false
 besharp_oop_type_AppEntrypoint_method_is_calling_parent["main"]=false
 besharp_oop_type_AppEntrypoint_method_is_calling_this["main"]=true
 besharp_oop_type_AppEntrypoint_methods['makeArguments']='makeArguments'
 besharp_oop_type_AppEntrypoint_method_is_returning["makeArguments"]=true
-besharp_oop_type_AppEntrypoint_method_body["makeArguments"]='    __be__arguments @new Arguments "${@}";
+besharp_oop_type_AppEntrypoint_method_body["makeArguments"]='    local arguments ;
+    __be__arguments @new Arguments "${@}";
     $arguments.add greeting '"'"'--greeting'"'"' '"'"'-g'"'"' '"'"'The way you want to greet. Default greeting is: '"'"' '"'"'Hello'"'"';
     $arguments.add subject '"'"'--subject'"'"' '"'"'-s'"'"' '"'"'The subject you want to greet. Default subject is: '"'"' '"'"'World'"'"';
     $arguments.add suffix '"'"'--suffix'"'"' '"'"'-u'"'"' '"'"'The string being placed at the end. Default is: '"'"' '"'"'.'"'"';
@@ -13308,7 +13473,8 @@ besharp_oop_type_Arguments_method_is_calling_parent["addFlag"]=false
 besharp_oop_type_Arguments_method_is_calling_this["addFlag"]=true
 besharp_oop_type_Arguments_methods['createArgument']='createArgument'
 besharp_oop_type_Arguments_method_is_returning["createArgument"]=false
-besharp_oop_type_Arguments_method_body["createArgument"]='    __be__arg @new Argument;
+besharp_oop_type_Arguments_method_body["createArgument"]='    local arg map vector ;
+    __be__arg @new Argument;
     $arg.isFlag = "${1}";
     $arg.key = "${2}";
     $arg.longName = "${3}";
@@ -13327,7 +13493,8 @@ besharp_oop_type_Arguments_method_is_calling_parent["createArgument"]=false
 besharp_oop_type_Arguments_method_is_calling_this["createArgument"]=true
 besharp_oop_type_Arguments_methods['findArgument']='findArgument'
 besharp_oop_type_Arguments_method_is_returning["findArgument"]=true
-besharp_oop_type_Arguments_method_body["findArgument"]='    local name="${1}";
+besharp_oop_type_Arguments_method_body["findArgument"]='    local arguments key ;
+    local name="${1}";
     besharp_rcrvs[besharp_rcsl]="";
     while @iterate @of $this.arguments @in argument; do
         if @returned @of $argument.longName == "${name}" || @returned @of $argument.shortName == "${name}"; then
@@ -13337,7 +13504,7 @@ besharp_oop_type_Arguments_method_body["findArgument"]='    local name="${1}";
             return;
         fi;
     done;
-    besharp.error "Invalid argument: ${arg}!"'
+    besharp.error "Invalid argument: ${name}!"'
 besharp_oop_type_Arguments_method_locals["findArgument"]='local argument
 local arguments
 local key'
@@ -13346,7 +13513,8 @@ besharp_oop_type_Arguments_method_is_calling_parent["findArgument"]=false
 besharp_oop_type_Arguments_method_is_calling_this["findArgument"]=true
 besharp_oop_type_Arguments_methods['get']='get'
 besharp_oop_type_Arguments_method_is_returning["get"]=true
-besharp_oop_type_Arguments_method_body["get"]='    local key="${1}";
+besharp_oop_type_Arguments_method_body["get"]='    local inputValues ;
+    local key="${1}";
     __be__inputValues $this.inputValues;
     besharp.returningOf $inputValues.get "${key}"'
 besharp_oop_type_Arguments_method_locals["get"]='local inputValues'
@@ -13355,7 +13523,8 @@ besharp_oop_type_Arguments_method_is_calling_parent["get"]=false
 besharp_oop_type_Arguments_method_is_calling_this["get"]=true
 besharp_oop_type_Arguments_methods['initDefaultValues']='initDefaultValues'
 besharp_oop_type_Arguments_method_is_returning["initDefaultValues"]=false
-besharp_oop_type_Arguments_method_body["initDefaultValues"]='    __be__inputValues $this.inputValues;
+besharp_oop_type_Arguments_method_body["initDefaultValues"]='    local defaultValue inputValues key ;
+    __be__inputValues $this.inputValues;
     while @iterate @of $this.arguments @in argument; do
         __be__key $argument.key;
         __be__defaultValue $argument.defaultValue;
@@ -13370,7 +13539,8 @@ besharp_oop_type_Arguments_method_is_calling_parent["initDefaultValues"]=false
 besharp_oop_type_Arguments_method_is_calling_this["initDefaultValues"]=true
 besharp_oop_type_Arguments_methods['printUsage']='printUsage'
 besharp_oop_type_Arguments_method_is_returning["printUsage"]=false
-besharp_oop_type_Arguments_method_body["printUsage"]='    local margin=19;
+besharp_oop_type_Arguments_method_body["printUsage"]='    local arguments ;
+    local margin=19;
     __be__arguments $this.arguments;
     while @iterate @of $this.argsInOrder @in arg; do
         local paddingText='"'"''"'"';
@@ -13395,7 +13565,8 @@ besharp_oop_type_Arguments_method_is_calling_parent["printUsage"]=false
 besharp_oop_type_Arguments_method_is_calling_this["printUsage"]=true
 besharp_oop_type_Arguments_methods['process']='process'
 besharp_oop_type_Arguments_method_is_returning["process"]=false
-besharp_oop_type_Arguments_method_body["process"]='    $this.initDefaultValues;
+besharp_oop_type_Arguments_method_body["process"]='    local arg inputValues key ;
+    $this.initDefaultValues;
     __be__inputValues $this.inputValues;
     local nextItemIsValue=false;
     while @iterate @of $this.inputArgs @in arg; do
@@ -13465,6 +13636,10 @@ if ${beshfile_section__code:-false}; then :;
 function __be__args() {
   "${@}"
   args="${besharp_rcrvs[besharp_rcsl + 1]}"
+}
+function __be__greetingText() {
+  "${@}"
+  greetingText="${besharp_rcrvs[besharp_rcsl + 1]}"
 }
 function __be__arguments() {
   "${@}"
@@ -13544,10 +13719,12 @@ AppEntrypoint ()
 }
 AppEntrypoint.greetingText ()
 {
+    local args="${1}";
     besharp_rcrvs[besharp_rcsl]="$( @ $args.get greeting ) $( @ $args.get subject )$( @ $args.get suffix )"
 }
 AppEntrypoint.main ()
 {
+    local args greetingText;
     __be__args $this.makeArguments "${@}";
     if @true $args.get isAskingForHelp; then
         echo 'An example Hello-World App for the BeSharp Framework.' 1>&2;
@@ -13556,14 +13733,16 @@ AppEntrypoint.main ()
         $args.printUsage 1>&2;
         return 0;
     fi;
+    __be__greetingText $this.greetingText $args;
     if @true $args.get isLoud; then
-        echo "$( @fmt bold )$( @ $this.greetingText )$( @fmt reset )";
+        echo "$( @fmt bold )${greetingText}$( @fmt reset )";
     else
-        @echo $this.greetingText;
+        echo "${greetingText}";
     fi
 }
 AppEntrypoint.makeArguments ()
 {
+    local arguments;
     __be__arguments @new Arguments "${@}";
     $arguments.add greeting '--greeting' '-g' 'The way you want to greet. Default greeting is: ' 'Hello';
     $arguments.add subject '--subject' '-s' 'The subject you want to greet. Default subject is: ' 'World';
@@ -13594,6 +13773,7 @@ Arguments.addFlag ()
 }
 Arguments.createArgument ()
 {
+    local arg map vector;
     __be__arg @new Argument;
     $arg.isFlag = "${1}";
     $arg.key = "${2}";
@@ -13608,6 +13788,7 @@ Arguments.createArgument ()
 }
 Arguments.findArgument ()
 {
+    local arguments key;
     local name="${1}";
     besharp_rcrvs[besharp_rcsl]="";
     while @iterate @of $this.arguments @in argument; do
@@ -13618,16 +13799,18 @@ Arguments.findArgument ()
             return;
         fi;
     done;
-    besharp.error "Invalid argument: ${arg}!"
+    besharp.error "Invalid argument: ${name}!"
 }
 Arguments.get ()
 {
+    local inputValues;
     local key="${1}";
     __be__inputValues $this.inputValues;
     besharp.returningOf $inputValues.get "${key}"
 }
 Arguments.initDefaultValues ()
 {
+    local defaultValue inputValues key;
     __be__inputValues $this.inputValues;
     while @iterate @of $this.arguments @in argument; do
         __be__key $argument.key;
@@ -13637,6 +13820,7 @@ Arguments.initDefaultValues ()
 }
 Arguments.printUsage ()
 {
+    local arguments;
     local margin=19;
     __be__arguments $this.arguments;
     while @iterate @of $this.argsInOrder @in arg; do
@@ -13656,8 +13840,9 @@ Arguments.printUsage ()
         fi;
     done
 }
-Arguments.process () 
-{ 
+Arguments.process ()
+{
+    local arg inputValues key;
     $this.initDefaultValues;
     __be__inputValues $this.inputValues;
     local nextItemIsValue=false;
@@ -13683,12 +13868,12 @@ Arguments.process ()
 }
 
 fi
-if ${beshfile_section__code:-false}; then :; 
+if ${beshfile_section__code:-false}; then :;
 
 @bind Entrypoint @with AppEntrypoint
 
 fi
-if ${beshfile_section__launcher:-true}; then :; 
-    besharp.runtime.entrypoint_embedded_static "${@}" 
+if ${beshfile_section__launcher:-true}; then :;
+    besharp.runtime.entrypoint_embedded_static "${@}"
 
 fi
