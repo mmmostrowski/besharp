@@ -1,4 +1,5 @@
 /.idea/
+*.iml
 *.be.sh
 /app/dist/*
 !/app/dist/.gitkeep
