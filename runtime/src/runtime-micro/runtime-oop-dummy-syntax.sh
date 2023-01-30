@@ -31,3 +31,9 @@ function @abstract() {
 function @internal() {
     :
 }
+
+if ! type -t "@bind" > /dev/null 2> /dev/null ; then
+  function @bind() {
+      :
+  }
+fi
