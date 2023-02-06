@@ -90,7 +90,7 @@ The `Arguments` class might be an OOP replacement for the Bash `getopt` command.
           return 0
       fi
 
-      @let greetingText = $this.greetingText $args
+      @let greetingText = $this.renderGreeting $args
 
       if @true $args.get isLoud; then
           echo "$( @fmt bold )${greetingText}$( @fmt reset )"
@@ -99,7 +99,7 @@ The `Arguments` class might be an OOP replacement for the Bash `getopt` command.
       fi
   }
 
-  function AppEntrypoint.greetingText() {
+  function AppEntrypoint.renderGreeting() {
       local args="${1}"
 
       @returning "$( @ $args.get greeting ) $( @ $args.get subject )$( @ $args.get suffix )"
@@ -168,11 +168,11 @@ The `Arguments` class might be an OOP replacement for the Bash `getopt` command.
 
       @let inputValues = $this.inputValues
 
-      local nextItemIsValue=false
+      local itemIsValue=false
       while @iterate @of $this.inputArgs @in arg; do
-          if $nextItemIsValue; then
+          if $itemIsValue; then
               $inputValues.set "${key}" "${arg}"
-              nextItemIsValue=false
+              itemIsValue=false
               continue
           fi
 
@@ -182,11 +182,11 @@ The `Arguments` class might be an OOP replacement for the Bash `getopt` command.
           if @true $arg.isFlag; then
               $inputValues.set "${key}" true
           else
-              nextItemIsValue=true
+              itemIsValue=true
           fi
       done
 
-      if $nextItemIsValue; then
+      if $itemIsValue; then
           local argText
           argText="$( @ $arg.longName ) ($( @ $arg.shortName ))"
           besharp.error "The value is missing for ${argText} argument!"
@@ -203,13 +203,13 @@ The `Arguments` class might be an OOP replacement for the Bash `getopt` command.
 
   function Arguments.printUsage()
   {
-      local margin=19
+      local padding=19
 
       @let arguments = $this.arguments
       while @iterate @of $this.argsInOrder @in arg; do
           local paddingText=''
           local totalString="$( @ $arg.longName )$( @ $arg.shortName )"
-          local paddingSize=$(( margin - ${#totalString} ))
+          local paddingSize=$(( padding - ${#totalString} ))
           while (( --paddingSize >= 0 )); do
               paddingText+=' '
           done
@@ -236,11 +236,11 @@ The `Arguments` class might be an OOP replacement for the Bash `getopt` command.
       $arg.description = "${5}"
       $arg.defaultValue = "${6}"
 
-      @let map = $this.arguments
-      $map.set "${2}" $arg
+      @let argsMap = $this.arguments
+      $argsMap.set "${2}" $arg
 
-      @let vector = $this.argsInOrder
-      $vector.add $arg
+      @let argsVector = $this.argsInOrder
+      $argsVector.add $arg
   }
 
   function Arguments.findArgument()
@@ -252,10 +252,7 @@ The `Arguments` class might be an OOP replacement for the Bash `getopt` command.
           if @returned @of $argument.longName == "${name}" \
               || @returned @of $argument.shortName == "${name}"; then
 
-              @let key = $argument.key
-              @let arguments = $this.arguments
-
-              @returning @of $arguments.get "${key}"
+              @returning $argument
               return
           fi
       done
