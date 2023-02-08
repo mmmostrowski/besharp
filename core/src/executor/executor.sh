@@ -9,9 +9,6 @@ function besharp.executor.beginExecutePreset() {
 
 function besharp.executor.endExecutePreset() {
     local preset="${1}"
-
-    besharp.executor.stopSection
-    besharp.executor.sectionsSeparator
 }
 
 function besharp.executor.executeRuntimeCompilation() {

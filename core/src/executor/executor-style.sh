@@ -7,22 +7,22 @@ function besharp.executor.formatMessage() {
 }
 
 function besharp.executor.formatSection_1() {
-    echo "$(@fmt lightYellow)$(besharp.executor.currentSectionPrefix)====  ${1^^}  ====$(@fmt reset)" >&2
+    echo "$(@fmt reset lightYellow)$(besharp.executor.currentSectionPrefix)====  ${1^^}  ====$(@fmt reset)" >&2
     echo '' >&2
 }
 
 function besharp.executor.formatSection_2() {
-    echo "$(@fmt yellow)$(besharp.executor.currentSectionPrefix)==  ${1}$(@fmt reset)" >&2
+    echo "$(@fmt reset yellow)$(besharp.executor.currentSectionPrefix)==  ${1}$(@fmt reset)" >&2
     echo '' >&2
 }
 
 function besharp.executor.formatSection_3() {
-    echo "$(@fmt lightGray)$(besharp.executor.currentSectionPrefix)==  ${1,,}$(@fmt reset)" >&2
+    echo "$(@fmt reset lightGray)$(besharp.executor.currentSectionPrefix)==  ${1,,}$(@fmt reset)" >&2
     echo '' >&2
 }
 
 function besharp.executor.formatSection_N() {
-    echo "$(@fmt dim lightGray)$(besharp.executor.currentSectionPrefix)==  ${1,,}$(@fmt reset)" >&2
+    echo "$(@fmt reset dim lightGray)$(besharp.executor.currentSectionPrefix)==  ${1,,}$(@fmt reset)" >&2
     echo '' >&2
 }
 
@@ -62,7 +62,7 @@ function besharp.executor.currentSectionLevel() {
 function besharp.executor.currentSectionPrefix() {
     local lvl=${#besharp_executor_sections[@]}
     while (( lvl > 0 && --lvl )); do
-        echo -n '==--' >&2
+        echo -n '==--'
     done
 }
 
