@@ -80,19 +80,23 @@ The `Arguments` class might be an OOP replacement for the Bash `getopt` command.
 
   function AppEntrypoint.main()
   {
-      @let args = $this.makeArguments "${@}"
+      @let arguments = $this.makeArguments "${@}"
 
-      if @true $args.get isAskingForHelp; then
-          echo 'An example Hello-World App for the BeSharp Framework.' >&2
-          echo '' >&2
-          echo 'Usage:' >&2
-          $args.printUsage >&2
+      if @true $arguments.valueOf isAskingForHelp; then
+          (
+            echo ''
+            echo 'An example Hello-World App on BeSharp Framework.'
+            echo ''
+            echo 'Usage:'
+            $arguments.printUsage
+            echo ''
+          ) >&2
           return 0
       fi
 
-      @let greetingText = $this.renderGreeting $args
+      @let greetingText = $this.renderGreeting $arguments
 
-      if @true $args.get isLoud; then
+      if @true $arguments.valueOf isLoud; then
           echo "$( @fmt bold )${greetingText}$( @fmt reset )"
       else
           echo "${greetingText}"
@@ -100,9 +104,9 @@ The `Arguments` class might be an OOP replacement for the Bash `getopt` command.
   }
 
   function AppEntrypoint.renderGreeting() {
-      local args="${1}"
+      local arguments="${1}"
 
-      @returning "$( @ $args.get greeting ) $( @ $args.get subject )$( @ $args.get suffix )"
+      @returning "$( @ $arguments.valueOf greeting ) $( @ $arguments.valueOf subject )$( @ $arguments.valueOf suffix )"
   }
 
   function AppEntrypoint.makeArguments()
@@ -169,17 +173,17 @@ The `Arguments` class might be an OOP replacement for the Bash `getopt` command.
       @let inputValues = $this.inputValues
 
       local itemIsValue=false
-      while @iterate @of $this.inputArgs @in arg; do
+      while @iterate @of $this.inputArgs @in argument; do
           if $itemIsValue; then
-              $inputValues.set "${key}" "${arg}"
+              $inputValues.set "${key}" "${argument}"
               itemIsValue=false
               continue
           fi
 
-          @let arg = $this.findArgument "${arg}"
-          @let key = $arg.key
+          @let argument = $this.findArgument "${argument}"
+          @let key = $argument.key
 
-          if @true $arg.isFlag; then
+          if @true $argument.isFlag; then
               $inputValues.set "${key}" true
           else
               itemIsValue=true
@@ -188,12 +192,12 @@ The `Arguments` class might be an OOP replacement for the Bash `getopt` command.
 
       if $itemIsValue; then
           local argText
-          argText="$( @ $arg.longName ) ($( @ $arg.shortName ))"
+          argText="$( @ $argument.longName ) ($( @ $argument.shortName ))"
           besharp.error "The value is missing for ${argText} argument!"
       fi
   }
 
-  function Arguments.get()
+  function Arguments.valueOf()
   {
       local key="${1}"
 
@@ -206,48 +210,47 @@ The `Arguments` class might be an OOP replacement for the Bash `getopt` command.
       local padding=19
 
       @let arguments = $this.arguments
-      while @iterate @of $this.argsInOrder @in arg; do
+      while @iterate @of $this.argsInOrder @in argument; do
           local paddingText=''
-          local totalString="$( @ $arg.longName )$( @ $arg.shortName )"
+          local totalString="$( @ $argument.longName )$( @ $argument.shortName )"
           local paddingSize=$(( padding - ${#totalString} ))
           while (( --paddingSize >= 0 )); do
               paddingText+=' '
           done
 
           echo -n "  "
-          if @true $arg.isFlag; then
-              echo -n "$(@ $arg.shortName), $(@ $arg.longName)             ${paddingText} - "
-              @echo $arg.description
+          if @true $argument.isFlag; then
+              echo -n "$(@ $argument.shortName), $(@ $argument.longName)             ${paddingText} - "
+              @echo $argument.description
           else
-              echo -n "$(@ $arg.shortName) value, $(@ $arg.longName) value ${paddingText} - "
-              echo "$(@ $arg.description)$(@fmt bold)$(@ $arg.defaultValue)$(@fmt reset)"
+              echo -n "$(@ $argument.shortName) value, $(@ $argument.longName) value ${paddingText} - "
+              echo "$(@ $argument.description)$(@fmt bold)$(@ $argument.defaultValue)$(@fmt reset)"
           fi
       done
   }
 
   function Arguments.createArgument()
   {
-      @let arg = @new Argument
+      @let argument = @new Argument
 
-      $arg.isFlag = "${1}"
-      $arg.key = "${2}"
-      $arg.longName = "${3}"
-      $arg.shortName = "${4}"
-      $arg.description = "${5}"
-      $arg.defaultValue = "${6}"
+      $argument.isFlag = "${1}"
+      $argument.key = "${2}"
+      $argument.longName = "${3}"
+      $argument.shortName = "${4}"
+      $argument.description = "${5}"
+      $argument.defaultValue = "${6}"
 
       @let argsMap = $this.arguments
-      $argsMap.set "${2}" $arg
+      $argsMap.set "${2}" $argument
 
       @let argsVector = $this.argsInOrder
-      $argsVector.add $arg
+      $argsVector.add $argument
   }
 
   function Arguments.findArgument()
   {
       local name="${1}"
 
-      @returning ""
       while @iterate @of $this.arguments @in argument; do
           if @returned @of $argument.longName == "${name}" \
               || @returned @of $argument.shortName == "${name}"; then
@@ -257,7 +260,7 @@ The `Arguments` class might be an OOP replacement for the Bash `getopt` command.
           fi
       done
 
-      besharp.error "Invalid argument: ${arg}!"
+      besharp.error "Invalid argument: ${argument}!"
   }
 
   function Arguments.initDefaultValues()
